@@ -2,8 +2,15 @@
 import App from "./App.svelte"
 import { mount, unmount } from "svelte"
 
+const urls = {
+  chatgpt: "*://*.chatgpt.com/*",
+  deepseek: "*://*.deepseek.com/*",
+  gemini: "*://gemini.google.com/*",
+  claude: "*://claude.ai/*",
+}
+
 export default defineContentScript({
-  matches: ["*://*.chatgpt.com/*"],
+  matches: [urls.chatgpt, urls.deepseek, urls.gemini, urls.claude],
 
   main(ctx) {
     const ui = createIntegratedUi(ctx, {
