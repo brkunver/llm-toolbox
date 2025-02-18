@@ -1,4 +1,4 @@
-// entrypoints/example-ui.content/index.ts
+
 import App from "./App.svelte"
 import { mount, unmount } from "svelte"
 
