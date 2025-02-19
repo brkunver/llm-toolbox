@@ -1,7 +1,9 @@
 import App from "./App.svelte"
 import { mount, unmount } from "svelte"
 
-const urls = {
+import type { Tllm } from "../../utils/helpers"
+
+const urls: Record<Tllm, string> = {
   chatgpt: "*://*.chatgpt.com/*",
   deepseek: "*://*.deepseek.com/*",
   gemini: "*://gemini.google.com/*",
@@ -11,7 +13,7 @@ const urls = {
 }
 
 export default defineContentScript({
-  matches: [urls.chatgpt, urls.deepseek, urls.gemini, urls.claude, urls.perplexity, urls.t3],
+  matches: [...Object.values(urls)],
 
   main(ctx) {
     const ui = createIntegratedUi(ctx, {
