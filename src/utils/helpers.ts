@@ -1,4 +1,4 @@
-type TWebsite = "chatgpt" | "deepseek" | "gemini" | "claude" | "unknown"
+type TWebsite = "unknown" | "chatgpt" | "deepseek" | "gemini" | "claude" | "perplexity" | "t3"
 
 export function getWebsite(): TWebsite {
   const url = window.location.href
@@ -6,6 +6,8 @@ export function getWebsite(): TWebsite {
   if (url.includes("deepseek")) return "deepseek"
   if (url.includes("gemini")) return "gemini"
   if (url.includes("claude")) return "claude"
+  if (url.includes("perplexity")) return "perplexity"
+  if (url.includes("t3.chat")) return "t3"
 
   return "unknown"
 }
@@ -17,9 +19,19 @@ export function getPromptElement(website: TWebsite) {
   if (website == "deepseek") {
     return document.querySelector("#chat-input") as HTMLTextAreaElement
   }
+  if (website == "gemini") {
+    return document.querySelector('div[contenteditable="true"]') as HTMLDivElement
+  }
   if (website == "claude") {
     return document.querySelector('div[contenteditable="true"]') as HTMLDivElement
   }
+  if (website == "perplexity") {
+    return document.querySelector("textarea")
+  }
+  if (website == "t3") {
+    return document.querySelector("#chat-input") as HTMLTextAreaElement
+  }
+
   return null
 }
 
@@ -37,6 +49,15 @@ export function changePrompt(prompt: string) {
       promptElement.dispatchEvent(new Event("input", { bubbles: true }))
     } else if (website == "claude") {
       promptElement.innerText = prompt
+      promptElement.dispatchEvent(new Event("input", { bubbles: true }))
+    } else if (website == "gemini") {
+      promptElement.innerText = prompt
+      promptElement.dispatchEvent(new Event("input", { bubbles: true }))
+    } else if (website == "perplexity" && promptElement instanceof HTMLTextAreaElement) {
+      promptElement.value = prompt
+      promptElement.dispatchEvent(new Event("input", { bubbles: true }))
+    } else if (website == "t3" && promptElement instanceof HTMLTextAreaElement) {
+      promptElement.value = prompt
       promptElement.dispatchEvent(new Event("input", { bubbles: true }))
     }
   }
