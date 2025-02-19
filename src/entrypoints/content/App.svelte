@@ -9,7 +9,6 @@
   let onMenuButtonClick = () => {
     showMenu = !showMenu
   }
-
 </script>
 
 <main class="fixed top-14 right-14 z-50">
@@ -21,7 +20,7 @@
       <section transition:fade class="flex flex-col">
         <h1>LLM Toolbox</h1>
         <p>Detected Website : {getWebsite()}</p>
-        <button onclick={() => changePrompt("Test prompt via button")} class="cursor-pointer">Test Prompt Change</button
+        <button onclick={() => changePrompt("How are you doing :)")} class="cursor-pointer">Test Prompt Change</button
         >
       </section>
     {/if}
