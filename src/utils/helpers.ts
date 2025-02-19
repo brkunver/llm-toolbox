@@ -1,4 +1,5 @@
-type TWebsite = "unknown" | "chatgpt" | "deepseek" | "gemini" | "claude" | "perplexity" | "t3"
+export type Tllm = | "chatgpt" | "deepseek" | "gemini" | "claude" | "perplexity" | "t3"
+type TWebsite = Tllm | "unknown"
 
 export function getWebsite(): TWebsite {
   const url = window.location.href
