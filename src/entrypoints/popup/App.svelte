@@ -1,6 +1,7 @@
 <script lang="ts">
   import "../global.css"
   import { isExtensionActive } from "../../utils/storage"
+  import Button from "../components/Button.svelte"
 
   let isActive = $state(true)
 
@@ -31,4 +32,5 @@
   <button onclick={toggleExtension} class="border p-2 bg-black text-white rounded-2xl cursor-pointer"
     >Toggle Extension</button
   >
+  <Button className="bg-black text-blue-200">Click me</Button>
 </main>

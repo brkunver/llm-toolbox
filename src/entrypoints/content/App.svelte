@@ -1,9 +1,10 @@
 <script lang="ts">
-  import "../global.css"
+  import "@/entrypoints/global.css"
   import logo from "./128.png"
   import { fade } from "svelte/transition"
-  import { getWebsite, changePrompt } from "../../utils/helpers"
-  import { isExtensionActive } from "../../utils/storage"
+  import { getWebsite, changePrompt } from "@/utils/helpers"
+  import { isExtensionActive } from "@/utils/storage"
+  import Button from "@/entrypoints/components/Button.svelte"
 
   let showUi = $state(true)
   let showMenu = $state(false)
@@ -38,8 +39,7 @@
         <section transition:fade class="flex flex-col">
           <h1>LLM Toolbox</h1>
           <p>Detected Website : {getWebsite()}</p>
-          <button onclick={() => changePrompt("How are you doing :)")} class="cursor-pointer">Test Prompt Change</button
-          >
+          <Button onClick={() => changePrompt("How are you doing :)")}>Test Prompt Change</Button>
         </section>
       {/if}
     </section>
