@@ -1,7 +1,7 @@
-import App from "./App.svelte"
-import { mount, unmount } from "svelte"
+import ReactDOM from "react-dom/client"
+import App from "./App.tsx"
 
-import type { Tllm } from "../../utils/helpers"
+import type { Tllm } from "@/utils/helpers.ts"
 
 const urls: Record<Tllm, string> = {
   chatgpt: "*://*.chatgpt.com/*",
@@ -20,15 +20,16 @@ export default defineContentScript({
       position: "inline",
       anchor: "body",
       onMount: (container) => {
-        // Create the Svelte app inside the UI container
-        mount(App, {
-          target: container,
-        })
+        // Create a root on the UI container and render a component
+        const root = ReactDOM.createRoot(container)
+        root.render(<App />)
+        return root
       },
-      onRemove: (app) => {
-        // Destroy the app when the UI is removed
-        // cast any to avoid TS error
-        unmount(app as any)
+      onRemove: (root) => {
+        // Unmount the root when the UI is removed
+        if (root) {
+          root.unmount()
+        }
       },
     })
 
