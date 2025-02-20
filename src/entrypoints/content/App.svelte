@@ -29,7 +29,7 @@
 </script>
 
 {#if showUi}
-  <main class="fixed top-14 right-14 z-50">
+  <main transition:fade class="fixed top-14 right-14 z-50">
     <section id="ui" class="flex flex-col p-2 rounded-2xl bg-gray-900 w-fit h-fit">
       <button onclick={onMenuButtonClick} class="w-fit h-fit self-end cursor-pointer">
         <img src={logo} alt="toggle-menu" class="text-white w-10 h-10 mb-2 ml-2" />
