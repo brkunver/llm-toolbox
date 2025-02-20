@@ -1,3 +1,7 @@
+import { isExtensionActive } from "@/utils/storage"
+
 export default defineBackground(() => {
-  console.log('Hello background!', { id: browser.runtime.id });
-});
+  browser.runtime.onInstalled.addListener(() => {
+    isExtensionActive.setValue(true)
+  })
+})
