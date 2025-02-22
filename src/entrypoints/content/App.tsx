@@ -15,7 +15,7 @@ function App() {
   const [showMenu, setShowMenu] = useState<boolean>(true)
   const [showDrawer, setShowDrawer] = useState<boolean>(false)
 
-  isExtensionActive.watch((active: boolean) => {
+  isExtensionActive.watch((active) => {
     setShowUi(active)
   })
 
