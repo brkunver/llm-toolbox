@@ -1,4 +1,4 @@
-export type Tllm = | "chatgpt" | "deepseek" | "gemini" | "claude" | "perplexity" | "t3"
+export type Tllm = "chatgpt" | "deepseek" | "gemini" | "claude" | "perplexity" | "t3"
 type TWebsite = Tllm | "unknown"
 
 export function getWebsite(): TWebsite {
@@ -14,50 +14,59 @@ export function getWebsite(): TWebsite {
 }
 
 export function getPromptElement(website: TWebsite) {
-  if (website == "chatgpt") {
-    return document.querySelector("#prompt-textarea") as HTMLDivElement
+  switch (website) {
+    case "chatgpt":
+      return document.querySelector("#prompt-textarea") as HTMLDivElement
+    case "deepseek":
+      return document.querySelector("#chat-input") as HTMLTextAreaElement
+    case "gemini":
+      return document.querySelector('div[contenteditable="true"]') as HTMLDivElement
+    case "claude":
+      return document.querySelector('div[contenteditable="true"]') as HTMLDivElement
+    case "perplexity":
+      return document.querySelector("textarea") as HTMLTextAreaElement // not needed but for consistency
+    case "t3":
+      return document.querySelector("#chat-input") as HTMLTextAreaElement
+    default:
+      return null
   }
-  if (website == "deepseek") {
-    return document.querySelector("#chat-input") as HTMLTextAreaElement
-  }
-  if (website == "gemini") {
-    return document.querySelector('div[contenteditable="true"]') as HTMLDivElement
-  }
-  if (website == "claude") {
-    return document.querySelector('div[contenteditable="true"]') as HTMLDivElement
-  }
-  if (website == "perplexity") {
-    return document.querySelector("textarea")
-  }
-  if (website == "t3") {
-    return document.querySelector("#chat-input") as HTMLTextAreaElement
-  }
-
-  return null
 }
 
 export function changePrompt(prompt: string) {
   const website = getWebsite()
   const promptElement = getPromptElement(website)
+
   if (promptElement) {
     if (website == "chatgpt") {
       promptElement.innerText = prompt
-    } else if (website == "deepseek") {
+    }
+
+    if (website == "deepseek") {
       const descriptor = Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype, "value")
+
       if (descriptor && descriptor.set) {
         descriptor.set.call(promptElement, prompt)
       }
+
       promptElement.dispatchEvent(new Event("input", { bubbles: true }))
-    } else if (website == "claude") {
+    }
+
+    if (website == "claude") {
       promptElement.innerText = prompt
       promptElement.dispatchEvent(new Event("input", { bubbles: true }))
-    } else if (website == "gemini") {
+    }
+
+    if (website == "gemini") {
       promptElement.innerText = prompt
       promptElement.dispatchEvent(new Event("input", { bubbles: true }))
-    } else if (website == "perplexity" && promptElement instanceof HTMLTextAreaElement) {
+    }
+
+    if (website == "perplexity" && promptElement instanceof HTMLTextAreaElement) {
       promptElement.value = prompt
       promptElement.dispatchEvent(new Event("input", { bubbles: true }))
-    } else if (website == "t3" && promptElement instanceof HTMLTextAreaElement) {
+    }
+
+    if (website == "t3" && promptElement instanceof HTMLTextAreaElement) {
       promptElement.value = prompt
       promptElement.dispatchEvent(new Event("input", { bubbles: true }))
     }
