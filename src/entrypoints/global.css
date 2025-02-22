@@ -1,1 +1,21 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "jb-mono";
+  src: url("~/assets/fonts/jb-mono.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url("~/assets/fonts/roboto.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
+@theme {
+  --color-primary: #2f3640;
+  --font-jb-mono: "jb-mono", monospace;
+  --font-roboto: "roboto", sans-serif;
+}
