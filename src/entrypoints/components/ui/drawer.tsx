@@ -8,7 +8,7 @@ interface DrawerProps {
   side?: "left" | "right"
 }
 
-export const Drawer: React.FC<DrawerProps> = ({ isOpen, onClose, children, side = "right" }) => {
+export function Drawer({ isOpen, onClose, children, side = "right" }: DrawerProps) {
   const variants = {
     open: {
       x: "0%",
