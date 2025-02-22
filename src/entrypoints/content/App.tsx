@@ -13,7 +13,7 @@ import { Drawer } from "@/entrypoints/components/ui/drawer"
 function App() {
   const [showUi, setShowUi] = useState<boolean>(false)
   const [showMenu, setShowMenu] = useState<boolean>(true)
-  const [showDrawer, setShowDrawer] = useState<boolean>(true)
+  const [showDrawer, setShowDrawer] = useState<boolean>(false)
 
   isExtensionActive.watch((active: boolean) => {
     setShowUi(active)
@@ -40,8 +40,9 @@ function App() {
   return (
     <>
       <button
+        role="button"
         onClick={onMenuButtonClick}
-        className="fixed top-14 right-14 z-30 w-fit h-fit p-2 cursor-pointer rounded-2xl bg-gray-900"
+        className="fixed top-14 right-14 z-30 w-fit h-fit p-2 cursor-pointer rounded-2xl bg-primary! hover:scale-110! transition-all duration-100! ease-in-out!"
       >
         <img src={logo} alt="toggle-menu" className="text-white w-10 h-10 mb-2 ml-2" />
       </button>
@@ -53,12 +54,16 @@ function App() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1, type: "spring" }}
-            className="flex flex-col fixed top-32 right-14 z-30 p-4 rounded-2xl bg-gray-900 w-fit h-fit"
+            className="flex flex-col fixed top-32 right-14 z-30 p-4 rounded-2xl bg-primary! w-fit h-fit"
           >
-            <h1>LLM Toolbox</h1>
-            <p>Detected Website : {getWebsite()}</p>
-            <button onClick={() => changePrompt("Hello, how are you?")}>Hello, how are you?</button>
-            <button onClick={() => setShowDrawer(true)}>Show Drawer</button>
+            <h1 className="font-jb-mono! text-3xl! font-bold!">LLM Toolbox</h1>
+            <p className="font-jb-mono!">Detected Website : {getWebsite()}</p>
+            <button className="font-roboto!" onClick={() => changePrompt("Hello, how are you?")}>
+              Hello, how are you?
+            </button>
+            <button className="font-roboto!" onClick={() => setShowDrawer(true)}>
+              Show Drawer
+            </button>
           </motion.section>
         )}
       </AnimatePresence>
