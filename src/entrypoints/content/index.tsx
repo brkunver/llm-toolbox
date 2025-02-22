@@ -43,7 +43,7 @@ export default defineContentScript({
   },
 })
 
-// integrated ui
+//  Old Integrated UI Code
 
 // export default defineContentScript({
 //   matches: [...Object.values(urls)],
