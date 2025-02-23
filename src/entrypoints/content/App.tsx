@@ -6,13 +6,13 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "motion/react"
 
 import { getWebsite, changePrompt } from "@/utils/helpers"
-import { isExtensionActive } from "@/utils/storage"
+import { isExtensionActive, isMenuActive } from "@/utils/storage"
 
 import { Drawer } from "@/entrypoints/components/ui/drawer"
 
 function App() {
   const [showUi, setShowUi] = useState<boolean>(false)
-  const [showMenu, setShowMenu] = useState<boolean>(true)
+  const [showMenu, setShowMenu] = useState<boolean>(false)
   const [showDrawer, setShowDrawer] = useState<boolean>(false)
 
   isExtensionActive.watch((active) => {
@@ -20,19 +20,23 @@ function App() {
   })
 
   useEffect(() => {
-    const setupExtensionState = async () => {
-      try {
-        const value = await isExtensionActive.getValue()
-        setShowUi(value)
-      } catch (err) {
-        console.error("Error while getting extension active storage information", err)
-      }
+    async function setExtensionActive() {
+      const value = await isExtensionActive.getValue()
+      setShowUi(value)
     }
-    setupExtensionState()
+
+    async function setMenuActive() {
+      const value = await isMenuActive.getValue()
+      setShowMenu(value)
+    }
+
+    setExtensionActive()
+    setMenuActive()
   }, [])
 
   const onMenuButtonClick = () => {
     setShowMenu(!showMenu)
+    isMenuActive.setValue(!showMenu)
   }
 
   if (!showUi) return null
