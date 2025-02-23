@@ -19,7 +19,7 @@ export default defineContentScript({
   async main(ctx) {
     // 3. Define your UI
     const ui = await createShadowRootUi(ctx, {
-      name: "example-ui",
+      name: "extension-ui",
       position: "inline",
       anchor: "body",
       onMount: (container) => {
