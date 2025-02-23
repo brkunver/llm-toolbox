@@ -1,7 +1,10 @@
-import { isExtensionActive } from "@/utils/storage"
+import { isExtensionActive, isMenuActive } from "@/utils/storage"
 
 export default defineBackground(() => {
-  browser.runtime.onInstalled.addListener(() => {
-    isExtensionActive.setValue(true)
+  browser.runtime.onInstalled.addListener((details) => {
+    if (details.reason == "install") {
+      isExtensionActive.setValue(true)
+      isMenuActive.setValue(true)
+    }
   })
 })
