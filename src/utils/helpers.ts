@@ -1,5 +1,4 @@
-export type Tllm = "chatgpt" | "deepseek" | "gemini" | "claude" | "perplexity" | "t3"
-type TWebsite = Tllm | "unknown"
+import type { TWebsite } from "@/utils/types"
 
 export function getWebsite(): TWebsite {
   const url = window.location.href
