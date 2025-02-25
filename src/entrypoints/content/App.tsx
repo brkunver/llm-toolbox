@@ -79,11 +79,9 @@ function App() {
         )}
       </AnimatePresence>
 
-      <AnimatePresence>
-        <Drawer isOpen={showDrawer} onClose={() => setShowDrawer(false)} key={showDrawer.toString()}>
-          <h1>Drawer</h1>
-        </Drawer>
-      </AnimatePresence>
+      <Drawer isOpen={showDrawer} onClose={() => setShowDrawer(false)} key={showDrawer.toString()}>
+        <h1>Drawer</h1>
+      </Drawer>
     </>
   )
 }
