@@ -2,7 +2,7 @@ export type Tllm = "chatgpt" | "deepseek" | "gemini" | "claude" | "perplexity" |
 export type TWebsite = Tllm | "unknown"
 
 export type TBookmark = {
-  id: string
+  website: TWebsite
   name: string
   url: string
 }
