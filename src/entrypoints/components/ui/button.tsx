@@ -12,7 +12,10 @@ export default function Button(props: ButtonProps) {
       {...props}
       role="button"
       onClick={props.onClick}
-      className={twMerge("p-2 rounded-md bg-black text-white cursor-pointer", props.className)}
+      className={twMerge(
+        "p-2 rounded-md bg-black text-white cursor-pointer border border-transparent hover:border-white",
+        props.className
+      )}
     >
       {props.children}
     </button>
