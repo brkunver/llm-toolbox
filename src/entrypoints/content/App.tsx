@@ -46,7 +46,7 @@ function App() {
       <div className="fixed top-14 right-14 z-30 w-fit h-fit group">
         <div
           className={`${
-            showMenu ? "bg-red-500" : "bg-green-500"
+            showMenu ? "bg-[#c23616]" : "bg-[#44bd32]"
           } absolute inset-0 rounded-2xl scale-110 opacity-0 group-hover:opacity-100 transition-all duration-200 -z-10`}
         ></div>
         <button
