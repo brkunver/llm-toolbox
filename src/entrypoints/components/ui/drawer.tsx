@@ -1,59 +1,94 @@
 import { motion } from "framer-motion"
-import React from "react"
+import { useEffect } from "react"
 
 interface DrawerProps {
   isOpen: boolean
   onClose: () => void
   children: React.ReactNode
   side?: "left" | "right"
+  width?: string
 }
 
-export function Drawer({ isOpen, onClose, children, side = "right" }: DrawerProps) {
+export function Drawer({ isOpen, onClose, children, side = "right", width = "w-80" }: DrawerProps) {
+  useEffect(() => {
+    const handleEscKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isOpen) {
+        onClose()
+      }
+    }
+
+    window.addEventListener("keydown", handleEscKey)
+
+    if (isOpen) {
+      document.body.style.overflow = "hidden"
+    } else {
+      document.body.style.overflow = ""
+    }
+
+    return () => {
+      window.removeEventListener("keydown", handleEscKey)
+      document.body.style.overflow = ""
+    }
+  }, [isOpen, onClose])
+
+  if (!isOpen) return null
+
   const variants = {
-    open: {
+    initial: {
+      x: side === "right" ? "100%" : "-100%",
+    },
+    animate: {
       x: "0%",
       transition: {
         type: "spring",
-        stiffness: 300,
-        damping: 30,
-      },
-    },
-    closed: {
-      x: side === "right" ? "100%" : "-100%",
-      transition: {
-        type: "spring",
-        stiffness: 300,
+        stiffness: 400,
         damping: 30,
       },
     },
   }
 
   return (
-    <>
-      {isOpen && (
-        <div className="fixed inset-0 z-40">
-          {/* Overlay */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.5 }}
-            exit={{ opacity: 0 }}
-            onClick={onClose}
-            className="absolute inset-0 bg-black"
-          />
+    <div className="fixed inset-0 z-40 overflow-hidden">
+      {/* Overlay */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.5 }}
+        onClick={onClose}
+        className="absolute inset-0 bg-black"
+      />
 
-          {/* Drawer */}
-          <motion.div
-            initial="closed"
-            animate={isOpen ? "open" : "closed"}
-            variants={variants}
-            className={`absolute inset-y-0 ${
-              side === "right" ? "right-0" : "left-0"
-            } w-80 bg-black text-white shadow-lg z-50`}
+      {/* Drawer */}
+      <motion.div
+        initial="initial"
+        animate="animate"
+        variants={variants}
+        className={`absolute inset-y-0 ${
+          side === "right" ? "right-0" : "left-0"
+        } ${width} bg-black text-white shadow-xl flex flex-col`}
+      >
+        {/* Header */}
+        <div className="flex items-center justify-between p-4 border-b border-gray-700">
+          <h2 className="text-lg font-semibold">Menu</h2>
+          <button
+            onClick={onClose}
+            className="p-1 rounded-full hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-600"
+            aria-label="Close drawer"
           >
-            <div className="h-full p-4 overflow-y-auto">{children}</div>
-          </motion.div>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
         </div>
-      )}
-    </>
+
+        {/* Content */}
+        <div className="flex-1 p-4 overflow-y-auto">{children}</div>
+      </motion.div>
+    </div>
   )
 }
