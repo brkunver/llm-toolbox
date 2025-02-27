@@ -1,7 +1,7 @@
 import { twMerge } from "tailwind-merge"
 
 interface ButtonProps {
-  onClick: () => void
+  onClick?: () => void
   children: React.ReactNode | string
   className?: string
 }
