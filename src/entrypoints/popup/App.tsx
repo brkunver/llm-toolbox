@@ -29,10 +29,13 @@ const Popup: React.FC = () => {
   }
 
   return (
-    <main className="min-w-48 min-h-24 p-2 flex flex-col justify-center items-center">
+    <main className="min-w-48 min-h-24 p-2 flex flex-col justify-center items-center font-roboto font-medium bg-primary text-white">
       <h1>LLM Toolbox</h1>
       <p>Extension is = {String(isActive)}</p>
-      <Button onClick={toggleExtension}>{isActive ? "Deactivate" : "Activate"}</Button>
+      <Button className="min-w-20" onClick={toggleExtension}>
+        {isActive ? "Deactivate" : "Activate"}
+      </Button>
+      <Button onClick={() => browser.runtime.openOptionsPage()}>Open Options</Button>
     </main>
   )
 }
