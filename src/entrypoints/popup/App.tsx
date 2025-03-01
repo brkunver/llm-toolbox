@@ -29,7 +29,7 @@ const Popup: React.FC = () => {
   }
 
   return (
-    <main className="min-w-48 min-h-24 p-2 flex flex-col justify-center items-center font-roboto font-medium bg-primary text-white">
+    <main className="min-w-48 min-h-24 p-2 flex flex-col justify-center items-center font-main font-medium bg-primary text-white">
       <h1>LLM Toolbox</h1>
       <p>Extension is = {String(isActive)}</p>
       <Button className="min-w-20" onClick={toggleExtension}>
