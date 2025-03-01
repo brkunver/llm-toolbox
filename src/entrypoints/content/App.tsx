@@ -67,12 +67,12 @@ function App() {
             transition={{ duration: 1, type: "spring" }}
             className="flex flex-col fixed top-32 right-14 z-30 p-4 rounded-2xl bg-primary! w-fit h-fit"
           >
-            <h1 className="font-jb-mono! text-3xl! font-bold!">LLM Toolbox</h1>
-            <p className="font-jb-mono!">Detected Website : {getWebsite()}</p>
-            <button className="font-roboto!" onClick={() => changePrompt("Hello, how are you?")}>
+            <h1 className="font-main text-3xl! font-bold!">LLM Toolbox</h1>
+            <p className="font-main">Detected Website : {getWebsite()}</p>
+            <button className="font-main" onClick={() => changePrompt("Hello, how are you?")}>
               Hello, how are you?
             </button>
-            <button className="font-roboto!" onClick={() => setShowDrawer(true)}>
+            <button className="font-main" onClick={() => setShowDrawer(true)}>
               Show Drawer
             </button>
           </motion.section>
