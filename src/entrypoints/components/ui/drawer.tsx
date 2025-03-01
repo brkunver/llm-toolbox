@@ -71,7 +71,7 @@ export function Drawer({ isOpen, onClose, children, side = "right", width = "w-8
           <h2 className="text-lg font-semibold">Menu</h2>
           <button
             onClick={onClose}
-            className="p-1 rounded-full hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-600"
+            className="p-1 rounded-full hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-600 cursor-pointer"
             aria-label="Close drawer"
           >
             <svg
