@@ -13,7 +13,7 @@ export default function Button(props: ButtonProps) {
       role="button"
       onClick={props.onClick}
       className={twMerge(
-        "p-2 rounded-md bg-black text-white cursor-pointer border border-transparent hover:border-white",
+        "p-2 rounded-md bg-black text-white cursor-pointer border border-transparent hover:border-white font-main",
         props.className
       )}
     >
