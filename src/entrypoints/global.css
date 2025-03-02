@@ -10,4 +10,10 @@
 @theme {
   --color-primary: #2f3640;
   --font-main: "inter", sans-serif;
+  --color-flat-red: #eb2f06;
+  --color-flat-green: #44bd32;
+}
+
+* {
+  @apply font-main;
 }
