@@ -9,7 +9,7 @@ interface DrawerProps {
   width?: string
 }
 
-export function Drawer({ isOpen, onClose, children, side = "right", width = "w-80" }: DrawerProps) {
+export default function Drawer({ isOpen, onClose, children, side = "right", width = "w-80" }: DrawerProps) {
   useEffect(() => {
     const handleEscKey = (e: KeyboardEvent) => {
       if (e.key === "Escape" && isOpen) {
