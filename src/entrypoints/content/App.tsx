@@ -1,6 +1,6 @@
 import "@/entrypoints/global.css"
 
-import logo from "./128.png"
+import logo from "~/assets/128.png"
 
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "motion/react"
@@ -70,14 +70,10 @@ function App() {
             transition={{ duration: 0.5, type: "spring" }}
             className="flex flex-col fixed top-32 right-14 z-30 p-4 rounded-2xl bg-primary! w-fit h-fit"
           >
-            <h1 className="font-main text-3xl! font-bold!">LLM Toolbox</h1>
-            <p className="font-main">Detected Website : {getWebsite()}</p>
-            <Button className="font-main" onClick={() => changePrompt("Hello, how are you?")}>
-              Hello, how are you?
-            </Button>
-            <Button className="font-main" onClick={() => setShowDrawer(true)}>
-              Show Drawer
-            </Button>
+            <h1 className="text-3xl! font-bold!">LLM Toolbox</h1>
+            <p>Detected Website : {getWebsite()}</p>
+            <Button onClick={() => changePrompt("Hello, how are you?")}>Hello, how are you?</Button>
+            <Button onClick={() => setShowDrawer(true)}>Show Drawer</Button>
             <Button onClick={() => setShowModal(true)}>Show Modal</Button>
           </motion.section>
         )}
