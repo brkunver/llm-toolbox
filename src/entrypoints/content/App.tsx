@@ -8,12 +8,15 @@ import { motion, AnimatePresence } from "motion/react"
 import { getWebsite, changePrompt } from "@/utils/helpers"
 import { isExtensionActive, isMenuActive } from "@/utils/storage"
 
-import { Drawer } from "@/entrypoints/components/ui/drawer"
+import Drawer from "@/entrypoints/components/ui/drawer"
+import Modal from "@/entrypoints/components/ui/modal"
+import Button from "../components/ui/button"
 
 function App() {
   const [showUi, setShowUi] = useState<boolean>(false)
   const [showMenu, setShowMenu] = useState<boolean>(false)
   const [showDrawer, setShowDrawer] = useState<boolean>(false)
+  const [showModal, setShowModal] = useState<boolean>(false)
 
   isExtensionActive.watch((active) => {
     setShowUi(active)
@@ -46,7 +49,7 @@ function App() {
       <div className="fixed top-14 right-14 z-30 w-fit h-fit group">
         <div
           className={`${
-            showMenu ? "bg-[#c23616]" : "bg-[#44bd32]"
+            showMenu ? "bg-flat-red" : "bg-flat-green"
           } absolute inset-0 rounded-2xl scale-110 opacity-0 group-hover:opacity-100 transition-all duration-200 -z-10`}
         ></div>
         <button
@@ -64,17 +67,18 @@ function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1, type: "spring" }}
+            transition={{ duration: 0.5, type: "spring" }}
             className="flex flex-col fixed top-32 right-14 z-30 p-4 rounded-2xl bg-primary! w-fit h-fit"
           >
             <h1 className="font-main text-3xl! font-bold!">LLM Toolbox</h1>
             <p className="font-main">Detected Website : {getWebsite()}</p>
-            <button className="font-main" onClick={() => changePrompt("Hello, how are you?")}>
+            <Button className="font-main" onClick={() => changePrompt("Hello, how are you?")}>
               Hello, how are you?
-            </button>
-            <button className="font-main" onClick={() => setShowDrawer(true)}>
+            </Button>
+            <Button className="font-main" onClick={() => setShowDrawer(true)}>
               Show Drawer
-            </button>
+            </Button>
+            <Button onClick={() => setShowModal(true)}>Show Modal</Button>
           </motion.section>
         )}
       </AnimatePresence>
@@ -82,6 +86,10 @@ function App() {
       <Drawer isOpen={showDrawer} onClose={() => setShowDrawer(false)} key={showDrawer.toString()}>
         <h1>Drawer</h1>
       </Drawer>
+
+      <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
+        <h1>Modal</h1>
+      </Modal>
     </>
   )
 }
