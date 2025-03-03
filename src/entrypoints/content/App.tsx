@@ -10,7 +10,8 @@ import { isExtensionActive, isMenuActive } from "@/utils/storage"
 
 import Drawer from "@/entrypoints/components/ui/drawer"
 import Modal from "@/entrypoints/components/ui/modal"
-import Button from "../components/ui/button"
+import Button from "@/entrypoints/components/ui/button"
+import NewPrompt from "@/entrypoints/components/new-prompt"
 
 function App() {
   const [showUi, setShowUi] = useState<boolean>(false)
@@ -55,7 +56,7 @@ function App() {
         <button
           role="button"
           onClick={onMenuButtonClick}
-          className="w-fit h-fit p-2 cursor-pointer rounded-2xl bg-primary"
+          className="w-fit h-fit p-2 cursor-pointer rounded-2xl bg-primary border-solid border-1 border-border hover:border-transparent transition-all"
         >
           <img src={logo} alt="toggle-menu" className="text-white w-10 h-10 mb-2 ml-2" />
         </button>
@@ -68,7 +69,7 @@ function App() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5, type: "spring" }}
-            className="flex flex-col fixed top-32 right-14 z-30 p-4 rounded-2xl bg-primary! w-fit h-fit"
+            className="flex flex-col fixed top-32 right-14 z-30 p-4 rounded-2xl bg-primary! border-border border-solid border-1 w-fit h-fit"
           >
             <h1 className="text-3xl! font-bold!">LLM Toolbox</h1>
             <p>Detected Website : {getWebsite()}</p>
@@ -84,7 +85,7 @@ function App() {
       </Drawer>
 
       <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
-        <h1>Modal</h1>
+        <NewPrompt />
       </Modal>
     </>
   )
