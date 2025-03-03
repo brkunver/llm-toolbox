@@ -8,12 +8,14 @@
 }
 
 @theme {
-  --color-primary: #2f3640;
   --font-main: "inter", sans-serif;
+  --color-primary: #121212;
   --color-flat-red: #eb2f06;
   --color-flat-green: #44bd32;
+  --color-flat-blue: #1e3a8a;
+  --color-flat-dark-blue: #172554;
 }
 
-* {
+body {
   @apply font-main;
 }
