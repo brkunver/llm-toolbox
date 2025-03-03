@@ -14,8 +14,15 @@
   --color-flat-green: #44bd32;
   --color-flat-blue: #1e3a8a;
   --color-flat-dark-blue: #172554;
+
+  /* dark theme colors */
+  --color-background: #181818;
+  --color-ui: #242424;
+  --color-border: #333333;
+  --color-text-main: #e0e0e0;
+
 }
 
 body {
-  @apply font-main;
+  @apply font-main text-text-main;
 }
