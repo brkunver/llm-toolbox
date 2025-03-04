@@ -17,7 +17,7 @@ function App() {
   const [showUi, setShowUi] = useState<boolean>(false)
   const [showMenu, setShowMenu] = useState<boolean>(false)
   const [showDrawer, setShowDrawer] = useState<boolean>(false)
-  const [showModal, setShowModal] = useState<boolean>(false)
+  const [showModal, setShowModal] = useState<boolean>(true)
 
   isExtensionActive.watch((active) => {
     setShowUi(active)
@@ -84,8 +84,8 @@ function App() {
         <h1>Drawer</h1>
       </Drawer>
 
-      <Modal isOpen={showModal} onClose={() => setShowModal(false)}>
-        <NewPrompt />
+      <Modal isOpen={showModal} onClose={() => setShowModal(false)} className="p-10">
+        <NewPrompt onClose={() => setShowModal(false)} />
       </Modal>
     </>
   )
