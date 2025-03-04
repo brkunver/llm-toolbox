@@ -17,7 +17,7 @@ export default function Modal({ children, isOpen, onClose, className }: ModalPro
       <div className="fixed inset-0 z-50 flex items-start justify-center pt-24">
         <motion.div
           initial={{ opacity: 0 }}
-          animate={{ opacity: 0.5 }}
+          animate={{ opacity: 0.6 }}
           exit={{ opacity: 0 }}
           onClick={onClose}
           className="fixed inset-0 bg-black"
@@ -27,7 +27,7 @@ export default function Modal({ children, isOpen, onClose, className }: ModalPro
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className={twMerge("relative z-50 rounded-lg bg-black text-white p-6 shadow-lg", className)}
+          className={twMerge("relative z-50 rounded-lg bg-black text-white p-6 shadow-lg ", className)}
         >
           {children}
         </motion.div>
