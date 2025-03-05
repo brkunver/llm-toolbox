@@ -34,5 +34,5 @@
 }
 
 body {
-  @apply font-main text-text-main;
+  @apply text-text-main;
 }
