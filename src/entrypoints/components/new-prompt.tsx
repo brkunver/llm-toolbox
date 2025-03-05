@@ -36,18 +36,18 @@ export default function NewPrompt({ onClose }: NewPromptProps) {
   }
 
   return (
-    <section className="flex flex-col gap-4 rounded-2xl w-[50rem]">
+    <section className="flex flex-col gap-4 rounded-2xl w-[50rem] ">
       <h2 className="text-center text-3xl font-bold underline">Create a new prompt</h2>
       <input
         className="bg-ui px-4 py-2 rounded-2xl"
         type="text"
         value={prompTitle}
-        placeholder="Software Developer"
+        placeholder="Title..."
         onChange={(e) => setPromptTitle(e.target.value)}
       />
       <textarea
         className="h-40 w-full resize-none bg-ui text-text-main p-4 rounded-2xl"
-        placeholder="You are a softare developer..."
+        placeholder="Prompt content..."
         value={promptContent}
         onChange={(e) => setPromptContent(e.target.value)}
       ></textarea>
