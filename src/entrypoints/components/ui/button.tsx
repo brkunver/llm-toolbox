@@ -31,7 +31,7 @@ export default function Button(props: ButtonProps) {
       type="button"
       onClick={props.onClick}
       className={twMerge(
-        "px-2 py-1 rounded-md text-white cursor-pointer transition-all font-main w-fit",
+        "px-2 py-1 rounded-md text-white cursor-pointer transition-all font-main text-base w-fit",
         getVariantClasses(),
         props.className
       )}
