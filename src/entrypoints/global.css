@@ -1,4 +1,4 @@
-@import "tailwindcss" important prefix(ext);
+@import "tailwindcss" important;
 
 @font-face {
   font-family: "inter";
@@ -34,5 +34,5 @@
 }
 
 body {
-  @apply text-text-main;
+  @apply font-main;
 }
