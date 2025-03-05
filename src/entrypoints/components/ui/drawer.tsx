@@ -1,4 +1,4 @@
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion" // AnimatePresence'ı import ediyoruz
 import { useEffect } from "react"
 
 interface DrawerProps {
@@ -31,8 +31,6 @@ export default function Drawer({ isOpen, onClose, children, side = "right", widt
     }
   }, [isOpen, onClose])
 
-  if (!isOpen) return null
-
   const variants = {
     initial: {
       x: side === "right" ? "100%" : "-100%",
@@ -45,50 +43,62 @@ export default function Drawer({ isOpen, onClose, children, side = "right", widt
         damping: 30,
       },
     },
+    exit: {
+      x: side === "right" ? "100%" : "-100%",
+      transition: {
+        type: "spring",
+        stiffness: 400,
+        damping: 40,
+      },
+    },
   }
 
   return (
-    <div className="fixed inset-0 z-40 overflow-hidden">
-      {/* Overlay */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.5 }}
-        onClick={onClose}
-        className="absolute inset-0 bg-black"
-      />
-
-      {/* Drawer */}
-      <motion.div
-        initial="initial"
-        animate="animate"
-        variants={variants}
-        className={`absolute inset-y-0 ${
-          side === "right" ? "right-0" : "left-0"
-        } ${width} bg-black text-white shadow-xl flex flex-col`}
-      >
-        {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b border-gray-700">
-          <h2 className="text-lg font-semibold">Menu</h2>
-          <button
+    <AnimatePresence>
+      {isOpen && (
+        <div className="fixed inset-0 z-40 overflow-hidden">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.5 }}
+            exit={{ opacity: 0 }}
             onClick={onClose}
-            className="p-1 rounded-full hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-600 cursor-pointer"
-            aria-label="Close drawer"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
+            className="absolute inset-0 bg-black"
+          />
 
-        {/* Content */}
-        <div className="flex-1 p-4 overflow-y-auto">{children}</div>
-      </motion.div>
-    </div>
+          <motion.div
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            variants={variants}
+            className={`absolute inset-y-0 ${
+              side === "right" ? "right-0" : "left-0"
+            } ${width} bg-black text-white shadow-xl flex flex-col`}
+          >
+            {/* Header */}
+            <div className="flex items-center justify-between p-4 border-b border-gray-700">
+              <h2 className="text-lg font-semibold">Menu</h2>
+              <button
+                onClick={onClose}
+                className="p-1 rounded-full hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-600 cursor-pointer"
+                aria-label="Close drawer"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Content */}
+            <div className="flex-1 p-4 overflow-y-auto">{children}</div>
+          </motion.div>
+        </div>
+      )}
+    </AnimatePresence>
   )
 }
