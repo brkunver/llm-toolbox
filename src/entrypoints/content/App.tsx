@@ -6,18 +6,19 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "motion/react"
 
 import { getWebsite, changePrompt } from "@/utils/helpers"
-import { isExtensionActive, isMenuActive } from "@/utils/storage"
+import { isExtensionActive, isMenuActive, promptStorage } from "@/utils/storage"
 
 import Drawer from "@/entrypoints/components/ui/drawer"
 import Modal from "@/entrypoints/components/ui/modal"
 import Button from "@/entrypoints/components/ui/button"
 import NewPrompt from "@/entrypoints/components/new-prompt"
+import PromptList from "@/entrypoints/components/prompt-list"
 
 function App() {
   const [showUi, setShowUi] = useState<boolean>(false)
   const [showMenu, setShowMenu] = useState<boolean>(false)
   const [showDrawer, setShowDrawer] = useState<boolean>(false)
-  const [showModal, setShowModal] = useState<boolean>(true)
+  const [showModal, setShowModal] = useState<boolean>(false)
 
   isExtensionActive.watch((active) => {
     setShowUi(active)
@@ -47,7 +48,7 @@ function App() {
 
   return (
     <>
-      <div className="fixed top-14 right-14 z-30 w-fit h-fit group">
+      <div className="fixed top-14 right-14 z-30 w-fit h-fit group font-main">
         <div
           className={`${
             showMenu ? "bg-flat-red" : "bg-flat-green"
@@ -69,7 +70,7 @@ function App() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.5, type: "spring" }}
-            className="flex flex-col fixed top-32 right-14 z-30 p-4 rounded-2xl bg-primary! border-border border-solid border-1 w-fit h-fit"
+            className="flex flex-col fixed top-32 right-14 z-30 p-4 rounded-2xl font-main bg-primary! border-border border-solid border-1 w-fit h-fit"
           >
             <h1 className="text-3xl! font-bold!">LLM Toolbox</h1>
             <p>Detected Website : {getWebsite()}</p>
@@ -80,9 +81,11 @@ function App() {
         )}
       </AnimatePresence>
 
-      <Drawer isOpen={showDrawer} onClose={() => setShowDrawer(false)} key={showDrawer.toString()}>
-        <h1>Drawer</h1>
-      </Drawer>
+      {/* <Drawer isOpen={showDrawer} onClose={() => setShowDrawer(false)} key={showDrawer.toString()}>
+        <h1>Current prompts</h1>
+      </Drawer> */}
+
+      <PromptList isOpen={showDrawer} onClose={() => setShowDrawer(false)} />
 
       <Modal isOpen={showModal} onClose={() => setShowModal(false)} className="p-10">
         <NewPrompt onClose={() => setShowModal(false)} />
