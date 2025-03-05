@@ -1,6 +1,11 @@
 import { useState } from "react"
+
 import Button from "@/entrypoints/components/ui/button"
 import { CircleX, Eraser, Save } from "lucide-react"
+
+import type { TPrompt } from "@/utils/types"
+import { addNewPrompt } from "@/utils/helpers"
+import { nanoid } from "nanoid"
 
 interface NewPromptProps {
   onClose: () => void
@@ -10,8 +15,24 @@ export default function NewPrompt({ onClose }: NewPromptProps) {
   const [prompTitle, setPromptTitle] = useState<string>("")
   const [promptContent, setPromptContent] = useState<string>("")
 
+  console.log()
+
   function handleSavePrompt() {
-    return
+    if (prompTitle.trim() === "" || promptContent.trim() === "") {
+      alert("Please fill in all fields")
+      return
+    }
+
+    const newPrompt: TPrompt = {
+      id: nanoid(),
+      title: prompTitle,
+      content: promptContent,
+      category: "other",
+      createdAt: new Date(),
+    }
+
+    addNewPrompt(newPrompt)
+    onClose()
   }
 
   return (
