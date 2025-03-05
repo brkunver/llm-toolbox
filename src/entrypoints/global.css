@@ -1,4 +1,4 @@
-@import "tailwindcss" important;
+@import "tailwindcss" important prefix(ext);
 
 @font-face {
   font-family: "inter";
