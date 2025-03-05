@@ -8,10 +8,10 @@ export type TBookmark = {
   url: string
 }
 
-export type TPrompts = {
+export type TPrompt = {
   id: string
   title: string
-  prompt: string
+  content: string
   category: TPromptCategory
   createdAt: Date
 }
