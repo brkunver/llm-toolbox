@@ -1,4 +1,4 @@
-import type { TWebsite, TBookmark } from "@/utils/types"
+import type { TWebsite, TBookmark, TPrompt } from "@/utils/types"
 
 export function getWebsite(): TWebsite {
   const url = window.location.href
@@ -86,4 +86,10 @@ export async function addCurrentAsBookmark() {
   const bookmarks = await bookmarkStorage.getValue()
   bookmarks.push(bookmark)
   await bookmarkStorage.setValue(bookmarks)
+}
+
+export async function addNewPrompt(newPrompt: TPrompt) {
+  const prompts = await promptStorage.getValue()
+  prompts.push(newPrompt)
+  await promptStorage.setValue(prompts)
 }
