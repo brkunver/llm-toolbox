@@ -1,9 +1,10 @@
-import { motion, AnimatePresence } from "framer-motion" // AnimatePresence'ı import ediyoruz
+import { motion, AnimatePresence } from "motion/react" 
 import { useEffect } from "react"
 
 interface DrawerProps {
   isOpen: boolean
   onClose: () => void
+  // biome-ignore lint/correctness/noUndeclaredVariables: Using Global Types
   children: React.ReactNode
   side?: "left" | "right"
   width?: string
@@ -89,6 +90,7 @@ export default function Drawer({ isOpen, onClose, children, side = "right", widt
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
+                  <title>Close drawer</title>
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
