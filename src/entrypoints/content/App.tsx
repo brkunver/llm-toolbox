@@ -1,5 +1,4 @@
-import "@/entrypoints/global.css"
-import { useState, useEffect, useCallback, memo } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { isExtensionActive, isMenuActive } from "@/utils/storage"
 
 import NewPrompt from "@/entrypoints/components/new-prompt"
@@ -14,6 +13,10 @@ function App() {
   const [showPromptList, setShowPromptList] = useState<boolean>(false)
   const [showNewPromptModal, setshowNewPromptModal] = useState<boolean>(false)
   const [showPopup, setShowPopup] = useState<boolean>(false)
+
+  isExtensionActive.watch((active: boolean) => {
+    setShowExtension(active)
+  })
 
   const handleShowPromptList = useCallback(() => {
     setShowPromptList(true)
@@ -69,14 +72,12 @@ function App() {
   return (
     <>
       <ExtButton showMenu={showMenu} onMenuButtonClick={onMenuButtonClick} />
-
       <Menu
         showMenu={showMenu}
         onShowPromptList={handleShowPromptList}
         onShowNewPrompt={handleShowNewPrompt}
         onShowPopup={handleShowPopup}
       />
-
       <PromptList isOpen={showPromptList} onClose={handleDrawerClose} />
       <NewPrompt isOpen={showNewPromptModal} onClose={handleNewPromptModalClose} />
       <Popup isOpen={showPopup} onClose={handlePopupClose} message="Hello, how are you?" />
