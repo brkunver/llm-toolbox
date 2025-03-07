@@ -2,6 +2,7 @@ import { twMerge } from "tailwind-merge"
 
 interface ButtonProps {
   onClick?: () => void
+  // biome-ignore lint/correctness/noUndeclaredVariables:  Using Global Types
   children: React.ReactNode | string
   className?: string
   variant?: "blue" | "red" | "green" | "yellow"
@@ -29,7 +30,6 @@ export default function Button(props: ButtonProps) {
 
   return (
     <button
-      role="button"
       type="button"
       onClick={props.onClick}
       className={twMerge(
