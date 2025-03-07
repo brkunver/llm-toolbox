@@ -1,3 +1,5 @@
+import "~/assets/style.css"
+
 import ReactDOM from "react-dom/client"
 import App from "./App.tsx"
 import type { Tllm } from "@/utils/types.ts"
@@ -22,7 +24,22 @@ export default defineContentScript({
       name: "extension-ui",
       position: "inline",
       anchor: "body",
+      append: "first",
       onMount: (container) => {
+        const fontUrl = browser.runtime.getURL("/fonts/Inter.ttf")
+        const fontStyle = document.createElement("style")
+        fontStyle.textContent = `
+            @font-face {
+              font-family: 'Inter';
+              src: url('${fontUrl}') format('truetype');
+              font-weight: 100 900;
+              font-style: normal;
+            }
+        `
+
+        // Add to shadow head
+        document.head.appendChild(fontStyle)
+
         // Container is a body, and React warns when creating a root on the body, so create a wrapper div
         const app = document.createElement("div")
         container.append(app)
