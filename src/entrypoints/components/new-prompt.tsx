@@ -19,7 +19,6 @@ const NewPrompt = memo(function NewPrompt({ onClose, isOpen }: NewPromptProps) {
   const [prompTitle, setPromptTitle] = useState<string>("")
   const [promptContent, setPromptContent] = useState<string>("")
 
-
   function handleSavePrompt() {
     if (prompTitle.trim() === "" || promptContent.trim() === "") {
       alert("Please fill in all fields")
@@ -54,7 +53,7 @@ const NewPrompt = memo(function NewPrompt({ onClose, isOpen }: NewPromptProps) {
           placeholder="Prompt content..."
           value={promptContent}
           onChange={(e) => setPromptContent(e.target.value)}
-        ></textarea>
+        />
         <div className="flex justify-center gap-4 w-full">
           <Button className="text-lg font-semibold flex gap-1" onClick={onClose} variant="red">
             <CircleX />
