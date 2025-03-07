@@ -1,3 +1,4 @@
+import { memo } from "react"
 import logo from "~/assets/128.png"
 
 interface ExtButtonProps {
@@ -6,6 +7,10 @@ interface ExtButtonProps {
 }
 
 function ExtButton({ showMenu, onMenuButtonClick }: ExtButtonProps) {
+  if (import.meta.env.MODE == "development") {
+    console.log("Ext Dev : Ext Button Rendered")
+  }
+
   return (
     <div id="ext-button" className="fixed top-14 right-14 z-30 w-fit h-fit group font-main">
       <div
@@ -24,4 +29,4 @@ function ExtButton({ showMenu, onMenuButtonClick }: ExtButtonProps) {
   )
 }
 
-export default ExtButton
+export default memo(ExtButton)
