@@ -1,9 +1,10 @@
 import { twMerge } from "tailwind-merge"
 import { motion, AnimatePresence } from "motion/react"
-import { ReactNode } from "react"
+
 
 interface ModalProps {
-  children: ReactNode
+  // biome-ignore lint/correctness/noUndeclaredVariables: Using Global Types
+  children: React.ReactNode
   isOpen: boolean
   onClose: () => void
   className?: string
