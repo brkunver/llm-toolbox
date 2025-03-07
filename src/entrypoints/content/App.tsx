@@ -6,22 +6,20 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "motion/react"
 
 import { getWebsite, changePrompt } from "@/utils/helpers"
-import { isExtensionActive, isMenuActive, promptStorage } from "@/utils/storage"
+import { isExtensionActive, isMenuActive } from "@/utils/storage"
 
-import Drawer from "@/entrypoints/components/ui/drawer"
 import Modal from "@/entrypoints/components/ui/modal"
 import Button from "@/entrypoints/components/ui/button"
 import NewPrompt from "@/entrypoints/components/new-prompt"
 import PromptList from "@/entrypoints/components/prompt-list"
-import usePopup from "@/entrypoints/components/ui/use-popup"
+import Popup from "@/entrypoints/components/ui/popup"
 
 function App() {
   const [showUi, setShowUi] = useState<boolean>(false)
   const [showMenu, setShowMenu] = useState<boolean>(false)
   const [showDrawer, setShowDrawer] = useState<boolean>(false)
   const [showModal, setShowModal] = useState<boolean>(false)
-
-  const { showPopup, PopupComponent } = usePopup()
+  const [showPopup, setShowPopup] = useState<boolean>(false)
 
   isExtensionActive.watch((active) => {
     setShowUi(active)
@@ -80,13 +78,7 @@ function App() {
             <Button onClick={() => changePrompt("Hello, how are you?")}>Hello, how are you?</Button>
             <Button onClick={() => setShowDrawer(true)}>Show Drawer</Button>
             <Button onClick={() => setShowModal(true)}>Show Modal</Button>
-            <Button
-              onClick={() => {
-                showPopup("Hello, how are you?")
-              }}
-            >
-              Show Popup
-            </Button>
+            <Button onClick={() => setShowPopup(true)}>Show Popup</Button>
           </motion.section>
         )}
       </AnimatePresence>
@@ -97,7 +89,7 @@ function App() {
         <NewPrompt onClose={() => setShowModal(false)} />
       </Modal>
 
-      <PopupComponent />
+      <Popup isOpen={showPopup} onClose={() => setShowPopup(false)} message="Hello, how are you?" />
     </>
   )
 }
