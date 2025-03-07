@@ -2,33 +2,38 @@ import "@/entrypoints/global.css"
 
 import logo from "~/assets/128.png"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback } from "react"
 import { motion, AnimatePresence } from "motion/react"
 
 import { getWebsite, changePrompt } from "@/utils/helpers"
 import { isExtensionActive, isMenuActive } from "@/utils/storage"
 
-import Modal from "@/entrypoints/components/ui/modal"
 import Button from "@/entrypoints/components/ui/button"
 import NewPrompt from "@/entrypoints/components/new-prompt"
 import PromptList from "@/entrypoints/components/prompt-list"
 import Popup from "@/entrypoints/components/ui/popup"
 
 function App() {
-  const [showUi, setShowUi] = useState<boolean>(false)
+  const [showExtension, setShowExtension] = useState<boolean>(false)
   const [showMenu, setShowMenu] = useState<boolean>(false)
-  const [showDrawer, setShowDrawer] = useState<boolean>(false)
-  const [showModal, setShowModal] = useState<boolean>(false)
+  const [showPromptList, setShowPromptList] = useState<boolean>(false)
+  const [showNewPromptModal, setshowNewPromptModal] = useState<boolean>(false)
   const [showPopup, setShowPopup] = useState<boolean>(false)
 
+  // This is a development check
+  if (import.meta.env.MODE == "development") {
+    console.log("Ext Dev : App Rendered")
+  }
+
+  // subcribe to the storage change
   isExtensionActive.watch((active) => {
-    setShowUi(active)
+    setShowExtension(active)
   })
 
   useEffect(() => {
     async function setExtensionActive() {
       const value = await isExtensionActive.getValue()
-      setShowUi(value)
+      setShowExtension(value)
     }
 
     async function setMenuActive() {
@@ -40,12 +45,26 @@ function App() {
     setMenuActive()
   }, [])
 
+  // This function toggles the menu
   const onMenuButtonClick = () => {
     setShowMenu(!showMenu)
     isMenuActive.setValue(!showMenu)
   }
 
-  if (!showUi) return null
+  // These functions handle the closing of the drawer, modal and popup
+  const handleDrawerClose = useCallback(() => {
+    setShowPromptList(false)
+  }, [])
+
+  const handleNewPromptModalClose = useCallback(() => {
+    setshowNewPromptModal(false)
+  }, [])
+
+  const handlePopupClose = useCallback(() => {
+    setShowPopup(false)
+  }, [])
+
+  if (!showExtension) return null
 
   return (
     <>
@@ -76,20 +95,18 @@ function App() {
             <h1 className="text-3xl! font-bold!">LLM Toolbox</h1>
             <p>Detected Website : {getWebsite()}</p>
             <Button onClick={() => changePrompt("Hello, how are you?")}>Hello, how are you?</Button>
-            <Button onClick={() => setShowDrawer(true)}>Show Drawer</Button>
-            <Button onClick={() => setShowModal(true)}>Show Modal</Button>
+            <Button onClick={() => setShowPromptList(true)}>Show Drawer</Button>
+            <Button onClick={() => setshowNewPromptModal(true)}>Show Modal</Button>
             <Button onClick={() => setShowPopup(true)}>Show Popup</Button>
           </motion.section>
         )}
       </AnimatePresence>
 
-      <PromptList isOpen={showDrawer} onClose={() => setShowDrawer(false)} />
+      <PromptList isOpen={showPromptList} onClose={handleDrawerClose} />
 
-      <Modal isOpen={showModal} onClose={() => setShowModal(false)} className="p-10">
-        <NewPrompt onClose={() => setShowModal(false)} />
-      </Modal>
+      <NewPrompt isOpen={showNewPromptModal} onClose={handleNewPromptModalClose} />
 
-      <Popup isOpen={showPopup} onClose={() => setShowPopup(false)} message="Hello, how are you?" />
+      <Popup isOpen={showPopup} onClose={handlePopupClose} message="Hello, how are you?" />
     </>
   )
 }
