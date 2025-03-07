@@ -4,7 +4,6 @@ import { useEffect } from "react"
 interface DrawerProps {
   isOpen: boolean
   onClose: () => void
-  // biome-ignore lint/correctness/noUndeclaredVariables: Using Global Types
   children: React.ReactNode
   side?: "left" | "right"
   width?: string
