@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react"
 import Button from "@/entrypoints/components/ui/button"
-import "../global.css"
 import { isExtensionActive } from "@/utils/storage"
 
 const Popup: React.FC = () => {
@@ -35,7 +34,9 @@ const Popup: React.FC = () => {
       <Button className="min-w-20" onClick={toggleExtension}>
         {isActive ? "Deactivate" : "Activate"}
       </Button>
-      <Button className="bg-blue-900" onClick={() => browser.runtime.openOptionsPage()}>Open Options</Button>
+      <Button className="bg-blue-900" onClick={() => browser.runtime.openOptionsPage()}>
+        Open Options
+      </Button>
     </main>
   )
 }
