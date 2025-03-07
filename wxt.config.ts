@@ -5,6 +5,12 @@ import tailwindcss from "@tailwindcss/vite"
 export default defineConfig({
   manifest: {
     permissions: ["storage"],
+    web_accessible_resources: [
+      {
+        matches: ["<all_urls>"],
+        resources: ["/fonts/*"],
+      },
+    ],
   },
   srcDir: "src",
   extensionApi: "chrome",
