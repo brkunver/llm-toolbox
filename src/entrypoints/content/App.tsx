@@ -21,6 +21,7 @@ function App() {
   const [showPopup, setShowPopup] = useState<boolean>(false)
 
   // This is a development check
+
   if (import.meta.env.MODE == "development") {
     console.log("Ext Dev : App Rendered")
   }
@@ -68,12 +69,12 @@ function App() {
 
   return (
     <>
-      <div className="fixed top-14 right-14 z-30 w-fit h-fit group font-main">
+      <div id="ext-button" className="fixed top-14 right-14 z-30 w-fit h-fit group font-main">
         <div
           className={`${
             showMenu ? "bg-flat-red" : "bg-flat-green"
           } absolute inset-0 rounded-2xl scale-110 opacity-0 group-hover:opacity-100 transition-all duration-200 -z-10`}
-        ></div>
+        />
         <button
           type="button"
           onClick={onMenuButtonClick}
