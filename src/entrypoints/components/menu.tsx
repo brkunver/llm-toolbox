@@ -23,9 +23,9 @@ function MenuComponent({ showMenu, onShowPromptList, onShowNewPrompt, onShowPopu
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, type: "spring" }}
-          className="flex flex-col fixed top-32 right-14 z-30 p-4 rounded-2xl font-main bg-primary! border-border border-solid border-1 w-fit h-fit"
+          className="flex flex-col fixed top-32 right-14 z-30 p-4 rounded-2xl font-main font-medium bg-primary! border-border border-solid border-1 w-fit h-fit"
         >
-          <h1 className="text-3xl! font-bold!">LLM Toolbox</h1>
+          <h1 className="text-3xl font-bold">LLM Toolbox</h1>
           <p>Detected Website : {getWebsite()}</p>
           <Button onClick={() => changePrompt("Hello, how are you?")}>Hello, how are you?</Button>
           <Button onClick={onShowPromptList}>Show Drawer</Button>
