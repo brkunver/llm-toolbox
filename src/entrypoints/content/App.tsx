@@ -58,7 +58,7 @@ function App() {
           } absolute inset-0 rounded-2xl scale-110 opacity-0 group-hover:opacity-100 transition-all duration-200 -z-10`}
         ></div>
         <button
-          role="button"
+          type="button"
           onClick={onMenuButtonClick}
           className="w-fit h-fit p-2 cursor-pointer rounded-2xl bg-primary border-solid border-1 border-border hover:border-transparent transition-all"
         >
