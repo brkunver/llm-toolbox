@@ -11,7 +11,7 @@ interface NewPromptProps {
   onClose: () => void
 }
 
-const NewPrompt = memo(function NewPrompt({ onClose, isOpen }: NewPromptProps) {
+function NewPrompt({ onClose, isOpen }: NewPromptProps) {
   if (import.meta.env.MODE == "development") {
     console.log("Ext Dev : New Prompt Rendered")
   }
@@ -78,6 +78,6 @@ const NewPrompt = memo(function NewPrompt({ onClose, isOpen }: NewPromptProps) {
       </section>
     </Modal>
   )
-})
+}
 
-export default NewPrompt
+export default memo(NewPrompt)
