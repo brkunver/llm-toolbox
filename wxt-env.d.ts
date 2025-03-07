@@ -1,1 +1,1 @@
-/// <reference types="svelte" />
+/// <reference types="react" />
