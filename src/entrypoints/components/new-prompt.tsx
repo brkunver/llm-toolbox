@@ -19,6 +19,7 @@ const NewPrompt = memo(function NewPrompt({ onClose, isOpen }: NewPromptProps) {
   const [prompTitle, setPromptTitle] = useState<string>("")
   const [promptContent, setPromptContent] = useState<string>("")
 
+
   function handleSavePrompt() {
     if (prompTitle.trim() === "" || promptContent.trim() === "") {
       alert("Please fill in all fields")
