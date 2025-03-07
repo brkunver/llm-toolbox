@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "motion/react"
 
 
 interface ModalProps {
-  // biome-ignore lint/correctness/noUndeclaredVariables: Using Global Types
   children: React.ReactNode
   isOpen: boolean
   onClose: () => void
