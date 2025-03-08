@@ -27,5 +27,5 @@
 }
 
 body {
-  @apply font-main text-base;
+  @apply font-main text-base font-normal;
 }
