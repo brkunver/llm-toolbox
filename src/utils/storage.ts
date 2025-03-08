@@ -1,4 +1,3 @@
-import type { TBookmark, TPrompt } from "@/utils/types"
 import { storage } from "wxt/storage"
 
 export const isExtensionActive = storage.defineItem<boolean>("local:isExtensionActive", {
