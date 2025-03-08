@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "motion/react" 
+import { motion, AnimatePresence } from "motion/react"
 import { useEffect } from "react"
 
 interface DrawerProps {
@@ -9,7 +9,7 @@ interface DrawerProps {
   width?: string
 }
 
-export default function Drawer({ isOpen, onClose, children, side = "right", width = "w-80" }: DrawerProps) {
+function Drawer({ isOpen, onClose, children, side = "right", width = "w-80" }: DrawerProps) {
   useEffect(() => {
     const handleEscKey = (e: KeyboardEvent) => {
       if (e.key === "Escape" && isOpen) {
@@ -103,3 +103,5 @@ export default function Drawer({ isOpen, onClose, children, side = "right", widt
     </AnimatePresence>
   )
 }
+
+export default Drawer

@@ -1,7 +1,6 @@
 import { twMerge } from "tailwind-merge"
 import { motion, AnimatePresence } from "motion/react"
 
-
 interface ModalProps {
   children: React.ReactNode
   isOpen: boolean
@@ -9,7 +8,7 @@ interface ModalProps {
   className?: string
 }
 
-export default function Modal({ children, isOpen, onClose, className }: ModalProps) {
+function Modal({ children, isOpen, onClose, className }: ModalProps) {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -35,3 +34,5 @@ export default function Modal({ children, isOpen, onClose, className }: ModalPro
     </AnimatePresence>
   )
 }
+
+export default Modal

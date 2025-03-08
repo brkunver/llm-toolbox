@@ -16,7 +16,7 @@ const bgColors = {
   red: "bg-red-600",
 }
 
-export default function Popup({ isOpen, onClose, message, duration = 2500, color = "blue" }: PopupProps) {
+function Popup({ isOpen, onClose, message, duration = 2500, color = "blue" }: PopupProps) {
   useEffect(() => {
     if (isOpen) {
       const timer = setTimeout(() => {
@@ -46,3 +46,5 @@ export default function Popup({ isOpen, onClose, message, duration = 2500, color
     </AnimatePresence>
   )
 }
+
+export default Popup

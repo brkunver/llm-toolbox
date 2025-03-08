@@ -7,7 +7,7 @@ interface ButtonProps {
   variant?: "blue" | "red" | "green" | "yellow"
 }
 
-export default function Button(props: ButtonProps) {
+function Button(props: ButtonProps) {
   const variant = props.variant || "blue"
 
   function getVariantClasses() {
@@ -32,10 +32,12 @@ export default function Button(props: ButtonProps) {
       className={twMerge(
         "px-2 py-1 rounded-md text-white cursor-pointer transition-all font-main text-base w-fit",
         getVariantClasses(),
-        props.className
+        props.className,
       )}
     >
       {props.children}
     </button>
   )
 }
+
+export default Button

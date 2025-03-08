@@ -10,7 +10,7 @@ interface MenuProps {
   onShowPopup: () => void
 }
 
-function MenuComponent({ showMenu, onShowPromptList, onShowNewPrompt, onShowPopup }: MenuProps) {
+function Menu({ showMenu, onShowPromptList, onShowNewPrompt, onShowPopup }: MenuProps) {
   if (import.meta.env.MODE == "development") {
     console.log("Ext Dev : Menu Rendered")
   }
@@ -37,5 +37,4 @@ function MenuComponent({ showMenu, onShowPromptList, onShowNewPrompt, onShowPopu
   )
 }
 
-const Menu = memo(MenuComponent)
-export default Menu
+export default memo(Menu)
