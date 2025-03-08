@@ -26,6 +26,7 @@ export default defineContentScript({
       anchor: "body",
       append: "first",
       onMount: (container) => {
+        //Inject Inter font
         const fontUrl = browser.runtime.getURL("/fonts/Inter.ttf")
         const fontStyle = document.createElement("style")
         fontStyle.textContent = `
