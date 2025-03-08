@@ -3,8 +3,9 @@ export type TWebsite = Tllm | "unknown"
 export type TPromptCategory = "writing" | "conversation" | "creative" | "code" | "marketing" | "other"
 
 export type TBookmark = {
+  id: string
   website: TWebsite
-  name: string
+  title: string
   url: string
 }
 
