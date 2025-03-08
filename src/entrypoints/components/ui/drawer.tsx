@@ -1,5 +1,4 @@
 import { motion, AnimatePresence } from "motion/react"
-import { useEffect } from "react"
 
 interface DrawerProps {
   isOpen: boolean

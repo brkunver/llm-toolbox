@@ -1,9 +1,9 @@
 import { memo, useState } from "react"
+
 import Button from "@/entrypoints/components/ui/button"
-import { CircleX, Eraser, Save } from "lucide-react"
 import Modal from "@/entrypoints/components/ui/modal"
-import type { TPrompt } from "@/utils/types"
-import { addNewPrompt } from "@/utils/helpers"
+
+import { CircleX, Eraser, Save } from "lucide-react"
 import { nanoid } from "nanoid"
 
 interface NewPromptProps {

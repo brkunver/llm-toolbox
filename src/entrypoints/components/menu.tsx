@@ -1,5 +1,4 @@
 import { motion, AnimatePresence } from "motion/react"
-import { getWebsite, changePrompt } from "@/utils/helpers"
 import Button from "@/entrypoints/components/ui/button"
 import { memo } from "react"
 

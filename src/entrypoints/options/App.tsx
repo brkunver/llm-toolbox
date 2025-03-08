@@ -1,6 +1,4 @@
-import { useState, useEffect } from "react"
 import Button from "@/entrypoints/components/ui/button"
-import { isExtensionActive } from "@/utils/storage"
 
 const Popup: React.FC = () => {
   const [isActive, setIsActive] = useState<boolean>(true)

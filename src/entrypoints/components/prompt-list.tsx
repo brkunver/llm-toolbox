@@ -1,9 +1,6 @@
 import Drawer from "@/entrypoints/components/ui/drawer"
 
-import type { TPrompt } from "@/utils/types"
-import { promptStorage } from "@/utils/storage"
-
-import { useState, useEffect, memo } from "react"
+import { memo } from "react"
 
 interface PromptListProps {
   isOpen: boolean

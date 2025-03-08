@@ -2,7 +2,6 @@ import "~/assets/style.css"
 
 import ReactDOM from "react-dom/client"
 import App from "./App.tsx"
-import type { Tllm } from "@/utils/types.ts"
 
 const urls: Record<Tllm, string> = {
   chatgpt: "*://*.chatgpt.com/*",

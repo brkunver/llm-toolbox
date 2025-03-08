@@ -1,6 +1,3 @@
-import { useState, useEffect, useCallback } from "react"
-import { isExtensionActive, isMenuActive } from "@/utils/storage"
-
 import NewPrompt from "@/entrypoints/components/new-prompt"
 import PromptList from "@/entrypoints/components/prompt-list"
 import Popup from "@/entrypoints/components/ui/popup"
