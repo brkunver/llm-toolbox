@@ -1,6 +1,5 @@
-import Drawer from "@/entrypoints/components/ui/drawer"
-
 import { memo } from "react"
+import Drawer from "@/entrypoints/components/ui/drawer"
 
 interface PromptListProps {
   isOpen: boolean
@@ -34,7 +33,6 @@ function PromptList({ onClose, isOpen }: PromptListProps) {
       {prompts.map((prompt) => (
         <div key={prompt.id}>
           <h2>{prompt.title}</h2>
-          <p>{prompt.content}</p>
         </div>
       ))}
     </Drawer>
