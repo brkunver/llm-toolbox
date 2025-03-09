@@ -1,6 +1,8 @@
 import { motion, AnimatePresence } from "motion/react"
 import Button from "@/entrypoints/components/ui/button"
+import addBookmarkButton from "./add-bookmark-button"
 import { memo } from "react"
+import AddBookmarkButton from "./add-bookmark-button"
 
 interface MenuProps {
   showMenu: boolean
@@ -27,6 +29,8 @@ function Menu({ showMenu, onShowPromptList, onShowNewPrompt, onShowPopup }: Menu
           <h1 className="text-3xl font-bold">LLM Toolbox</h1>
           <p>Detected Website : {getWebsite()}</p>
           <Button onClick={() => changePrompt("Hello, how are you?")}>Hello, how are you?</Button>
+          <AddBookmarkButton />
+          <AddBookmarkButton changeTitle={true} />
           <Button onClick={onShowPromptList}>Show Drawer</Button>
           <Button onClick={onShowNewPrompt}>Show Modal</Button>
           <Button onClick={onShowPopup}>Show Popup</Button>
