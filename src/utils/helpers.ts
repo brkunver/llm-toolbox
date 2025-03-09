@@ -1,3 +1,5 @@
+import { nanoid } from "nanoid"
+
 export function getWebsite(): TWebsite {
   const url = window.location.href
   if (url.includes("chatgpt")) return "chatgpt"
@@ -70,14 +72,16 @@ export function changePrompt(prompt: string) {
   }
 }
 
-export async function addCurrentAsBookmark() {
+export async function addBookmark(title?: string) {
   const website = getWebsite()
   const url = window.location.href
   const name = document.title
+  const id = nanoid()
 
   const bookmark: TBookmark = {
+    id,
     website,
-    name,
+    title: title || name,
     url,
   }
 
