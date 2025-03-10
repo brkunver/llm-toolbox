@@ -14,15 +14,15 @@ function Bookmarks({ onClose, isOpen }: BookmarksProps) {
 
   const [bookmarks, setBookmarks] = useState<TBookmark[]>([])
 
-  bookmarkStorage.watch((bookmarks) => {
-    setBookmarks(bookmarks)
-  })
-
   useEffect(() => {
     async function getBookmarks() {
       const bookmarks = await bookmarkStorage.getValue()
       setBookmarks(bookmarks)
     }
+
+    bookmarkStorage.watch((bookmarks) => {
+      setBookmarks(bookmarks)
+    })
 
     getBookmarks()
   }, [])

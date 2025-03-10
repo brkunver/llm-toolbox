@@ -13,15 +13,15 @@ function PromptList({ onClose, isOpen }: PromptListProps) {
 
   const [prompts, setPrompts] = useState<TPrompt[]>([])
 
-  promptStorage.watch((prompts) => {
-    setPrompts(prompts)
-  })
-
   useEffect(() => {
     async function getPrompts() {
       const prompts = await promptStorage.getValue()
       setPrompts(prompts)
     }
+
+    promptStorage.watch((prompts) => {
+      setPrompts(prompts)
+    })
 
     getPrompts()
   }, [])

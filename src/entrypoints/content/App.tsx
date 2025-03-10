@@ -13,10 +13,6 @@ function App() {
   const [showPopup, setShowPopup] = useState<boolean>(false)
   const [showBookmarks, setShowBookmarks] = useState<boolean>(false)
 
-  isExtensionActive.watch((active: boolean) => {
-    setShowExtension(active)
-  })
-
   const handleShowPromptList = useCallback(() => {
     setShowPromptList(true)
   }, [])
@@ -64,6 +60,10 @@ function App() {
       const value = await isMenuActive.getValue()
       setShowMenu(value)
     }
+
+    isExtensionActive.watch((active: boolean) => {
+      setShowExtension(active)
+    })
 
     setExtensionActive()
     setMenuActive()
