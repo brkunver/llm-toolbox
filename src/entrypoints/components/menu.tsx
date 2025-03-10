@@ -1,6 +1,5 @@
 import { motion, AnimatePresence } from "motion/react"
 import Button from "@/entrypoints/components/ui/button"
-import addBookmarkButton from "./add-bookmark-button"
 import { memo } from "react"
 import AddBookmarkButton from "./add-bookmark-button"
 
@@ -9,9 +8,10 @@ interface MenuProps {
   onShowPromptList: () => void
   onShowNewPrompt: () => void
   onShowPopup: () => void
+  onShowBookmarks: () => void
 }
 
-function Menu({ showMenu, onShowPromptList, onShowNewPrompt, onShowPopup }: MenuProps) {
+function Menu({ showMenu, onShowPromptList, onShowNewPrompt, onShowPopup, onShowBookmarks }: MenuProps) {
   if (import.meta.env.MODE == "development") {
     console.log("Ext Dev : Menu Rendered")
   }
@@ -31,8 +31,9 @@ function Menu({ showMenu, onShowPromptList, onShowNewPrompt, onShowPopup }: Menu
           <Button onClick={() => changePrompt("Hello, how are you?")}>Hello, how are you?</Button>
           <AddBookmarkButton />
           <AddBookmarkButton changeTitle={true} />
-          <Button onClick={onShowPromptList}>Show Drawer</Button>
-          <Button onClick={onShowNewPrompt}>Show Modal</Button>
+          <Button onClick={onShowPromptList}>My Prompts</Button>
+          <Button onClick={onShowBookmarks}>My Bookmarks</Button>
+          <Button onClick={onShowNewPrompt}>Add new prompt</Button>
           <Button onClick={onShowPopup}>Show Popup</Button>
         </motion.section>
       )}

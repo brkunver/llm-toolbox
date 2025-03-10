@@ -3,6 +3,7 @@ import PromptList from "@/entrypoints/components/prompt-list"
 import Popup from "@/entrypoints/components/ui/popup"
 import ExtButton from "@/entrypoints/components/ext-button"
 import Menu from "@/entrypoints/components/menu"
+import Bookmarks from "@/entrypoints/components/bookmarks"
 
 function App() {
   const [showExtension, setShowExtension] = useState<boolean>(false)
@@ -10,6 +11,7 @@ function App() {
   const [showPromptList, setShowPromptList] = useState<boolean>(false)
   const [showNewPromptModal, setshowNewPromptModal] = useState<boolean>(false)
   const [showPopup, setShowPopup] = useState<boolean>(false)
+  const [showBookmarks, setShowBookmarks] = useState<boolean>(false)
 
   isExtensionActive.watch((active: boolean) => {
     setShowExtension(active)
@@ -27,6 +29,10 @@ function App() {
     setShowPopup(true)
   }, [])
 
+  const handleShowBookmarks = useCallback(() => {
+    setShowBookmarks(true)
+  }, [])
+
   const handleDrawerClose = useCallback(() => {
     setShowPromptList(false)
   }, [])
@@ -37,6 +43,10 @@ function App() {
 
   const handlePopupClose = useCallback(() => {
     setShowPopup(false)
+  }, [])
+
+  const handleBookmarksClose = useCallback(() => {
+    setShowBookmarks(false)
   }, [])
 
   const onMenuButtonClick = useCallback(() => {
@@ -74,10 +84,12 @@ function App() {
         onShowPromptList={handleShowPromptList}
         onShowNewPrompt={handleShowNewPrompt}
         onShowPopup={handleShowPopup}
+        onShowBookmarks={handleShowBookmarks}
       />
       <PromptList isOpen={showPromptList} onClose={handleDrawerClose} />
       <NewPrompt isOpen={showNewPromptModal} onClose={handleNewPromptModalClose} />
       <Popup isOpen={showPopup} onClose={handlePopupClose} message="Hello, how are you?" />
+      <Bookmarks isOpen={showBookmarks} onClose={handleBookmarksClose} />
     </>
   )
 }
