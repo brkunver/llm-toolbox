@@ -29,3 +29,7 @@
 body {
   @apply font-main text-base font-normal;
 }
+
+button {
+  @apply cursor-pointer;
+}
