@@ -9,9 +9,17 @@ interface MenuProps {
   onShowNewPrompt: () => void
   onShowPopup: () => void
   onShowBookmarks: () => void
+  onShowAddBookmarkModal: () => void
 }
 
-function Menu({ showMenu, onShowPromptList, onShowNewPrompt, onShowPopup, onShowBookmarks }: MenuProps) {
+function Menu({
+  showMenu,
+  onShowPromptList,
+  onShowNewPrompt,
+  onShowPopup,
+  onShowBookmarks,
+  onShowAddBookmarkModal,
+}: MenuProps) {
   if (import.meta.env.MODE == "development") {
     console.log("Ext Dev : Menu Rendered")
   }
@@ -30,7 +38,7 @@ function Menu({ showMenu, onShowPromptList, onShowNewPrompt, onShowPopup, onShow
           <p>Detected Website : {getWebsite()}</p>
           <Button onClick={() => changePrompt("Hello, how are you?")}>Hello, how are you?</Button>
           <AddBookmarkButton />
-          <AddBookmarkButton changeTitle={true} />
+          <AddBookmarkButton changeTitle={true} onShowAddBookmarkModal={onShowAddBookmarkModal} />
           <Button onClick={onShowPromptList}>My Prompts</Button>
           <Button onClick={onShowBookmarks}>My Bookmarks</Button>
           <Button onClick={onShowNewPrompt}>Add new prompt</Button>

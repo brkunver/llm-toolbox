@@ -3,13 +3,14 @@ import Button from "./ui/button"
 import { Bookmark, FilePenLine } from "lucide-react"
 
 interface AddBookmarkButtonProps {
+  onShowAddBookmarkModal?: () => void
   changeTitle?: boolean
 }
 
-function AddBookmarkButton({ changeTitle = false }: AddBookmarkButtonProps) {
+function AddBookmarkButton({ changeTitle = false, onShowAddBookmarkModal }: AddBookmarkButtonProps) {
   function addBookmarkHandler() {
-    if (changeTitle) {
-      // TODO : Show a model for title
+    if (changeTitle && onShowAddBookmarkModal) {
+      onShowAddBookmarkModal()
       return
     } else {
       addBookmark()

@@ -4,6 +4,7 @@ import Popup from "@/entrypoints/components/ui/popup"
 import ExtButton from "@/entrypoints/components/ext-button"
 import Menu from "@/entrypoints/components/menu"
 import Bookmarks from "@/entrypoints/components/bookmarks"
+import AddBookmarkModal from "../components/add-bookmark-modal"
 
 function App() {
   const [showExtension, setShowExtension] = useState<boolean>(false)
@@ -12,13 +13,14 @@ function App() {
   const [showPromptList, setShowPromptList] = useState<boolean>(false)
   const [showNewPromptModal, setshowNewPromptModal] = useState<boolean>(false)
   const [showBookmarks, setShowBookmarks] = useState<boolean>(false)
+  const [showAddBookmarkModal, setShowAddBookmarkModal] = useState<boolean>(false)
 
   const [popupMessage, setPopupMessage] = useState<string>("")
   const [showPopup, setShowPopup] = useState<boolean>(false)
 
-
-  function popupHandler(msg: string){
-    
+  function popupHandler(msg: string) {
+    setPopupMessage(msg)
+    setShowPopup(true)
   }
 
   const handleShowPromptList = useCallback(() => {
@@ -51,6 +53,14 @@ function App() {
 
   const handleBookmarksClose = useCallback(() => {
     setShowBookmarks(false)
+  }, [])
+
+  const handleAddBookmarkModalClose = useCallback(() => {
+    setShowAddBookmarkModal(false)
+  }, [])
+
+  const handleAddBookmarkModalOpen = useCallback(() => {
+    setShowAddBookmarkModal(true)
   }, [])
 
   const onMenuButtonClick = useCallback(() => {
@@ -93,11 +103,13 @@ function App() {
         onShowNewPrompt={handleShowNewPrompt}
         onShowPopup={handleShowPopup}
         onShowBookmarks={handleShowBookmarks}
+        onShowAddBookmarkModal={handleAddBookmarkModalOpen}
       />
       <PromptList isOpen={showPromptList} onClose={handleDrawerClose} />
-      <NewPrompt isOpen={showNewPromptModal} onClose={handleNewPromptModalClose} />
-      <Popup isOpen={showPopup} onClose={handlePopupClose} message={popupMessage} />
       <Bookmarks isOpen={showBookmarks} onClose={handleBookmarksClose} />
+      <NewPrompt isOpen={showNewPromptModal} onClose={handleNewPromptModalClose} />
+      <AddBookmarkModal isOpen={showAddBookmarkModal} onClose={handleAddBookmarkModalClose} />
+      <Popup isOpen={showPopup} onClose={handlePopupClose} message={popupMessage} />
     </>
   )
 }
