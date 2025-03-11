@@ -2,7 +2,7 @@ import { fakeBrowser } from "wxt/testing"
 import { beforeEach, describe, expect, it } from "vitest"
 import { addBookmark } from "@/utils/helpers"
 
-describe("Add Bookmark", () => {
+describe("Add Bookmark for chatgpt conversation", () => {
   beforeEach(() => {
     fakeBrowser.reset()
     // Mock window location and document title
