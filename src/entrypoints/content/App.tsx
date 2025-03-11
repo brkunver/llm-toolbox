@@ -8,10 +8,18 @@ import Bookmarks from "@/entrypoints/components/bookmarks"
 function App() {
   const [showExtension, setShowExtension] = useState<boolean>(false)
   const [showMenu, setShowMenu] = useState<boolean>(false)
+
   const [showPromptList, setShowPromptList] = useState<boolean>(false)
   const [showNewPromptModal, setshowNewPromptModal] = useState<boolean>(false)
-  const [showPopup, setShowPopup] = useState<boolean>(false)
   const [showBookmarks, setShowBookmarks] = useState<boolean>(false)
+
+  const [popupMessage, setPopupMessage] = useState<string>("")
+  const [showPopup, setShowPopup] = useState<boolean>(false)
+
+
+  function popupHandler(msg: string){
+    
+  }
 
   const handleShowPromptList = useCallback(() => {
     setShowPromptList(true)
@@ -88,7 +96,7 @@ function App() {
       />
       <PromptList isOpen={showPromptList} onClose={handleDrawerClose} />
       <NewPrompt isOpen={showNewPromptModal} onClose={handleNewPromptModalClose} />
-      <Popup isOpen={showPopup} onClose={handlePopupClose} message="Hello, how are you?" />
+      <Popup isOpen={showPopup} onClose={handlePopupClose} message={popupMessage} />
       <Bookmarks isOpen={showBookmarks} onClose={handleBookmarksClose} />
     </>
   )
