@@ -15,11 +15,13 @@ function App() {
   const [showBookmarks, setShowBookmarks] = useState<boolean>(false)
   const [showAddBookmarkModal, setShowAddBookmarkModal] = useState<boolean>(false)
 
+  const [popupColor, setPopupColor] = useState<"blue" | "green" | "yellow" | "red">("green")
   const [popupMessage, setPopupMessage] = useState<string>("")
   const [showPopup, setShowPopup] = useState<boolean>(false)
 
-  function popupHandler(msg: string) {
+  function popupHandler(msg: string, color?: "blue" | "green" | "yellow" | "red") {
     setPopupMessage(msg)
+    setPopupColor(color || "green")
     setShowPopup(true)
   }
 
@@ -107,9 +109,9 @@ function App() {
       />
       <PromptList isOpen={showPromptList} onClose={handleDrawerClose} />
       <Bookmarks isOpen={showBookmarks} onClose={handleBookmarksClose} />
-      <NewPrompt isOpen={showNewPromptModal} onClose={handleNewPromptModalClose} />
+      <NewPrompt isOpen={showNewPromptModal} onClose={handleNewPromptModalClose} showPopupHandler={popupHandler} />
       <AddBookmarkModal isOpen={showAddBookmarkModal} onClose={handleAddBookmarkModalClose} />
-      <Popup isOpen={showPopup} onClose={handlePopupClose} message={popupMessage} />
+      <Popup isOpen={showPopup} onClose={handlePopupClose} message={popupMessage} color={popupColor} />
     </>
   )
 }
