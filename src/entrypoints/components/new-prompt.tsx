@@ -7,11 +7,12 @@ import { CircleX, Eraser, Save } from "lucide-react"
 import { nanoid } from "nanoid"
 
 interface NewPromptProps {
+  showPopupHandler: (msg: string, color?: "blue" | "green" | "yellow" | "red") => void
   isOpen: boolean
   onClose: () => void
 }
 
-function NewPrompt({ onClose, isOpen }: NewPromptProps) {
+function NewPrompt({ onClose, isOpen, showPopupHandler }: NewPromptProps) {
   if (import.meta.env.MODE == "development") {
     console.log("Ext Dev : New Prompt Rendered")
   }
@@ -21,7 +22,17 @@ function NewPrompt({ onClose, isOpen }: NewPromptProps) {
 
   function handleSavePrompt() {
     if (prompTitle.trim() === "" || promptContent.trim() === "") {
-      alert("Please fill in all fields")
+      showPopupHandler("Title and content cannot be empty", "red")
+      return
+    }
+
+    if (prompTitle.length > 50) {
+      showPopupHandler("Title cannot be longer than 50 characters", "red")
+      return
+    }
+
+    if (promptContent.length > 1000) {
+      showPopupHandler("Content cannot be longer than 1000 characters", "red")
       return
     }
 
@@ -34,6 +45,7 @@ function NewPrompt({ onClose, isOpen }: NewPromptProps) {
     }
 
     addNewPrompt(newPrompt)
+    showPopupHandler("Prompt saved successfully")
     onClose()
   }
 
