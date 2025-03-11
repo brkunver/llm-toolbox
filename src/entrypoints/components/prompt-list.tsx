@@ -32,7 +32,7 @@ function PromptList({ onClose, isOpen }: PromptListProps) {
       <p>Prompt Count = {prompts.length}</p>
       {prompts.map((prompt) => (
         <div key={prompt.id}>
-          <h2>{prompt.title}</h2>
+          <h2>{truncateText(prompt.title, 20)}</h2>
         </div>
       ))}
     </Drawer>
