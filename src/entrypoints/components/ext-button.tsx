@@ -26,9 +26,9 @@ function ExtButton() {
       <button
         type="button"
         onClick={handleMenuButtonClick}
-        className="w-fit h-fit p-2 cursor-pointer rounded-2xl bg-primary border-solid border-1 border-border hover:border-transparent transition-all"
+        className="w-fit h-fit p-1.5 cursor-pointer rounded-2xl bg-primary border-solid border-1 border-border hover:border-transparent transition-all"
       >
-        <img src={logo} alt="toggle-menu" className="text-white w-10 h-10 mb-2 ml-2" />
+        <img src={logo} alt="toggle-menu" className="text-white w-8 h-8 mb-1 ml-1" />
       </button>
     </div>
   )
