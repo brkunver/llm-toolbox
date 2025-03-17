@@ -1,4 +1,5 @@
 import { create } from "zustand"
+import { TPrompt } from "./types"
 
 interface extensionStoreTypes {
   showExtension: boolean
@@ -46,12 +47,18 @@ interface UIStateStoreTypes {
   showNewPromptModal: boolean
   showBookmarks: boolean
   showAddBookmarkModal: boolean
+  showEditPromptModal: boolean
+  currentEditingPrompt: TPrompt | null
   setShowMenu: (show: boolean) => void
   toggleMenu: () => void
   setShowPromptList: (show: boolean) => void
   setShowNewPromptModal: (show: boolean) => void
   setShowBookmarks: (show: boolean) => void
   setShowAddBookmarkModal: (show: boolean) => void
+  setShowEditPromptModal: (show: boolean) => void
+  setCurrentEditingPrompt: (prompt: TPrompt | null) => void
+  openEditPromptModal: (prompt: TPrompt) => void
+  closeEditPromptModal: () => void
 }
 
 export const useUIStateStore = create<UIStateStoreTypes>((set) => ({
@@ -60,10 +67,16 @@ export const useUIStateStore = create<UIStateStoreTypes>((set) => ({
   showNewPromptModal: false,
   showBookmarks: false,
   showAddBookmarkModal: false,
+  showEditPromptModal: false,
+  currentEditingPrompt: null,
   setShowMenu: (show: boolean) => set({ showMenu: show }),
   toggleMenu: () => set((state) => ({ showMenu: !state.showMenu })),
   setShowPromptList: (show: boolean) => set({ showPromptList: show }),
   setShowNewPromptModal: (show: boolean) => set({ showNewPromptModal: show }),
   setShowBookmarks: (show: boolean) => set({ showBookmarks: show }),
   setShowAddBookmarkModal: (show: boolean) => set({ showAddBookmarkModal: show }),
+  setShowEditPromptModal: (show: boolean) => set({ showEditPromptModal: show }),
+  setCurrentEditingPrompt: (prompt: TPrompt | null) => set({ currentEditingPrompt: prompt }),
+  openEditPromptModal: (prompt: TPrompt) => set({ showEditPromptModal: true, currentEditingPrompt: prompt }),
+  closeEditPromptModal: () => set({ showEditPromptModal: false, currentEditingPrompt: null }),
 }))
