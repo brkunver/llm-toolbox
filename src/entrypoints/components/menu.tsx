@@ -46,10 +46,14 @@ function Menu() {
           <h1 className="text-3xl font-bold">LLM Toolbox</h1>
           <div id="website-detected-div" className="flex flex-col justify-center items-center my-1">
             <p>Detected Website </p>
-            <div className={`${currentWebsite == "unknown" ? "bg-red-800" : "bg-emerald-900 "} rounded-2xl px-4 py-1 text-white font-semibold`}>{currentWebsite}</div>
+            <div className={`${currentWebsite == "unknown" ? "bg-red-800" : "bg-blue-900 "} rounded-2xl px-4 py-1 text-white font-semibold`}>{currentWebsite}</div>
           </div>
-          <AddBookmarkButton className="w-full text-center" />
-          <AddBookmarkButton className="w-full text-center" changeTitle={true} onShowAddBookmarkModal={() => setShowAddBookmarkModal(true)} />
+          <AddBookmarkButton className="w-full text-center bg-emerald-900 hover:bg-emerald-950" />
+          <AddBookmarkButton className="w-full text-center bg-emerald-900 hover:bg-emerald-950" changeTitle={true} onShowAddBookmarkModal={() => setShowAddBookmarkModal(true)} />
+          <Button className="flex gap-1 w-full text-center bg-indigo-900 hover:bg-indigo-950" onClick={() => setShowNewPromptModal(true)}>
+            <PlusCircle />
+            <span>Add new prompt</span>
+          </Button>
           <Button className="flex gap-1 w-full text-center" onClick={() => setShowPromptList(true)}>
             <List />
             <span>My Prompts</span>
@@ -58,10 +62,7 @@ function Menu() {
             <Bookmark />
             <span>My Bookmarks</span>
           </Button>
-          <Button className="flex gap-1 w-full text-center" onClick={() => setShowNewPromptModal(true)}>
-            <PlusCircle />
-            <span>Add new prompt</span>
-          </Button>
+          
         </motion.section>
       )}
     </AnimatePresence>
