@@ -1,16 +1,16 @@
-import { memo } from "react"
+import { memo, useState, useEffect } from "react"
 import Drawer from "@/entrypoints/components/ui/drawer"
+import { useUIStateStore } from "@/utils/stores"
+import { promptStorage } from "@/utils/storage"
+import { truncateText } from "@/utils/helpers"
 
-interface PromptListProps {
-  isOpen: boolean
-  onClose: () => void
-}
-
-function PromptList({ onClose, isOpen }: PromptListProps) {
+function PromptList() {
   if (import.meta.env.MODE == "development") {
     console.log("Ext Dev : Prompt List Rendered")
   }
 
+  const isOpen = useUIStateStore((state) => state.showPromptList)
+  const setShowPromptList = useUIStateStore((state) => state.setShowPromptList)
   const [prompts, setPrompts] = useState<TPrompt[]>([])
 
   useEffect(() => {
@@ -27,7 +27,7 @@ function PromptList({ onClose, isOpen }: PromptListProps) {
   }, [])
 
   return (
-    <Drawer isOpen={isOpen} onClose={onClose}>
+    <Drawer isOpen={isOpen} onClose={() => setShowPromptList(false)}>
       <h1>Promplist</h1>
       <p>Prompt Count = {prompts.length}</p>
       {prompts.map((prompt) => (

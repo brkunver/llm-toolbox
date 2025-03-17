@@ -1,14 +1,19 @@
 import { memo } from "react"
 import logo from "~/assets/128.png"
+import { useUIStateStore } from "@/utils/stores"
+import { isMenuActive } from "@/utils/storage"
 
-interface ExtButtonProps {
-  showMenu: boolean
-  onMenuButtonClick: () => void
-}
-
-function ExtButton({ showMenu, onMenuButtonClick }: ExtButtonProps) {
+function ExtButton() {
   if (import.meta.env.MODE == "development") {
     console.log("Ext Dev : Ext Button Rendered")
+  }
+
+  const showMenu = useUIStateStore((state) => state.showMenu)
+  const toggleMenu = useUIStateStore((state) => state.toggleMenu)
+
+  const handleMenuButtonClick = () => {
+    toggleMenu()
+    isMenuActive.setValue(!showMenu)
   }
 
   return (
@@ -20,7 +25,7 @@ function ExtButton({ showMenu, onMenuButtonClick }: ExtButtonProps) {
       />
       <button
         type="button"
-        onClick={onMenuButtonClick}
+        onClick={handleMenuButtonClick}
         className="w-fit h-fit p-2 cursor-pointer rounded-2xl bg-primary border-solid border-1 border-border hover:border-transparent transition-all"
       >
         <img src={logo} alt="toggle-menu" className="text-white w-10 h-10 mb-2 ml-2" />

@@ -1,17 +1,17 @@
-import { memo } from "react"
+import { memo, useState, useEffect } from "react"
 import Drawer from "@/entrypoints/components/ui/drawer"
 import { Trash, ExternalLink } from "lucide-react"
+import { useUIStateStore } from "@/utils/stores"
+import { bookmarkStorage } from "@/utils/storage"
+import { TBookmark } from "@/utils/types"
 
-interface BookmarksProps {
-  isOpen: boolean
-  onClose: () => void
-}
-
-function Bookmarks({ onClose, isOpen }: BookmarksProps) {
+function Bookmarks() {
   if (import.meta.env.MODE == "development") {
     console.log("Ext Dev : Bookmarks Rendered")
   }
 
+  const isOpen = useUIStateStore((state) => state.showBookmarks)
+  const setShowBookmarks = useUIStateStore((state) => state.setShowBookmarks)
   const [bookmarks, setBookmarks] = useState<TBookmark[]>([])
 
   useEffect(() => {
@@ -37,7 +37,7 @@ function Bookmarks({ onClose, isOpen }: BookmarksProps) {
   }
 
   return (
-    <Drawer isOpen={isOpen} onClose={onClose} width="w-96">
+    <Drawer isOpen={isOpen} onClose={() => setShowBookmarks(false)} width="w-96">
       <div className="flex flex-col gap-4">
         <h1 className="text-2xl font-bold">My Bookmarks</h1>
         <p className="text-gray-400">Bookmark Count: {bookmarks.length}</p>

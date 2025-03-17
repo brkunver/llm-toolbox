@@ -1,38 +1,35 @@
-import { memo, useState } from "react"
-
+import { memo } from "react"
 import Button from "@/entrypoints/components/ui/button"
 import Modal from "@/entrypoints/components/ui/modal"
-
 import { CircleX, Eraser, Save } from "lucide-react"
 import { nanoid } from "nanoid"
 
-interface NewPromptProps {
-  showPopupHandler: (msg: string, color?: "blue" | "green" | "yellow" | "red") => void
-  isOpen: boolean
-  onClose: () => void
-}
-
-function NewPrompt({ onClose, isOpen, showPopupHandler }: NewPromptProps) {
+function NewPrompt() {
   if (import.meta.env.MODE == "development") {
     console.log("Ext Dev : New Prompt Rendered")
   }
 
+  const isOpen = useUIStateStore(state => state.showNewPromptModal)
+  const setShowNewPromptModal = useUIStateStore(state => state.setShowNewPromptModal)
+  const showPopup = usePopupStore(state => state.show)
+
   const [prompTitle, setPromptTitle] = useState<string>("")
   const [promptContent, setPromptContent] = useState<string>("")
+  const [promptCategory, setPromptCategory] = useState<TPromptCategory>("other")
 
   function handleSavePrompt() {
     if (prompTitle.trim() === "" || promptContent.trim() === "") {
-      showPopupHandler("Title and content cannot be empty", "red")
+      showPopup("Title and content cannot be empty", "red")
       return
     }
 
     if (prompTitle.length > 50) {
-      showPopupHandler("Title cannot be longer than 50 characters", "red")
+      showPopup("Title cannot exceed 50 characters", "red")
       return
     }
 
     if (promptContent.length > 1000) {
-      showPopupHandler("Content cannot be longer than 1000 characters", "red")
+      showPopup("Content cannot exceed 1000 characters", "red")
       return
     }
 
@@ -40,17 +37,17 @@ function NewPrompt({ onClose, isOpen, showPopupHandler }: NewPromptProps) {
       id: nanoid(),
       title: prompTitle,
       content: promptContent,
-      category: "other",
+      category: promptCategory,
       createdAt: new Date(),
     }
 
     addNewPrompt(newPrompt)
-    showPopupHandler("Prompt saved successfully")
-    onClose()
+    showPopup("Prompt added successfully!")
+    setShowNewPromptModal(false)
   }
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} className="p-10">
+    <Modal isOpen={isOpen} onClose={() => setShowNewPromptModal(false)} className="p-10">
       <section className="flex flex-col gap-4 rounded-2xl w-[50rem] ">
         <h2 className="text-center text-3xl font-bold underline">Create a new prompt</h2>
         <input
@@ -66,8 +63,20 @@ function NewPrompt({ onClose, isOpen, showPopupHandler }: NewPromptProps) {
           value={promptContent}
           onChange={(e) => setPromptContent(e.target.value)}
         />
+        <select
+          className="bg-ui px-4 py-2 rounded-2xl"
+          value={promptCategory}
+          onChange={(e) => setPromptCategory(e.target.value as TPromptCategory)}
+        >
+          <option value="writing">Writing</option>
+          <option value="conversation">Conversation</option>
+          <option value="creative">Creative</option>
+          <option value="coding">Coding</option>
+          <option value="marketing">Marketing</option>
+          <option value="other">Other</option>
+        </select>
         <div className="flex justify-center gap-4 w-full">
-          <Button className="text-lg font-semibold flex gap-1" onClick={onClose} variant="red">
+          <Button className="text-lg font-semibold flex gap-1" onClick={() => setShowNewPromptModal(false)} variant="red">
             <CircleX />
             <p>Cancel</p>
           </Button>
@@ -77,6 +86,7 @@ function NewPrompt({ onClose, isOpen, showPopupHandler }: NewPromptProps) {
             onClick={() => {
               setPromptTitle("")
               setPromptContent("")
+              setPromptCategory("other")
             }}
           >
             <Eraser />

@@ -1,13 +1,5 @@
 import { motion, AnimatePresence } from "motion/react"
 
-interface PopupProps {
-  isOpen: boolean
-  onClose: () => void
-  message: string
-  duration?: number
-  color?: "blue" | "green" | "yellow" | "red"
-}
-
 const bgColors = {
   blue: "bg-blue-600",
   green: "bg-green-600",
@@ -15,30 +7,32 @@ const bgColors = {
   red: "bg-red-600",
 }
 
-function Popup({ isOpen, onClose, message, duration = 2500, color = "blue" }: PopupProps) {
+function Popup() {
+  const { showPopup, popupMessage, popupColor, duration, setShowPopup } = usePopupStore()
+
   useEffect(() => {
-    if (isOpen) {
+    if (showPopup) {
       const timer = setTimeout(() => {
-        onClose()
+        setShowPopup(false)
       }, duration)
 
       return () => clearTimeout(timer)
     }
-  }, [isOpen, duration, onClose])
+  }, [showPopup, duration, setShowPopup])
 
   return (
     <AnimatePresence>
-      {isOpen && (
+      {showPopup && (
         <motion.section
           key="popup"
           initial={{ opacity: 0, x: 100 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: 100 }}
           transition={{ duration: 0.5 }}
-          className={`fixed bottom-10 right-10 z-50 ${bgColors[color]} text-white p-4 rounded-lg shadow-lg`}
+          className={`fixed bottom-10 right-10 z-50 ${bgColors[popupColor]} text-white p-4 rounded-lg shadow-lg`}
         >
           <div className="flex flex-col">
-            <p>{message}</p>
+            <p>{popupMessage}</p>
           </div>
         </motion.section>
       )}

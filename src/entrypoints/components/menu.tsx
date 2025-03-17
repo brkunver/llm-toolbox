@@ -2,27 +2,19 @@ import { motion, AnimatePresence } from "motion/react"
 import Button from "@/entrypoints/components/ui/button"
 import { memo } from "react"
 import AddBookmarkButton from "./add-bookmark-button"
+import { usePopupStore, useUIStateStore } from "@/utils/stores"
 
-interface MenuProps {
-  showMenu: boolean
-  onShowPromptList: () => void
-  onShowNewPrompt: () => void
-  onShowPopup: () => void
-  onShowBookmarks: () => void
-  onShowAddBookmarkModal: () => void
-}
-
-function Menu({
-  showMenu,
-  onShowPromptList,
-  onShowNewPrompt,
-  onShowPopup,
-  onShowBookmarks,
-  onShowAddBookmarkModal,
-}: MenuProps) {
+function Menu() {
   if (import.meta.env.MODE == "development") {
     console.log("Ext Dev : Menu Rendered")
   }
+
+  const showMenu = useUIStateStore(state => state.showMenu)
+  const setShowPromptList = useUIStateStore(state => state.setShowPromptList)
+  const setShowNewPromptModal = useUIStateStore(state => state.setShowNewPromptModal)
+  const setShowBookmarks = useUIStateStore(state => state.setShowBookmarks)
+  const setShowAddBookmarkModal = useUIStateStore(state => state.setShowAddBookmarkModal)
+  const showPopup = usePopupStore(state => state.show)
 
   return (
     <AnimatePresence>
@@ -38,11 +30,11 @@ function Menu({
           <p>Detected Website : {getWebsite()}</p>
           <Button onClick={() => changePrompt("Hello, how are you?")}>Hello, how are you?</Button>
           <AddBookmarkButton />
-          <AddBookmarkButton changeTitle={true} onShowAddBookmarkModal={onShowAddBookmarkModal} />
-          <Button onClick={onShowPromptList}>My Prompts</Button>
-          <Button onClick={onShowBookmarks}>My Bookmarks</Button>
-          <Button onClick={onShowNewPrompt}>Add new prompt</Button>
-          <Button onClick={onShowPopup}>Show Popup</Button>
+          <AddBookmarkButton changeTitle={true} onShowAddBookmarkModal={() => setShowAddBookmarkModal(true)} />
+          <Button onClick={() => setShowPromptList(true)}>My Prompts</Button>
+          <Button onClick={() => setShowBookmarks(true)}>My Bookmarks</Button>
+          <Button onClick={() => setShowNewPromptModal(true)}>Add new prompt</Button>
+          <Button onClick={() => showPopup("Hello, how are you?")}>Show Popup</Button>
         </motion.section>
       )}
     </AnimatePresence>
