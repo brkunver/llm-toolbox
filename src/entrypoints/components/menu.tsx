@@ -2,7 +2,6 @@ import { motion, AnimatePresence } from "motion/react"
 import Button from "@/entrypoints/components/ui/button"
 import { memo } from "react"
 import AddBookmarkButton from "./add-bookmark-button"
-import { useUIStateStore } from "@/utils/stores"
 import { List, Bookmark, PlusCircle } from "lucide-react"
 
 function Menu() {
