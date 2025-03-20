@@ -24,7 +24,7 @@ export default defineContentScript({
       position: "inline",
       anchor: "body",
       append: "first",
-      onMount: (container) => {
+      onMount: container => {
         // Inject Inter font
         const fontUrl = browser.runtime.getURL("/fonts/Inter.ttf")
         const fontStyle = document.createElement("style")
@@ -49,7 +49,7 @@ export default defineContentScript({
         root.render(<App />)
         return root
       },
-      onRemove: (root) => {
+      onRemove: root => {
         // Unmount the root when the UI is removed
         root?.unmount()
       },

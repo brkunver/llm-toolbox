@@ -8,8 +8,8 @@ function ExtButton() {
     console.log("Ext Dev : Ext Button Rendered")
   }
 
-  const showMenu = useUIStateStore((state) => state.showMenu)
-  const toggleMenu = useUIStateStore((state) => state.toggleMenu)
+  const showMenu = useUIStateStore(state => state.showMenu)
+  const toggleMenu = useUIStateStore(state => state.toggleMenu)
 
   const handleMenuButtonClick = () => {
     toggleMenu()

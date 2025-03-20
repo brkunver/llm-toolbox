@@ -4,8 +4,8 @@ import Popup from "@/entrypoints/components/ui/popup"
 import ExtButton from "@/entrypoints/components/ext-button"
 import Menu from "@/entrypoints/components/menu"
 import Bookmarks from "@/entrypoints/components/bookmarks"
-import AddBookmarkModal from "../components/add-bookmark-modal"
-import EditPromptModal from "../components/edit-prompt-modal"
+import AddBookmarkModal from "@/entrypoints/components/add-bookmark-modal"
+import EditPromptModal from "@/entrypoints/components/edit-prompt-modal"
 
 function App() {
   const extensionStore = useExtensionStore()
@@ -27,7 +27,6 @@ function App() {
   if (import.meta.env.MODE == "development") {
     console.log("Ext Dev : App Rendered")
   }
-
 
   if (!extensionStore.showExtension) return null
 

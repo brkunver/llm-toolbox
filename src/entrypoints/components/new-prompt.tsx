@@ -55,18 +55,18 @@ function NewPrompt() {
           type="text"
           value={prompTitle}
           placeholder="Title..."
-          onChange={(e) => setPromptTitle(e.target.value)}
+          onChange={e => setPromptTitle(e.target.value)}
         />
         <textarea
           className="h-40 w-full resize-none bg-ui text-text-main p-4 rounded-2xl"
           placeholder="Prompt content..."
           value={promptContent}
-          onChange={(e) => setPromptContent(e.target.value)}
+          onChange={e => setPromptContent(e.target.value)}
         />
         <select
           className="bg-ui px-4 py-2 rounded-2xl"
           value={promptCategory}
-          onChange={(e) => setPromptCategory(e.target.value as TPromptCategory)}
+          onChange={e => setPromptCategory(e.target.value as TPromptCategory)}
         >
           <option value="writing">Writing</option>
           <option value="conversation">Conversation</option>
@@ -76,7 +76,11 @@ function NewPrompt() {
           <option value="other">Other</option>
         </select>
         <div className="flex justify-center gap-4 w-full">
-          <Button className="text-lg font-semibold flex gap-1" onClick={() => setShowNewPromptModal(false)} variant="red">
+          <Button
+            className="text-lg font-semibold flex gap-1"
+            onClick={() => setShowNewPromptModal(false)}
+            variant="red"
+          >
             <CircleX />
             <p>Cancel</p>
           </Button>

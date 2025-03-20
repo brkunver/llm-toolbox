@@ -10,12 +10,12 @@ function Menu() {
     console.log("Ext Dev : Menu Rendered")
   }
 
-  const showMenu = useUIStateStore((state) => state.showMenu)
-  const setShowMenu = useUIStateStore((state) => state.setShowMenu)
-  const setShowPromptList = useUIStateStore((state) => state.setShowPromptList)
-  const setShowNewPromptModal = useUIStateStore((state) => state.setShowNewPromptModal)
-  const setShowBookmarks = useUIStateStore((state) => state.setShowBookmarks)
-  const setShowAddBookmarkModal = useUIStateStore((state) => state.setShowAddBookmarkModal)
+  const showMenu = useUIStateStore(state => state.showMenu)
+  const setShowMenu = useUIStateStore(state => state.setShowMenu)
+  const setShowPromptList = useUIStateStore(state => state.setShowPromptList)
+  const setShowNewPromptModal = useUIStateStore(state => state.setShowNewPromptModal)
+  const setShowBookmarks = useUIStateStore(state => state.setShowBookmarks)
+  const setShowAddBookmarkModal = useUIStateStore(state => state.setShowAddBookmarkModal)
 
   const currentWebsite = getWebsite()
 
