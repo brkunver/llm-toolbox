@@ -1,22 +1,22 @@
-import Modal from "@/entrypoints/components/ui/modal";
-import Button from "@/entrypoints/components/ui/button";
-import { addBookmark } from "@/utils/helpers";
-
+import Modal from "@/entrypoints/components/ui/modal"
+import Button from "@/entrypoints/components/ui/button"
+import { addBookmark } from "@/utils/helpers"
 
 function AddBookmarkModal() {
-  const [title, setTitle] = useState("");
+  const [title, setTitle] = useState("")
   const showPopup = usePopupStore(state => state.show)
-  const isOpen = useUIStateStore((state) => state.showAddBookmarkModal);
-  const setShowAddBookmarkModal = useUIStateStore((state) => state.setShowAddBookmarkModal);
+  const isOpen = useUIStateStore(state => state.showAddBookmarkModal)
+  const setShowAddBookmarkModal = useUIStateStore(state => state.setShowAddBookmarkModal)
 
   const handleSave = async () => {
-    if (title.trim() === "") {
-      showPopup("Title cannot be empty", "red");
-      return;
+    if (title.trim() == "") {
+      showPopup("Title cannot be empty", "red")
+      return
     }
-    await addBookmark(title);
-    setShowAddBookmarkModal(false);
-  };
+    await addBookmark(title)
+    setShowAddBookmarkModal(false)
+    showPopup("Bookmark added", "green")
+  }
 
   return (
     <Modal isOpen={isOpen} onClose={() => setShowAddBookmarkModal(false)} className="p-10">
@@ -27,10 +27,14 @@ function AddBookmarkModal() {
           type="text"
           value={title}
           placeholder="Enter title..."
-          onChange={(e) => setTitle(e.target.value)}
+          onChange={e => setTitle(e.target.value)}
         />
         <div className="flex justify-center gap-4 w-full">
-          <Button className="text-lg font-semibold flex gap-1" onClick={() => setShowAddBookmarkModal(false)} variant="red">
+          <Button
+            className="text-lg font-semibold flex gap-1"
+            onClick={() => setShowAddBookmarkModal(false)}
+            variant="red"
+          >
             Cancel
           </Button>
           <Button className="text-lg font-semibold flex gap-1" onClick={handleSave} variant="green">
@@ -39,7 +43,7 @@ function AddBookmarkModal() {
         </div>
       </section>
     </Modal>
-  );
+  )
 }
 
-export default AddBookmarkModal;
+export default AddBookmarkModal
