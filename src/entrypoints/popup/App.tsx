@@ -62,14 +62,11 @@ const Popup: React.FC = () => {
         className="bg-amber-900 hover:bg-amber-950 flex items-center gap-1 w-full"
         onClick={() => browser.runtime.openOptionsPage()}
       >
-        <Settings />
+        <Settings size={16} />
         <span>Options</span>
       </Button>
-      <Button
-        className="bg-amber-900 hover:bg-amber-950 flex items-center gap-1 w-full"
-        onClick={() => changeIconSize()}
-      >
-        <Scaling />
+      <Button className="bg-sky-900 hover:bg-sky-950 flex items-center gap-1 w-full" onClick={() => changeIconSize()}>
+        <Scaling size={16} />
         <span>Change Icon Size</span>
       </Button>
     </main>
