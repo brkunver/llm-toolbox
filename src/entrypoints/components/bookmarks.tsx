@@ -10,8 +10,8 @@ function Bookmarks() {
     console.log("Ext Dev : Bookmarks Rendered")
   }
 
-  const isOpen = useUIStateStore((state) => state.showBookmarks)
-  const setShowBookmarks = useUIStateStore((state) => state.setShowBookmarks)
+  const isOpen = useUIStateStore(state => state.showBookmarks)
+  const setShowBookmarks = useUIStateStore(state => state.setShowBookmarks)
   const [bookmarks, setBookmarks] = useState<TBookmark[]>([])
 
   useEffect(() => {
@@ -20,7 +20,7 @@ function Bookmarks() {
       setBookmarks(bookmarks)
     }
 
-    bookmarkStorage.watch((bookmarks) => {
+    bookmarkStorage.watch(bookmarks => {
       setBookmarks(bookmarks)
     })
 
@@ -32,7 +32,7 @@ function Bookmarks() {
   }
 
   const handleDeleteBookmark = async (id: string) => {
-    const updatedBookmarks = bookmarks.filter((bookmark) => bookmark.id !== id)
+    const updatedBookmarks = bookmarks.filter(bookmark => bookmark.id !== id)
     await bookmarkStorage.setValue(updatedBookmarks)
   }
 
@@ -48,7 +48,7 @@ function Bookmarks() {
           </div>
         ) : (
           <div className="flex flex-col gap-3">
-            {bookmarks.map((bookmark) => (
+            {bookmarks.map(bookmark => (
               <div
                 key={bookmark.id}
                 className="p-4 bg-gray-800 w-full rounded-lg flex justify-between border border-gray-700 hover:border-gray-500 transition-colors"
