@@ -10,12 +10,15 @@ interface AddBookmarkButtonProps {
 }
 
 function AddBookmarkButton({ changeTitle = false, onShowAddBookmarkModal, className }: AddBookmarkButtonProps) {
+  const showPopup = usePopupStore(state => state.show)
+
   function addBookmarkHandler() {
     if (changeTitle && onShowAddBookmarkModal) {
       onShowAddBookmarkModal()
       return
     } else {
       addBookmark()
+      showPopup("Bookmark added", "green")
     }
   }
 
