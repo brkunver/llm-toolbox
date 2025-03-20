@@ -34,6 +34,7 @@ export default defineBackground(() => {
       isMenuActive.setValue(true)
       bookmarkStorage.setValue([exampleBookmark])
       promptStorage.setValue([examplePrompt, examplePrompt2])
+      extIconSizeStorage.setValue("medium")
     }
   })
 })
