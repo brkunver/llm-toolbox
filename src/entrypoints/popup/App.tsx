@@ -1,5 +1,5 @@
 import Button from "@/entrypoints/components/ui/button"
-import { CircleX, PlusCircle, Settings } from "lucide-react"
+import { CircleX, PlusCircle, Scaling, Settings } from "lucide-react"
 
 const Popup: React.FC = () => {
   const [isActive, setIsActive] = useState<boolean>(true)
@@ -24,6 +24,17 @@ const Popup: React.FC = () => {
   const toggleExtension = async () => {
     const currentState = await isExtensionActive.getValue()
     await isExtensionActive.setValue(!currentState)
+  }
+
+  const changeIconSize = async () => {
+    const currentState = await extIconSizeStorage.getValue()
+    if (currentState == "small") {
+      await extIconSizeStorage.setValue("medium")
+    } else if (currentState == "medium") {
+      await extIconSizeStorage.setValue("large")
+    } else {
+      await extIconSizeStorage.setValue("small")
+    }
   }
 
   return (
@@ -53,6 +64,13 @@ const Popup: React.FC = () => {
       >
         <Settings />
         <span>Options</span>
+      </Button>
+      <Button
+        className="bg-amber-900 hover:bg-amber-950 flex items-center gap-1 w-full"
+        onClick={() => changeIconSize()}
+      >
+        <Scaling />
+        <span>Change Icon Size</span>
       </Button>
     </main>
   )
