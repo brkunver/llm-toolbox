@@ -1,20 +1,16 @@
-import { memo, useState, useEffect } from "react"
+import { memo } from "react"
 import Drawer from "@/entrypoints/components/ui/drawer"
 import Button from "@/entrypoints/components/ui/button"
-import { useUIStateStore, usePopupStore } from "@/utils/stores"
-import { promptStorage } from "@/utils/storage"
-import { truncateText, changePrompt } from "@/utils/helpers"
-import { TPrompt } from "@/utils/types"
 
 function PromptList() {
   if (import.meta.env.MODE == "development") {
     console.log("Ext Dev : Prompt List Rendered")
   }
 
-  const isOpen = useUIStateStore((state) => state.showPromptList)
-  const setShowPromptList = useUIStateStore((state) => state.setShowPromptList)
-  const openEditPromptModal = useUIStateStore((state) => state.openEditPromptModal)
-  const showPopup = usePopupStore((state) => state.show)
+  const isOpen = useUIStateStore(state => state.showPromptList)
+  const setShowPromptList = useUIStateStore(state => state.setShowPromptList)
+  const openEditPromptModal = useUIStateStore(state => state.openEditPromptModal)
+  const showPopup = usePopupStore(state => state.show)
   const [prompts, setPrompts] = useState<TPrompt[]>([])
 
   useEffect(() => {
@@ -23,7 +19,7 @@ function PromptList() {
       setPrompts(prompts)
     }
 
-    promptStorage.watch((prompts) => {
+    promptStorage.watch(prompts => {
       setPrompts(prompts)
     })
 
@@ -41,11 +37,9 @@ function PromptList() {
   }
 
   const handleDeletePrompt = async (promptId: string, promptTitle: string) => {
-    if (confirm(`Are you sure you want to delete "${truncateText(promptTitle, 20)}"?`)) {
-      const updatedPrompts = prompts.filter((p) => p.id !== promptId)
-      await promptStorage.setValue(updatedPrompts)
-      showPopup(`Prompt "${truncateText(promptTitle, 20)}" deleted`, "red")
-    }
+    const updatedPrompts = prompts.filter(p => p.id !== promptId)
+    await promptStorage.setValue(updatedPrompts)
+    showPopup(`Prompt "${truncateText(promptTitle, 20)}" deleted`, "red")
   }
 
   return (
@@ -53,14 +47,14 @@ function PromptList() {
       <div className="flex flex-col gap-4">
         <h1 className="text-xl font-bold">Saved Prompts</h1>
         <p className="text-gray-400">Prompt Count: {prompts.length}</p>
-        
+
         {prompts.length === 0 ? (
           <div className="p-4 bg-gray-800 rounded-md">
             <p className="text-center text-gray-400">No saved prompts yet</p>
           </div>
         ) : (
           <div className="flex flex-col gap-3">
-            {prompts.map((prompt) => (
+            {prompts.map(prompt => (
               <div key={prompt.id} className="p-3 bg-gray-800 rounded-md flex flex-col gap-2">
                 <div className="flex flex-col">
                   <h2 className="font-semibold text-lg truncate">{truncateText(prompt.title, 25)}</h2>
