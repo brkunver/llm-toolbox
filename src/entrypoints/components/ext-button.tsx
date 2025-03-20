@@ -1,7 +1,8 @@
-import { memo } from "react"
+import { memo, useState, useEffect } from "react"
 import logo from "~/assets/128.png"
 import { useUIStateStore } from "@/utils/stores"
 import { isMenuActive } from "@/utils/storage"
+import { extIconSizeStorage } from "@/utils/storage"
 
 function ExtButton() {
   if (import.meta.env.MODE == "development") {
@@ -11,9 +12,31 @@ function ExtButton() {
   const showMenu = useUIStateStore(state => state.showMenu)
   const toggleMenu = useUIStateStore(state => state.toggleMenu)
 
+  const [iconSize, setIconSize] = useState<TExtIconSize>("medium")
+
   const handleMenuButtonClick = () => {
     toggleMenu()
     isMenuActive.setValue(!showMenu)
+  }
+
+  useEffect(() => {
+    async function setSize() {
+      const size = await extIconSizeStorage.getValue()
+      setIconSize(size)
+    }
+
+    //subscribe to changes
+    extIconSizeStorage.watch((size: TExtIconSize) => {
+      setIconSize(size)
+    })
+
+    setSize()
+  }, [])
+
+  let imgSizes = {
+    small: "w-8 h-8",
+    medium: "w-12 h-12",
+    large: "w-14 h-14",
   }
 
   return (
@@ -28,7 +51,7 @@ function ExtButton() {
         onClick={handleMenuButtonClick}
         className="w-fit h-fit p-1.5 cursor-pointer rounded-2xl bg-primary border-solid border-1 border-border hover:border-transparent transition-all"
       >
-        <img src={logo} alt="toggle-menu" className="text-white w-8 h-8 mb-1 ml-1" />
+        <img src={logo} alt="toggle-menu" className={`ps-1 pb-1 ${imgSizes[iconSize]}`} />
       </button>
     </div>
   )
