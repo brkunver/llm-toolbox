@@ -1,6 +1,7 @@
 export type Tllm = "chatgpt" | "deepseek" | "gemini" | "claude" | "perplexity" | "t3"
 export type TWebsite = Tllm | "unknown"
 export type TPromptCategory = "writing" | "conversation" | "creative" | "coding" | "marketing" | "other"
+export type TExtIconSize = "small" | "medium" | "large"
 
 export type TBookmark = {
   id: string
