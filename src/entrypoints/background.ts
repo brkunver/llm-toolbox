@@ -1,3 +1,5 @@
+import { extPositionStorage } from "@/utils/storage"
+
 const exampleBookmark : TBookmark = {
   id: "exampleid1",
   website: "chatgpt",
@@ -35,6 +37,7 @@ export default defineBackground(() => {
       bookmarkStorage.setValue([exampleBookmark])
       promptStorage.setValue([examplePrompt, examplePrompt2])
       extIconSizeStorage.setValue("medium")
+      extPositionStorage.setValue("top-right")
     }
   })
 })
