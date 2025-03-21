@@ -1,8 +1,9 @@
 import { memo, useState, useEffect } from "react"
 import logo from "~/assets/128.png"
 import { useUIStateStore } from "@/utils/stores"
-import { isMenuActive } from "@/utils/storage"
+import { isMenuActive, extPositionStorage } from "@/utils/storage"
 import { extIconSizeStorage } from "@/utils/storage"
+import { TExtIconSize, ExtPositionType } from "@/utils/types"
 
 function ExtButton() {
   if (import.meta.env.MODE == "development") {
@@ -13,6 +14,7 @@ function ExtButton() {
   const toggleMenu = useUIStateStore(state => state.toggleMenu)
 
   const [iconSize, setIconSize] = useState<TExtIconSize>("medium")
+  const [position, setPosition] = useState<ExtPositionType>("top-right")
 
   const handleMenuButtonClick = () => {
     toggleMenu()
@@ -25,12 +27,22 @@ function ExtButton() {
       setIconSize(size)
     }
 
+    async function loadPosition() {
+      const pos = await extPositionStorage.getValue()
+      setPosition(pos)
+    }
+
     //subscribe to changes
-    extIconSizeStorage.watch((size: TExtIconSize) => {
+    extIconSizeStorage.watch(size => {
       setIconSize(size)
     })
 
+    extPositionStorage.watch(pos => {
+      setPosition(pos)
+    })
+
     setSize()
+    loadPosition()
   }, [])
 
   let imgSizes = {
@@ -39,8 +51,13 @@ function ExtButton() {
     large: "w-14 h-14",
   }
 
+  let positions = {
+    "top-right": "top-14 right-14",
+    "bottom-right": "bottom-14 right-14",
+  }
+
   return (
-    <div id="ext-button" className="fixed top-14 right-14 z-30 w-fit h-fit group font-main">
+    <div id="ext-button" className={`fixed ${positions[position]} z-30 w-fit h-fit group font-main`}>
       <div
         className={`${
           showMenu ? "bg-flat-red" : "bg-flat-green"

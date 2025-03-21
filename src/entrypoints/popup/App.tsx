@@ -1,5 +1,6 @@
 import Button from "@/entrypoints/components/ui/button"
-import { CircleX, PlusCircle, Scaling, Settings } from "lucide-react"
+import { extPositionStorage } from "@/utils/storage"
+import { CircleX, MapPin, PlusCircle, Scaling, Settings } from "lucide-react"
 
 const Popup: React.FC = () => {
   const [isActive, setIsActive] = useState<boolean>(true)
@@ -37,6 +38,15 @@ const Popup: React.FC = () => {
     }
   }
 
+  const changeIconPosition = async () => {
+    const currentState = await extPositionStorage.getValue()
+    if (currentState == "top-right") {
+      await extPositionStorage.setValue("bottom-right")
+    } else {
+      await extPositionStorage.setValue("top-right")
+    }
+  }
+
   return (
     <main className="min-w-52 min-h-24 p-2 flex flex-col justify-center font-main font-medium gap-1 bg-primary text-white">
       <h1 className="text-2xl font-bold text-center">LLM Toolbox</h1>
@@ -65,9 +75,16 @@ const Popup: React.FC = () => {
         <Settings size={16} />
         <span>Options</span>
       </Button>
-      <Button className="bg-sky-900 hover:bg-sky-950 flex items-center gap-1 w-full" onClick={() => changeIconSize()}>
+      <Button className="bg-indigo-700 hover:bg-indigo-800 flex items-center gap-1 w-full" onClick={() => changeIconSize()}>
         <Scaling size={16} />
         <span>Change Icon Size</span>
+      </Button>
+      <Button
+        className="bg-purple-700 hover:bg-purple-800 flex items-center gap-1 w-full"
+        onClick={() => changeIconPosition()}
+      >
+        <MapPin size={16} />
+        <span>Change Position</span>
       </Button>
     </main>
   )

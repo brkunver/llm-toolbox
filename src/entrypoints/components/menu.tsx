@@ -16,6 +16,8 @@ function Menu() {
   const setShowBookmarks = useUIStateStore(state => state.setShowBookmarks)
   const setShowAddBookmarkModal = useUIStateStore(state => state.setShowAddBookmarkModal)
 
+  const [position, setPosition] = useState<ExtPositionType>("top-right")
+
   const currentWebsite = getWebsite()
 
   useEffect(() => {
@@ -24,12 +26,28 @@ function Menu() {
       setShowMenu(value)
     }
 
+    async function loadPosition() {
+      const pos = await extPositionStorage.getValue()
+      setPosition(pos)
+    }
+
+    //subscribe to changes
+    extPositionStorage.watch(pos => {
+      setPosition(pos)
+    })
+
     isMenuActive.watch((active: boolean) => {
       setShowMenu(active)
     })
 
     setMenuStatus()
+    loadPosition()
   }, [])
+
+  const positions = {
+    "top-right": "top-32 right-14",
+    "bottom-right": "bottom-32 right-14",
+  }
 
   return (
     <AnimatePresence>
@@ -39,7 +57,7 @@ function Menu() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, type: "spring" }}
-          className="flex flex-col fixed top-32 right-14 z-30 p-4 gap-1 rounded-2xl font-main font-medium bg-primary! border-border border-solid border-1 w-fit h-fit"
+          className={`flex flex-col fixed ${positions[position]} z-30 p-4 gap-1 rounded-2xl font-main font-medium bg-primary! border-border border-solid border-1 w-fit h-fit`}
         >
           <h1 className="text-3xl font-bold text-center">LLM Toolbox</h1>
           <div id="website-detected-div" className="flex flex-col justify-center items-center my-1">
