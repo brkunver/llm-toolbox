@@ -1,5 +1,5 @@
 import { storage } from "wxt/storage"
-import { TExtIconSize } from "./types"
+import { TExtIconSize, ExtPositionType, TBookmark, TPrompt } from "./types"
 
 export const isExtensionActive = storage.defineItem<boolean>("local:isExtensionActive", {
   fallback: true,
@@ -19,4 +19,8 @@ export const promptStorage = storage.defineItem<TPrompt[]>("local:prompts", {
 
 export const extIconSizeStorage = storage.defineItem<TExtIconSize>("local:extIconSizeStorage", {
   fallback: "medium",
+})
+
+export const extPositionStorage = storage.defineItem<ExtPositionType>("local:extPositionStorage", {
+  fallback: "top-right",
 })
