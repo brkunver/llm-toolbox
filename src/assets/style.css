@@ -1,0 +1,35 @@
+@import "tailwindcss" important;
+
+@theme {
+  --font-main: "Inter", sans-serif;
+
+  --color-primary: #121212;
+  --color-flat-red: #eb2f06;
+  --color-flat-green: #44bd32;
+
+  --color-background: #181818;
+  --color-ui: #1a1a1a;
+  --color-border: #333333;
+  --color-text-main: #e0e0e0;
+
+  /* button colors */
+  --color-blue-button: #0f477e;
+  --color-dark-blue-button: #092b4c;
+
+  --color-red-button: #b71c1c;
+  --color-dark-red-button: #6e1111;
+
+  --color-green-button: #388e3c;
+  --color-dark-green-button: #225524;
+
+  --color-yellow-button: #f9a825;
+  --color-dark-yellow-button: #956516;
+}
+
+body {
+  @apply font-main text-base font-normal;
+}
+
+button {
+  @apply cursor-pointer;
+}
