@@ -81,7 +81,7 @@ function Menu() {
             onClick={() => setShowNewPromptModal(true)}
           >
             <PlusCircle />
-            <span>Add new prompt</span>
+            <span>New prompt</span>
           </Button>
           <Button className="flex gap-1 w-full text-center" onClick={() => setShowPromptList(true)}>
             <List />
