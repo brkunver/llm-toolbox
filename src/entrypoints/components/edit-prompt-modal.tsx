@@ -1,5 +1,6 @@
 import Modal from "@/entrypoints/components/ui/modal"
 import Button from "@/entrypoints/components/ui/button"
+import { memo } from "react"
 
 function EditPromptModal() {
   const showPopup = usePopupStore(state => state.show)
@@ -122,4 +123,4 @@ function EditPromptModal() {
   )
 }
 
-export default EditPromptModal
+export default memo(EditPromptModal)
