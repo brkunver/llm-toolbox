@@ -1,5 +1,5 @@
 import { create } from "zustand"
-import { TPrompt } from "./types"
+import { TPrompt, TBookmark } from "./types"
 
 interface extensionStoreTypes {
   showExtension: boolean
@@ -42,41 +42,79 @@ export const usePopupStore = create<popupStoreTypes>((set) => ({
 }))
 
 interface UIStateStoreTypes {
+  // Menu state
   showMenu: boolean
-  showPromptList: boolean
-  showNewPromptModal: boolean
-  showBookmarks: boolean
-  showAddBookmarkModal: boolean
-  showEditPromptModal: boolean
-  currentEditingPrompt: TPrompt | null
   setShowMenu: (show: boolean) => void
   toggleMenu: () => void
+  
+  // Prompt list state
+  showPromptList: boolean
   setShowPromptList: (show: boolean) => void
+  
+  // New prompt modal state
+  showNewPromptModal: boolean
   setShowNewPromptModal: (show: boolean) => void
+  
+  // Bookmarks state
+  showBookmarks: boolean
   setShowBookmarks: (show: boolean) => void
+  
+  // Add bookmark modal state
+  showAddBookmarkModal: boolean
   setShowAddBookmarkModal: (show: boolean) => void
+  
+  // Edit prompt modal state
+  showEditPromptModal: boolean
+  currentEditingPrompt: TPrompt | null
   setShowEditPromptModal: (show: boolean) => void
   setCurrentEditingPrompt: (prompt: TPrompt | null) => void
   openEditPromptModal: (prompt: TPrompt) => void
   closeEditPromptModal: () => void
+  
+  // Edit bookmark modal state
+  showEditBookmarkModal: boolean
+  currentEditingBookmark: TBookmark | null
+  setShowEditBookmarkModal: (show: boolean) => void
+  setCurrentEditingBookmark: (bookmark: TBookmark | null) => void
+  openEditBookmarkModal: (bookmark: TBookmark) => void
+  closeEditBookmarkModal: () => void
 }
 
 export const useUIStateStore = create<UIStateStoreTypes>((set) => ({
+  // Menu state
   showMenu: false,
-  showPromptList: false,
-  showNewPromptModal: false,
-  showBookmarks: false,
-  showAddBookmarkModal: false,
-  showEditPromptModal: false,
-  currentEditingPrompt: null,
   setShowMenu: (show: boolean) => set({ showMenu: show }),
   toggleMenu: () => set((state) => ({ showMenu: !state.showMenu })),
+  
+  // Prompt list state
+  showPromptList: false,
   setShowPromptList: (show: boolean) => set({ showPromptList: show }),
+  
+  // New prompt modal state
+  showNewPromptModal: false,
   setShowNewPromptModal: (show: boolean) => set({ showNewPromptModal: show }),
+  
+  // Bookmarks state
+  showBookmarks: false,
   setShowBookmarks: (show: boolean) => set({ showBookmarks: show }),
+  
+  // Add bookmark modal state
+  showAddBookmarkModal: false,
   setShowAddBookmarkModal: (show: boolean) => set({ showAddBookmarkModal: show }),
+  
+  // Edit prompt modal state
+  showEditPromptModal: false,
+  currentEditingPrompt: null,
   setShowEditPromptModal: (show: boolean) => set({ showEditPromptModal: show }),
   setCurrentEditingPrompt: (prompt: TPrompt | null) => set({ currentEditingPrompt: prompt }),
   openEditPromptModal: (prompt: TPrompt) => set({ showEditPromptModal: true, currentEditingPrompt: prompt }),
   closeEditPromptModal: () => set({ showEditPromptModal: false, currentEditingPrompt: null }),
+  
+  // Edit bookmark modal state
+  showEditBookmarkModal: false,
+  currentEditingBookmark: null,
+  setShowEditBookmarkModal: (show: boolean) => set({ showEditBookmarkModal: show }),
+  setCurrentEditingBookmark: (bookmark: TBookmark | null) => set({ currentEditingBookmark: bookmark }),
+  openEditBookmarkModal: (bookmark: TBookmark) => set({ showEditBookmarkModal: true, currentEditingBookmark: bookmark }),
+  closeEditBookmarkModal: () => set({ showEditBookmarkModal: false, currentEditingBookmark: null }),
 }))

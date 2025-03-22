@@ -6,6 +6,7 @@ import Menu from "@/entrypoints/components/menu"
 import Bookmarks from "@/entrypoints/components/bookmarks"
 import AddBookmarkModal from "@/entrypoints/components/add-bookmark-modal"
 import EditPromptModal from "@/entrypoints/components/edit-prompt-modal"
+import EditBookmarkModal from "@/entrypoints/components/edit-bookmark-modal"
 
 function App() {
   const extensionStore = useExtensionStore()
@@ -39,6 +40,7 @@ function App() {
       <NewPrompt />
       <AddBookmarkModal />
       <EditPromptModal />
+      <EditBookmarkModal />
       <Popup />
     </>
   )

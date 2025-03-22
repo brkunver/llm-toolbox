@@ -1,6 +1,6 @@
 import { memo, useState, useEffect } from "react"
 import Drawer from "@/entrypoints/components/ui/drawer"
-import { Trash, ExternalLink } from "lucide-react"
+import { Trash, ExternalLink, Edit } from "lucide-react"
 import { useUIStateStore } from "@/utils/stores"
 import { bookmarkStorage } from "@/utils/storage"
 import { TBookmark } from "@/utils/types"
@@ -12,6 +12,8 @@ function Bookmarks() {
 
   const isOpen = useUIStateStore(state => state.showBookmarks)
   const setShowBookmarks = useUIStateStore(state => state.setShowBookmarks)
+  const openEditBookmarkModal = useUIStateStore(state => state.openEditBookmarkModal)
+
   const [bookmarks, setBookmarks] = useState<TBookmark[]>([])
 
   useEffect(() => {
@@ -36,6 +38,13 @@ function Bookmarks() {
     await bookmarkStorage.setValue(updatedBookmarks)
   }
 
+  const handleEditBookmark = async (id: string) => {
+    const bookmark = bookmarks.find(bookmark => bookmark.id === id)
+    if (bookmark) {
+      openEditBookmarkModal(bookmark)
+    }
+  }
+
   return (
     <Drawer isOpen={isOpen} onClose={() => setShowBookmarks(false)} width="w-96">
       <div className="flex flex-col gap-4">
@@ -57,9 +66,14 @@ function Bookmarks() {
                   <p>{bookmark.title}</p>
                   <ExternalLink />
                 </button>
-                <button onClick={() => handleDeleteBookmark(bookmark.id)}>
-                  <Trash />
-                </button>
+                <div className="flex gap-2">
+                  <button onClick={() => handleDeleteBookmark(bookmark.id)}>
+                    <Trash className="text-red-500 hover:text-red-600" />
+                  </button>
+                  <button onClick={() => handleEditBookmark(bookmark.id)}>
+                    <Edit className="text-blue-500 hover:text-blue-600" />
+                  </button>
+                </div>
               </div>
             ))}
           </div>
