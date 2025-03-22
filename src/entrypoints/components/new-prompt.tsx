@@ -43,6 +43,9 @@ function NewPrompt() {
 
     addNewPrompt(newPrompt)
     showPopup("Prompt added successfully!")
+    setPromptTitle("")
+    setPromptContent("")
+    setPromptCategory("other")
     setShowNewPromptModal(false)
   }
 

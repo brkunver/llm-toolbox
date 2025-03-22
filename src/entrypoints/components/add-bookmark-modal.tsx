@@ -14,6 +14,7 @@ function AddBookmarkModal() {
       return
     }
     await addBookmark(title)
+    setTitle("")
     setShowAddBookmarkModal(false)
     showPopup("Bookmark added", "green")
   }
