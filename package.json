@@ -1,8 +1,8 @@
 {
   "name": "LLM Toolbox",
   "description": "A browser extension for the Popular LLM's",
-  "private": true,
-  "version": "1.0.1",
+  "private": false,
+  "version": "1.0.2",
   "type": "module",
   "scripts": {
     "dev": "wxt",
