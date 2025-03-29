@@ -1,4 +1,4 @@
-import { storage } from "wxt/storage"
+import { storage } from "#imports"
 import { TExtIconSize, ExtPositionType, TBookmark, TPrompt } from "./types"
 
 export const isExtensionActive = storage.defineItem<boolean>("local:isExtensionActive", {
