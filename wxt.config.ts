@@ -13,9 +13,9 @@ export default defineConfig({
     ],
   },
   srcDir: "src",
-  extensionApi: "chrome",
+  publicDir: "src/public",
   modules: ["@wxt-dev/module-react"],
-  runner: {
+  webExt: {
     disabled: true,
   },
   vite: () => ({
