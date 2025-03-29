@@ -1,5 +1,11 @@
 # Change log
 
+## [1.0.3] - 2025-03-29
+
+### Changed
+
+- Update wxt framework to latest version.
+
 ## [1.0.2] - 2025-03-25
 
 ### Added
