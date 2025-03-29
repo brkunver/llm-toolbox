@@ -59,9 +59,9 @@ function Menu() {
           transition={{ duration: 0.5, type: "spring" }}
           className={`flex flex-col fixed ${positions[position]} z-30 p-4 gap-1 rounded-2xl font-main font-medium bg-primary! border-border border-solid border-1 w-fit h-fit`}
         >
-          <h1 className="text-3xl font-bold text-center">LLM Toolbox</h1>
+          <h1 className="text-3xl font-bold text-center text-white">LLM Toolbox</h1>
           <div id="website-detected-div" className="flex flex-col justify-center items-center my-1">
-            <p className="text-center underline">Detected Website</p>
+            <p className="text-center underline text-white">Detected Website</p>
             <div
               className={`${
                 currentWebsite == "unknown" ? "bg-red-800" : "bg-blue-900 "
