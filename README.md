@@ -12,9 +12,22 @@ LLM Toolbox is 100% open-source and free to use. It does not collect sensitive i
 
 📬 For support and suggestions, email burakhanunver@gmail.com.
 
+## Currently supported LLMs
+
+- ChatGPT
+- DeepSeek
+- Gemini
+- Claude
+- Perplexity
+- T3.Chat
+
 ## Download the extension
 
 [Google Chrome Extension Store](https://chromewebstore.google.com/detail/llm-toolbox/mcnpjmjpbdinjoocaekmlnafndbbnfjm)
+
+[Microsoft Edge Extension Store](https://microsoftedge.microsoft.com/addons/detail/llm-toolbox/fbiflpnbkhaiflgdolhekldojniaakoi)
+
+[Firefox Add-on Store](https://addons.mozilla.org/tr/firefox/addon/llm-toolbox/)
 
 ## Development
 
