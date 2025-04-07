@@ -6,8 +6,8 @@ function OptionsFooter() {
       <a target="_blank" href="https://github.com/brkunver">
         Created by Brkunver
       </a>
-      <a target="_blank" href="#">
-        Help
+      <a target="_blank" href="https://brkunver.github.io/llm-toolbox-extension/">
+        Website
       </a>
       <a target="_blank" href="https://github.com/brkunver/llm-toolbox">
         GitHub
