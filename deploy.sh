@@ -13,3 +13,5 @@ git merge dev
 git push origin main
 
 echo "✅ Successfully merged 'dev' into 'main' and pushed to GitHub!"
+
+git checkout dev
