@@ -1,5 +1,9 @@
 # Change log
 
+## [1.0.4] - 2025-04-07
+
+- Update website link in the options menu.
+
 ## [1.0.3] - 2025-03-29
 
 ### Changed

@@ -2,7 +2,7 @@
   "name": "LLM Toolbox",
   "description": "A browser extension for the Popular LLM's",
   "private": false,
-  "version": "1.0.3",
+  "version": "1.0.4",
   "type": "module",
   "scripts": {
     "dev": "wxt",
