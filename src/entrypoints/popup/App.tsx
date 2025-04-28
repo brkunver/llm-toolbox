@@ -1,6 +1,7 @@
 import Button from "@/entrypoints/components/ui/button"
 import { extPositionStorage } from "@/utils/storage"
 import { CircleX, MapPin, PlusCircle, Scaling, Settings } from "lucide-react"
+import { i18n } from "#imports"
 
 const Popup: React.FC = () => {
   const [isActive, setIsActive] = useState<boolean>(true)
@@ -52,19 +53,19 @@ const Popup: React.FC = () => {
       <h1 className="text-2xl font-bold text-center">LLM Toolbox</h1>
       <div className="flex mb-2 min-w-full">
         <span className={`px-2 py-1 rounded-md min-w-full text-center ${isActive ? "bg-emerald-900" : "bg-red-900"}`}>
-          Extension is {isActive ? "active" : "inactive"}
+          Extension is {isActive ? i18n.t("app.active") : i18n.t("app.inactive")}
         </span>
       </div>
       <Button className="flex items-center justify-start w-full gap-1" onClick={toggleExtension}>
         {isActive ? (
           <>
             <CircleX size={16} />
-            <span>Deactivate</span>
+            <span>{i18n.t("app.deactivate")}</span>
           </>
         ) : (
           <>
             <PlusCircle size={16} />
-            <span>Activate</span>
+            <span>{i18n.t("app.activate")}</span>
           </>
         )}
       </Button>
@@ -73,18 +74,21 @@ const Popup: React.FC = () => {
         onClick={() => browser.runtime.openOptionsPage()}
       >
         <Settings size={16} />
-        <span>Options</span>
+        <span>{i18n.t("app.options")}</span>
       </Button>
-      <Button className="bg-indigo-700 hover:bg-indigo-800 flex items-center gap-1 w-full" onClick={() => changeIconSize()}>
+      <Button
+        className="bg-indigo-700 hover:bg-indigo-800 flex items-center gap-1 w-full"
+        onClick={() => changeIconSize()}
+      >
         <Scaling size={16} />
-        <span>Change Icon Size</span>
+        <span>{i18n.t("app.changeIconSize")}</span>
       </Button>
       <Button
         className="bg-purple-700 hover:bg-purple-800 flex items-center gap-1 w-full"
         onClick={() => changeIconPosition()}
       >
         <MapPin size={16} />
-        <span>Change Position</span>
+        <span>{i18n.t("app.changePosition")}</span>
       </Button>
     </main>
   )
