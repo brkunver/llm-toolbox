@@ -4,6 +4,7 @@
   "private": false,
   "version": "1.0.4",
   "type": "module",
+  "packageManager": "pnpm@10.9.0",
   "scripts": {
     "dev": "wxt",
     "dev:firefox": "wxt -b firefox",
@@ -15,6 +16,7 @@
     "test": "vitest"
   },
   "dependencies": {
+    "@wxt-dev/i18n": "^0.2.3",
     "lucide-react": "^0.503.0",
     "motion": "^12.9.2",
     "nanoid": "^5.1.5",
