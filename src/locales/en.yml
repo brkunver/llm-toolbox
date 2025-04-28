@@ -1,8 +1,22 @@
-app:
-  active: "Active"
-  inactive: "Inactive"
+popup:
+  extension:
+    active: "Extension is Active"
+    deactive: "Extension is Deactive"
   activate: "Activate"
   deactivate: "Deactivate"
+  options: "Options"
   changeIconSize: "Change Icon Size"
   changePosition: "Change Position"
-  options: "Options"
+
+options:
+  iconSize:
+    small: "Small"
+    medium: "Medium"
+    large: "Large"
+  position:
+    topRight: "Top Right"
+    bottomRight: "Bottom Right"
+  footer:
+    createdByBrkunver: "Created by Brkunver"
+    website: "Website"
+    github: "GitHub"
