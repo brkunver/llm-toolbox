@@ -1,0 +1,3 @@
+app:
+  active: "Active"
+  inactive: "Inactive"
