@@ -15,7 +15,7 @@ export default defineConfig({
   },
   srcDir: "src",
   publicDir: "src/public",
-  modules: ["@wxt-dev/module-react"],
+  modules: ["@wxt-dev/module-react", "@wxt-dev/i18n/module"],
   webExt: {
     disabled: true,
   },
