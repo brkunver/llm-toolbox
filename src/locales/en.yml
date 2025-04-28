@@ -20,3 +20,12 @@ options:
     createdByBrkunver: "Created by Brkunver"
     website: "Website"
     github: "GitHub"
+
+content:
+  bookmarkAdded: "Bookmark Added"
+  addBookmark: "Add bookmark"
+  addBookmarkAs: "Add bookmark as..."
+  titleCantBeEmpty: "Title can't be empty"
+  save: "Save"
+  cancel: "Cancel"
+  bookmarkTitlePlaceholder: "Enter title..."
