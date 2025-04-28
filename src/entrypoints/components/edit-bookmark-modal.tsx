@@ -2,6 +2,8 @@ import Modal from "@/entrypoints/components/ui/modal"
 import Button from "@/entrypoints/components/ui/button"
 import { memo } from "react"
 
+import { i18n } from "#imports"
+
 function EditBookmarkModal() {
   const showPopup = usePopupStore(state => state.show)
   const isOpen = useUIStateStore(state => state.showEditBookmarkModal)
@@ -15,17 +17,17 @@ function EditBookmarkModal() {
     if (!bookmark) return
 
     if (title.trim() === "" || url.trim() === "") {
-      showPopup("Title and URL cannot be empty", "red")
+      showPopup(i18n.t("content.titleCantBeEmpty"), "red")
       return
     }
 
     if (title.length > 50) {
-      showPopup("Title cannot exceed 50 characters", "red")
+      showPopup(i18n.t("content.titleCantExceed"), "red")
       return
     }
 
     if (url.length > 1000) {
-      showPopup("URL cannot exceed 1000 characters", "red")
+      showPopup(i18n.t("content.urlCantExceed"), "red")
       return
     }
 
@@ -39,10 +41,10 @@ function EditBookmarkModal() {
       const bookmarks = await bookmarkStorage.getValue()
       const updatedBookmarks = bookmarks.map(b => (b.id === updatedBookmark.id ? updatedBookmark : b))
       await bookmarkStorage.setValue(updatedBookmarks)
-      showPopup("Bookmark updated successfully!", "green")
+      showPopup(i18n.t("content.bookmarkUpdatedSuccesfully"), "green")
       closeEditBookmarkModal()
     } catch (error) {
-      showPopup("Failed to update bookmark", "red")
+      showPopup(i18n.t("content.failedToUpdateBookmark"), "red")
     }
   }
 
@@ -55,11 +57,11 @@ function EditBookmarkModal() {
   return (
     <Modal isOpen={isOpen} onClose={closeEditBookmarkModal}>
       <div className="flex flex-col gap-4">
-        <h2 className="text-xl font-bold">Edit Bookmark</h2>
+        <h2 className="text-xl font-bold">{i18n.t("content.editBookmark")}</h2>
 
         <div className="flex flex-col gap-2">
           <label htmlFor="title" className="text-sm text-gray-400">
-            Title
+            {i18n.t("content.title")}
           </label>
           <input
             id="title"
@@ -85,10 +87,10 @@ function EditBookmarkModal() {
 
         <div className="flex justify-end gap-2 mt-2">
           <Button variant="red" onClick={closeEditBookmarkModal}>
-            Cancel
+            {i18n.t("content.cancel")}
           </Button>
           <Button variant="blue" onClick={() => handleSave()}>
-            Save
+            {i18n.t("content.save")}
           </Button>
         </div>
       </div>

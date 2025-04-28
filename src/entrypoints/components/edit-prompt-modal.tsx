@@ -2,6 +2,8 @@ import Modal from "@/entrypoints/components/ui/modal"
 import Button from "@/entrypoints/components/ui/button"
 import { memo } from "react"
 
+import { i18n } from "#imports"
+
 function EditPromptModal() {
   const showPopup = usePopupStore(state => state.show)
   const isOpen = useUIStateStore(state => state.showEditPromptModal)
@@ -24,12 +26,12 @@ function EditPromptModal() {
     if (!prompt) return
 
     if (!title.trim()) {
-      showPopup("Title cannot be empty", "red")
+      showPopup(i18n.t("content.titleCantBeEmpty"), "red")
       return
     }
 
     if (!content.trim()) {
-      showPopup("Content cannot be empty", "red")
+      showPopup(i18n.t("content.contentCantBeEmpty"), "red")
       return
     }
 
@@ -51,23 +53,23 @@ function EditPromptModal() {
       await promptStorage.setValue(updatedPrompts)
 
       // Show success message
-      showPopup(`Prompt "${truncateText(updatedPrompt.title, 20)}" updated`, "green")
+      showPopup(i18n.t("content.promptUpdated"), "green")
 
       // Close the modal
       closeEditPromptModal()
     } catch (error) {
-      showPopup("Failed to update prompt", "red")
+      showPopup(i18n.t("content.failedToUpdatePrompt"), "red")
     }
   }
 
   return (
     <Modal isOpen={isOpen} onClose={closeEditPromptModal} className="w-[500px] max-w-[90vw]">
       <div className="flex flex-col gap-4">
-        <h2 className="text-xl font-bold">Edit Prompt</h2>
+        <h2 className="text-xl font-bold">{i18n.t("content.editPrompt")}</h2>
 
         <div className="flex flex-col gap-2">
           <label htmlFor="title" className="text-sm text-gray-400">
-            Title
+            {i18n.t("content.title")}
           </label>
           <input
             id="title"
@@ -80,7 +82,7 @@ function EditPromptModal() {
 
         <div className="flex flex-col gap-2">
           <label htmlFor="content" className="text-sm text-gray-400">
-            Content
+            {i18n.t("content.content")}
           </label>
           <textarea
             id="content"
@@ -93,7 +95,7 @@ function EditPromptModal() {
 
         <div className="flex flex-col gap-2">
           <label htmlFor="category" className="text-sm text-gray-400">
-            Category
+            {i18n.t("content.category")}
           </label>
           <select
             id="category"
@@ -112,10 +114,10 @@ function EditPromptModal() {
 
         <div className="flex justify-end gap-2 mt-2">
           <Button variant="red" onClick={closeEditPromptModal}>
-            Cancel
+            {i18n.t("content.cancel")}
           </Button>
           <Button variant="blue" onClick={handleSave}>
-            Save
+            {i18n.t("content.save")}
           </Button>
         </div>
       </div>

@@ -61,7 +61,7 @@ function Menu() {
         >
           <h1 className="text-3xl font-bold text-center text-white">LLM Toolbox</h1>
           <div id="website-detected-div" className="flex flex-col justify-center items-center my-1">
-            <p className="text-center underline text-white">Detected Website</p>
+            <p className="text-center underline text-white">{i18n.t("content.detectedWebsite")}</p>
             <div
               className={`${
                 currentWebsite == "unknown" ? "bg-red-800" : "bg-blue-900 "
@@ -81,15 +81,15 @@ function Menu() {
             onClick={() => setShowNewPromptModal(true)}
           >
             <PlusCircle />
-            <span>New prompt</span>
+            <span>{i18n.t("content.newPrompt")}</span>
           </Button>
           <Button className="flex gap-1 w-full text-center" onClick={() => setShowPromptList(true)}>
             <List />
-            <span>My Prompts</span>
+            <span>{i18n.t("content.myPrompts")}</span>
           </Button>
           <Button className="flex gap-1 w-full text-center" onClick={() => setShowBookmarks(true)}>
             <Bookmark />
-            <span>My Bookmarks</span>
+            <span>{i18n.t("content.myBookmarks")}</span>
           </Button>
         </motion.section>
       )}

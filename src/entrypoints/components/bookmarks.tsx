@@ -5,6 +5,8 @@ import { useUIStateStore } from "@/utils/stores"
 import { bookmarkStorage } from "@/utils/storage"
 import { TBookmark } from "@/utils/types"
 
+import { i18n } from "#imports"
+
 function Bookmarks() {
   if (import.meta.env.MODE == "development") {
     console.log("Ext Dev : Bookmarks Rendered")
@@ -48,12 +50,14 @@ function Bookmarks() {
   return (
     <Drawer isOpen={isOpen} onClose={() => setShowBookmarks(false)} width="w-96">
       <div className="flex flex-col gap-4">
-        <h1 className="text-2xl font-bold">My Bookmarks</h1>
-        <p className="text-gray-400">Bookmark Count: {bookmarks.length}</p>
+        <h1 className="text-2xl font-bold">{i18n.t("content.myBookmarks")}</h1>
+        <p className="text-gray-400">
+          {i18n.t("content.bookmarkCount")}: {bookmarks.length}
+        </p>
 
         {bookmarks.length == 0 ? (
           <div className="flex flex-col items-center justify-center p-6 bg-gray-800 rounded-lg">
-            <p className="text-gray-400">No bookmarks yet</p>
+            <p className="text-gray-400">{i18n.t("content.noBookmarksYet")}</p>
           </div>
         ) : (
           <div className="flex flex-col gap-3">
