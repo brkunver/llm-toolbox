@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite"
 // See https://wxt.dev/api/config.html
 export default defineConfig({
   manifest: {
-    defaultLocale: "en",
+    default_locale: "en",
     permissions: ["storage"],
     web_accessible_resources: [
       {
