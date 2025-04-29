@@ -1,0 +1,79 @@
+extName: "LLM 툴박스"
+extDescription: "ChatGPT, Claude 등 채팅 웹사이트를 향상시킵니다. 프롬프트 저장 및 북마크 추가를 지원합니다."
+popup:
+  extension:
+    active: "확장 프로그램 활성화됨"
+    deactive: "확장 프로그램 비활성화됨"
+  activate: "활성화"
+  deactivate: "비활성화"
+  options: "옵션"
+  changeIconSize: "아이콘 크기 변경"
+  changePosition: "위치 변경"
+
+options:
+  iconSize:
+    small: "작게"
+    medium: "중간"
+    large: "크게"
+  position:
+    topRight: "오른쪽 상단"
+    bottomRight: "오른쪽 하단"
+  footer:
+    createdByBrkunver: "Brkunver 제작"
+    website: "웹사이트"
+    github: "GitHub"
+
+content:
+  title: "제목"
+  use: "사용"
+  edit: "편집"
+  delete: "삭제"
+  clear: "지우기"
+  save: "저장"
+  cancel: "취소"
+  bookmarkTitlePlaceholder: "제목 입력..."
+  titleCantBeEmpty: "제목은 비워둘 수 없습니다"
+  contentCantBeEmpty: "내용은 비워둘 수 없습니다"
+  titleAndContentCantBeEmpty: "제목과 내용은 비워둘 수 없습니다"
+  titleAndUrlCantBeEmpty: "제목과 URL은 비워둘 수 없습니다"
+  urlCantExceed: "URL은 1000자를 초과할 수 없습니다"
+  titleCantExceed: "제목은 50자를 초과할 수 없습니다"
+  contentCantExceed: "내용은 1000자를 초과할 수 없습니다"
+
+  bookmarkAdded: "북마크가 추가되었습니다"
+  addBookmark: "북마크 추가"
+  addBookmarkAs: "북마크로 추가..."
+  myBookmarks: "내 북마크"
+  bookmarkCount: "북마크 수"
+  noBookmarksYet: "아직 북마크가 없습니다"
+  editBookmark: "북마크 편집"
+  bookmarkUpdatedSuccesfully: "북마크가 성공적으로 업데이트되었습니다!"
+  failedToUpdateBookmark: "북마크 업데이트 실패"
+
+  promptUpdated: "프롬프트가 업데이트되었습니다"
+  failedToUpdatePrompt: "프롬프트 업데이트 실패"
+  editPrompt: "프롬프트 편집"
+  createNewPrompt: "새 프롬프트 만들기"
+  promptAddedSuccessfully: "프롬프트가 성공적으로 추가되었습니다!"
+  content: "내용"
+  promptContentPlaceholder: "프롬프트 내용..."
+  noSavedPrompts: "아직 저장된 프롬프트가 없습니다"
+  category: "카테고리"
+  promptApplied: "프롬프트 적용됨"
+  promptDeleted: "프롬프트 삭제됨"
+  promptCount: "프롬프트 수"
+  savedPrompts: "저장된 프롬프트"
+
+  detectedWebsite: "감지된 웹사이트"
+  newPrompt: "새 프롬프트"
+  myPrompts: "내 프롬프트"
+
+example:
+  prompt1:
+    id: "promptid1"
+    title: "데이터 과학자처럼 행동하기"
+    content: "데이터 과학자처럼 행동해 주세요.\n최첨단 기술 회사에서 어려운 프로젝트를 진행한다고 상상해 보세요.\n새로운 앱의 사용자 행동에 대한 대규모 데이터 세트에서 귀중한 인사이트를 추출해야 합니다.\n목표는 사용자 참여와 유지율을 높이기 위한 실질적인 권장 사항을 제공하는 것입니다."
+  prompt2:
+    id: "promptid2"
+    title: "SEO 전문가처럼 행동하기"
+    content: "SEO 전문가처럼 행동해 주세요.\n검색 엔진 최적화와 관련된 질문이나 시나리오를 드릴 테니, 관련 SEO 조언이나 추천을 해주세요.\n답변은 SEO 전략, 기술, 인사이트에만 집중해야 합니다.\n일반적인 마케팅 조언이나 설명은 제공하지 마세요."

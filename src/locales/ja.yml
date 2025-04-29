@@ -1,0 +1,79 @@
+extName: "LLMツールボックス"
+extDescription: "ChatGPT、Claudeなどのチャットサイトを強化します。プロンプトの保存やブックマークが可能です。"
+popup:
+  extension:
+    active: "拡張機能が有効"
+    deactive: "拡張機能が無効"
+  activate: "有効化"
+  deactivate: "無効化"
+  options: "オプション"
+  changeIconSize: "アイコンサイズを変更"
+  changePosition: "位置を変更"
+
+options:
+  iconSize:
+    small: "小"
+    medium: "中"
+    large: "大"
+  position:
+    topRight: "右上"
+    bottomRight: "右下"
+  footer:
+    createdByBrkunver: "Brkunverによって作成"
+    website: "ウェブサイト"
+    github: "GitHub"
+
+content:
+  title: "タイトル"
+  use: "使う"
+  edit: "編集"
+  delete: "削除"
+  clear: "クリア"
+  save: "保存"
+  cancel: "キャンセル"
+  bookmarkTitlePlaceholder: "タイトルを入力..."
+  titleCantBeEmpty: "タイトルは空にできません"
+  contentCantBeEmpty: "内容は空にできません"
+  titleAndContentCantBeEmpty: "タイトルと内容は空にできません"
+  titleAndUrlCantBeEmpty: "タイトルとURLは空にできません"
+  urlCantExceed: "URLは1000文字を超えてはいけません"
+  titleCantExceed: "タイトルは50文字を超えてはいけません"
+  contentCantExceed: "内容は1000文字を超えてはいけません"
+
+  bookmarkAdded: "ブックマークが追加されました"
+  addBookmark: "ブックマークを追加"
+  addBookmarkAs: "ブックマークとして追加..."
+  myBookmarks: "マイブックマーク"
+  bookmarkCount: "ブックマーク数"
+  noBookmarksYet: "まだブックマークがありません"
+  editBookmark: "ブックマークを編集"
+  bookmarkUpdatedSuccesfully: "ブックマークが正常に更新されました！"
+  failedToUpdateBookmark: "ブックマークの更新に失敗しました"
+
+  promptUpdated: "プロンプトが更新されました"
+  failedToUpdatePrompt: "プロンプトの更新に失敗しました"
+  editPrompt: "プロンプトを編集"
+  createNewPrompt: "新しいプロンプトを作成"
+  promptAddedSuccessfully: "プロンプトが正常に追加されました！"
+  content: "内容"
+  promptContentPlaceholder: "プロンプト内容..."
+  noSavedPrompts: "まだ保存されたプロンプトがありません"
+  category: "カテゴリー"
+  promptApplied: "プロンプトが適用されました"
+  promptDeleted: "プロンプトが削除されました"
+  promptCount: "プロンプト数"
+  savedPrompts: "保存されたプロンプト"
+
+  detectedWebsite: "検出されたウェブサイト"
+  newPrompt: "新しいプロンプト"
+  myPrompts: "マイプロンプト"
+
+example:
+  prompt1:
+    id: "promptid1"
+    title: "データサイエンティストとして行動する"
+    content: "データサイエンティストとして行動してほしい。\n最先端のテクノロジー企業で難しいプロジェクトに取り組んでいると想像してください。\n新しいアプリのユーザー行動に関する大規模なデータセットから貴重な洞察を抽出する必要があります。\nユーザーのエンゲージメントとリテンションを向上させるための実用的な提案を行うことが目標です。"
+  prompt2:
+    id: "promptid2"
+    title: "SEOスペシャリストとして行動する"
+    content: "SEOスペシャリストとして行動してほしい。\nSEOに関する質問やシナリオを提供するので、それに対して適切なSEOアドバイスや提案をしてください。\n回答はSEOの戦略、テクニック、インサイトのみに集中してください。\n一般的なマーケティングアドバイスや説明はしないでください。"

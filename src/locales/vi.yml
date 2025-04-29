@@ -1,0 +1,36 @@
+extName: "LLM Toolbox"
+extDescription: "Cải thiện các trang chat như ChatGPT, Claude. Cho phép lưu prompt và đánh dấu trang."
+popup:
+  extension:
+    active: "Tiện ích đang bật"
+    deactive: "Tiện ích đang tắt"
+  activate: "Bật"
+  deactivate: "Tắt"
+  options: "Tùy chọn"
+  changeIconSize: "Đổi kích thước biểu tượng"
+  changePosition: "Đổi vị trí"
+
+options:
+  iconSize:
+    small: "Nhỏ"
+    medium: "Vừa"
+    large: "Lớn"
+  position:
+    topRight: "Trên bên phải"
+    bottomRight: "Dưới bên phải"
+  footer:
+    createdByBrkunver: "Tạo bởi Brkunver"
+    website: "Website"
+    github: "GitHub"
+
+content:
+  title: "Tiêu đề"
+  use: "Sử dụng"
+  edit: "Chỉnh sửa"
+  delete: "Xóa"
+  clear: "Xóa sạch"
+  save: "Lưu"
+  cancel: "Hủy"
+  bookmarkTitlePlaceholder: "Nhập tiêu đề..."
+  titleCantBeEmpty: "Tiêu đề không được để trống"
+  contentCantBeEmpty: "Nội dung không được để trống"

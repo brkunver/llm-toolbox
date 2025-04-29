@@ -1,0 +1,79 @@
+extName: "أدوات LLM"
+extDescription: "يعزز مواقع الدردشة مثل ChatGPT وClaude. يسمح بحفظ المطالبات وإضافة الإشارات المرجعية."
+popup:
+  extension:
+    active: "الإضافة مفعلة"
+    deactive: "الإضافة غير مفعلة"
+  activate: "تفعيل"
+  deactivate: "تعطيل"
+  options: "الإعدادات"
+  changeIconSize: "تغيير حجم الأيقونة"
+  changePosition: "تغيير الموضع"
+
+options:
+  iconSize:
+    small: "صغير"
+    medium: "متوسط"
+    large: "كبير"
+  position:
+    topRight: "أعلى اليمين"
+    bottomRight: "أسفل اليمين"
+  footer:
+    createdByBrkunver: "أنشئ بواسطة Brkunver"
+    website: "الموقع الإلكتروني"
+    github: "جيت هب"
+
+content:
+  title: "العنوان"
+  use: "استخدم"
+  edit: "تعديل"
+  delete: "حذف"
+  clear: "مسح"
+  save: "حفظ"
+  cancel: "إلغاء"
+  bookmarkTitlePlaceholder: "أدخل العنوان..."
+  titleCantBeEmpty: "لا يمكن أن يكون العنوان فارغًا"
+  contentCantBeEmpty: "لا يمكن أن يكون المحتوى فارغًا"
+  titleAndContentCantBeEmpty: "لا يمكن أن يكون العنوان والمحتوى فارغين"
+  titleAndUrlCantBeEmpty: "لا يمكن أن يكون العنوان أو الرابط فارغين"
+  urlCantExceed: "لا يمكن أن يتجاوز الرابط 1000 حرف"
+  titleCantExceed: "لا يمكن أن يتجاوز العنوان 50 حرفًا"
+  contentCantExceed: "لا يمكن أن يتجاوز المحتوى 1000 حرف"
+
+  bookmarkAdded: "تمت إضافة الإشارة المرجعية"
+  addBookmark: "إضافة إشارة مرجعية"
+  addBookmarkAs: "إضافة كإشارة مرجعية..."
+  myBookmarks: "إشاراتي المرجعية"
+  bookmarkCount: "عدد الإشارات المرجعية"
+  noBookmarksYet: "لا توجد إشارات مرجعية بعد"
+  editBookmark: "تعديل الإشارة المرجعية"
+  bookmarkUpdatedSuccesfully: "تم تحديث الإشارة المرجعية بنجاح!"
+  failedToUpdateBookmark: "فشل تحديث الإشارة المرجعية"
+
+  promptUpdated: "تم تحديث الطلب"
+  failedToUpdatePrompt: "فشل تحديث الطلب"
+  editPrompt: "تعديل الطلب"
+  createNewPrompt: "إنشاء طلب جديد"
+  promptAddedSuccessfully: "تمت إضافة الطلب بنجاح!"
+  content: "المحتوى"
+  promptContentPlaceholder: "محتوى الطلب..."
+  noSavedPrompts: "لا توجد طلبات محفوظة بعد"
+  category: "الفئة"
+  promptApplied: "تم تطبيق الطلب"
+  promptDeleted: "تم حذف الطلب"
+  promptCount: "عدد الطلبات"
+  savedPrompts: "الطلبات المحفوظة"
+
+  detectedWebsite: "الموقع المكتشف"
+  newPrompt: "طلب جديد"
+  myPrompts: "طلباتي"
+
+example:
+  prompt1:
+    id: "promptid1"
+    title: "تصرّف كعالم بيانات"
+    content: "أريدك أن تتصرّف كعالم بيانات.\nتخيل أنك تعمل على مشروع صعب لشركة تقنية متقدمة.\nمطلوب منك استخراج رؤى قيّمة من مجموعة بيانات كبيرة حول سلوك المستخدمين في تطبيق جديد.\nهدفك هو تقديم توصيات عملية لتحسين تفاعل المستخدمين واحتفاظهم."
+  prompt2:
+    id: "promptid2"
+    title: "تصرّف كخبير SEO"
+    content: "أريدك أن تتصرّف كخبير SEO.\nسأعطيك أسئلة أو سيناريوهات متعلقة بتحسين محركات البحث وسترد بنصائح أو توصيات ذات صلة.\nيجب أن تركز إجاباتك فقط على استراتيجيات وتقنيات SEO والرؤى المتعلقة بها.\nلا تقدم نصائح أو شروحات تسويقية عامة."

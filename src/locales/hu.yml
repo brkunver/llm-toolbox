@@ -1,0 +1,36 @@
+extName: "LLM Toolbox"
+extDescription: "Feljavítja a ChatGPT, Claude és hasonló chat oldalakat. Lehetővé teszi promptok és könyvjelzők mentését."
+popup:
+  extension:
+    active: "A kiterjesztés aktív"
+    deactive: "A kiterjesztés inaktív"
+  activate: "Aktiválás"
+  deactivate: "Inaktiválás"
+  options: "Beállítások"
+  changeIconSize: "Ikonméret változtatása"
+  changePosition: "Pozíció változtatása"
+
+options:
+  iconSize:
+    small: "Kicsi"
+    medium: "Közepes"
+    large: "Nagy"
+  position:
+    topRight: "Jobb felső"
+    bottomRight: "Jobb alsó"
+  footer:
+    createdByBrkunver: "Készítette Brkunver"
+    website: "Weboldal"
+    github: "GitHub"
+
+content:
+  title: "Cím"
+  use: "Használ"
+  edit: "Szerkeszt"
+  delete: "Töröl"
+  clear: "Törlés"
+  save: "Mentés"
+  cancel: "Mégse"
+  bookmarkTitlePlaceholder: "Írd be a címet..."
+  titleCantBeEmpty: "A cím nem lehet üres"
+  contentCantBeEmpty: "A tartalom nem lehet üres"

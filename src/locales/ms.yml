@@ -1,0 +1,36 @@
+extName: "LLM Toolbox"
+extDescription: "Meningkatkan laman chat seperti ChatGPT, Claude. Membolehkan simpanan prompt dan penanda buku."
+popup:
+  extension:
+    active: "Ekstensi aktif"
+    deactive: "Ekstensi tidak aktif"
+  activate: "Aktifkan"
+  deactivate: "Nyahaktifkan"
+  options: "Pilihan"
+  changeIconSize: "Tukar saiz ikon"
+  changePosition: "Tukar posisi"
+
+options:
+  iconSize:
+    small: "Kecil"
+    medium: "Sederhana"
+    large: "Besar"
+  position:
+    topRight: "Kanan atas"
+    bottomRight: "Kanan bawah"
+  footer:
+    createdByBrkunver: "Dicipta oleh Brkunver"
+    website: "Laman web"
+    github: "GitHub"
+
+content:
+  title: "Tajuk"
+  use: "Guna"
+  edit: "Edit"
+  delete: "Padam"
+  clear: "Kosongkan"
+  save: "Simpan"
+  cancel: "Batal"
+  bookmarkTitlePlaceholder: "Masukkan tajuk..."
+  titleCantBeEmpty: "Tajuk tidak boleh kosong"
+  contentCantBeEmpty: "Kandungan tidak boleh kosong"

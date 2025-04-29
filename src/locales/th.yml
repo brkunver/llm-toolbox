@@ -1,0 +1,36 @@
+extName: "LLM Toolbox"
+extDescription: "เพิ่มประสิทธิภาพเว็บไซต์แชท เช่น ChatGPT, Claude สามารถบันทึกพรอมต์และบุ๊กมาร์กได้"
+popup:
+  extension:
+    active: "ส่วนขยายใช้งานอยู่"
+    deactive: "ส่วนขยายไม่ได้ใช้งาน"
+  activate: "เปิดใช้งาน"
+  deactivate: "ปิดใช้งาน"
+  options: "ตัวเลือก"
+  changeIconSize: "เปลี่ยนขนาดไอคอน"
+  changePosition: "เปลี่ยนตำแหน่ง"
+
+options:
+  iconSize:
+    small: "เล็ก"
+    medium: "กลาง"
+    large: "ใหญ่"
+  position:
+    topRight: "ขวาบน"
+    bottomRight: "ขวาล่าง"
+  footer:
+    createdByBrkunver: "สร้างโดย Brkunver"
+    website: "เว็บไซต์"
+    github: "GitHub"
+
+content:
+  title: "ชื่อเรื่อง"
+  use: "ใช้"
+  edit: "แก้ไข"
+  delete: "ลบ"
+  clear: "ล้าง"
+  save: "บันทึก"
+  cancel: "ยกเลิก"
+  bookmarkTitlePlaceholder: "กรอกชื่อเรื่อง..."
+  titleCantBeEmpty: "ชื่อเรื่องต้องไม่ว่างเปล่า"
+  contentCantBeEmpty: "เนื้อหาต้องไม่ว่างเปล่า"

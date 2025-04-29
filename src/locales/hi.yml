@@ -1,0 +1,79 @@
+extName: "LLM टूलबॉक्स"
+extDescription: "ChatGPT, Claude जैसी चैट वेबसाइटों को बेहतर बनाता है। प्रॉम्प्ट सेव और बुकमार्क जोड़ने की सुविधा देता है।"
+popup:
+  extension:
+    active: "एक्सटेंशन सक्रिय है"
+    deactive: "एक्सटेंशन निष्क्रिय है"
+  activate: "सक्रिय करें"
+  deactivate: "निष्क्रिय करें"
+  options: "विकल्प"
+  changeIconSize: "आइकन आकार बदलें"
+  changePosition: "स्थिति बदलें"
+
+options:
+  iconSize:
+    small: "छोटा"
+    medium: "मध्यम"
+    large: "बड़ा"
+  position:
+    topRight: "ऊपर दाईं ओर"
+    bottomRight: "नीचे दाईं ओर"
+  footer:
+    createdByBrkunver: "Brkunver द्वारा निर्मित"
+    website: "वेबसाइट"
+    github: "GitHub"
+
+content:
+  title: "शीर्षक"
+  use: "प्रयोग करें"
+  edit: "संपादित करें"
+  delete: "हटाएं"
+  clear: "साफ करें"
+  save: "सहेजें"
+  cancel: "रद्द करें"
+  bookmarkTitlePlaceholder: "शीर्षक दर्ज करें..."
+  titleCantBeEmpty: "शीर्षक खाली नहीं हो सकता"
+  contentCantBeEmpty: "सामग्री खाली नहीं हो सकती"
+  titleAndContentCantBeEmpty: "शीर्षक और सामग्री खाली नहीं हो सकते"
+  titleAndUrlCantBeEmpty: "शीर्षक और URL खाली नहीं हो सकते"
+  urlCantExceed: "URL 1000 अक्षरों से अधिक नहीं हो सकता"
+  titleCantExceed: "शीर्षक 50 अक्षरों से अधिक नहीं हो सकता"
+  contentCantExceed: "सामग्री 1000 अक्षरों से अधिक नहीं हो सकती"
+
+  bookmarkAdded: "बुकमार्क जोड़ा गया"
+  addBookmark: "बुकमार्क जोड़ें"
+  addBookmarkAs: "बुकमार्क के रूप में जोड़ें..."
+  myBookmarks: "मेरे बुकमार्क"
+  bookmarkCount: "बुकमार्क की संख्या"
+  noBookmarksYet: "अभी तक कोई बुकमार्क नहीं"
+  editBookmark: "बुकमार्क संपादित करें"
+  bookmarkUpdatedSuccesfully: "बुकमार्क सफलतापूर्वक अपडेट हुआ!"
+  failedToUpdateBookmark: "बुकमार्क अपडेट नहीं हो सका"
+
+  promptUpdated: "प्रॉम्प्ट अपडेट हुआ"
+  failedToUpdatePrompt: "प्रॉम्प्ट अपडेट नहीं हो सका"
+  editPrompt: "प्रॉम्प्ट संपादित करें"
+  createNewPrompt: "नया प्रॉम्प्ट बनाएं"
+  promptAddedSuccessfully: "प्रॉम्प्ट सफलतापूर्वक जोड़ा गया!"
+  content: "सामग्री"
+  promptContentPlaceholder: "प्रॉम्प्ट सामग्री..."
+  noSavedPrompts: "अभी तक कोई सेव्ड प्रॉम्प्ट नहीं"
+  category: "श्रेणी"
+  promptApplied: "प्रॉम्प्ट लागू हुआ"
+  promptDeleted: "प्रॉम्प्ट हटाया गया"
+  promptCount: "प्रॉम्प्ट की संख्या"
+  savedPrompts: "सेव्ड प्रॉम्प्ट्स"
+
+  detectedWebsite: "पता चला वेबसाइट"
+  newPrompt: "नया प्रॉम्प्ट"
+  myPrompts: "मेरे प्रॉम्प्ट्स"
+
+example:
+  prompt1:
+    id: "promptid1"
+    title: "डेटा वैज्ञानिक की तरह कार्य करें"
+    content: "मैं चाहता हूँ कि आप एक डेटा वैज्ञानिक की तरह कार्य करें।\nकल्पना करें कि आप एक अग्रणी टेक कंपनी के लिए एक चुनौतीपूर्ण परियोजना पर काम कर रहे हैं।\nआपको एक नए ऐप पर उपयोगकर्ता व्यवहार से संबंधित बड़े डेटा सेट से मूल्यवान जानकारी निकालनी है।\nआपका लक्ष्य उपयोगकर्ता सहभागिता और प्रतिधारण बढ़ाने के लिए व्यावहारिक सिफारिशें देना है।"
+  prompt2:
+    id: "promptid2"
+    title: "SEO विशेषज्ञ की तरह कार्य करें"
+    content: "मैं चाहता हूँ कि आप एक SEO विशेषज्ञ की तरह कार्य करें।\nमैं आपको SEO से संबंधित प्रश्न या परिदृश्य दूँगा और आप संबंधित SEO सलाह या सिफारिशें देंगे।\nआपके उत्तर केवल SEO रणनीतियों, तकनीकों और अंतर्दृष्टियों पर केंद्रित होने चाहिए।\nकृपया सामान्य विपणन सलाह या स्पष्टीकरण न दें।"
