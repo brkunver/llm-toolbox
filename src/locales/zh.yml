@@ -1,0 +1,79 @@
+extName: "LLM 工具箱"
+extDescription: "增强 ChatGPT、Claude 等聊天网站。支持保存提示和添加书签。"
+popup:
+  extension:
+    active: "扩展已激活"
+    deactive: "扩展未激活"
+  activate: "激活"
+  deactivate: "停用"
+  options: "选项"
+  changeIconSize: "更改图标大小"
+  changePosition: "更改位置"
+
+options:
+  iconSize:
+    small: "小"
+    medium: "中"
+    large: "大"
+  position:
+    topRight: "右上角"
+    bottomRight: "右下角"
+  footer:
+    createdByBrkunver: "由 Brkunver 创建"
+    website: "网站"
+    github: "GitHub"
+
+content:
+  title: "标题"
+  use: "使用"
+  edit: "编辑"
+  delete: "删除"
+  clear: "清除"
+  save: "保存"
+  cancel: "取消"
+  bookmarkTitlePlaceholder: "输入标题..."
+  titleCantBeEmpty: "标题不能为空"
+  contentCantBeEmpty: "内容不能为空"
+  titleAndContentCantBeEmpty: "标题和内容不能为空"
+  titleAndUrlCantBeEmpty: "标题和网址不能为空"
+  urlCantExceed: "网址不能超过1000个字符"
+  titleCantExceed: "标题不能超过50个字符"
+  contentCantExceed: "内容不能超过1000个字符"
+
+  bookmarkAdded: "已添加书签"
+  addBookmark: "添加书签"
+  addBookmarkAs: "添加为书签..."
+  myBookmarks: "我的书签"
+  bookmarkCount: "书签数量"
+  noBookmarksYet: "暂无书签"
+  editBookmark: "编辑书签"
+  bookmarkUpdatedSuccesfully: "书签更新成功！"
+  failedToUpdateBookmark: "书签更新失败"
+
+  promptUpdated: "提示已更新"
+  failedToUpdatePrompt: "提示更新失败"
+  editPrompt: "编辑提示"
+  createNewPrompt: "创建新提示"
+  promptAddedSuccessfully: "提示添加成功！"
+  content: "内容"
+  promptContentPlaceholder: "提示内容..."
+  noSavedPrompts: "暂无保存的提示"
+  category: "类别"
+  promptApplied: "提示已应用"
+  promptDeleted: "提示已删除"
+  promptCount: "提示数量"
+  savedPrompts: "已保存的提示"
+
+  detectedWebsite: "检测到的网站"
+  newPrompt: "新提示"
+  myPrompts: "我的提示"
+
+example:
+  prompt1:
+    id: "promptid1"
+    title: "扮演数据科学家"
+    content: "我希望你扮演一名数据科学家。\n想象你正在为一家前沿科技公司处理一个具有挑战性的项目。\n你需要从一个关于新应用用户行为的大型数据集中提取有价值的见解。\n你的目标是为提升用户参与度和留存率提供可行性建议。"
+  prompt2:
+    id: "promptid2"
+    title: "扮演SEO专家"
+    content: "我希望你扮演一名SEO专家。\n我会给你与SEO相关的问题或场景，你要给出相关的SEO建议或推荐。\n你的回答应只关注SEO策略、技术和见解。\n不要给出一般的营销建议或解释。"

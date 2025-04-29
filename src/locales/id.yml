@@ -1,0 +1,79 @@
+extName: "LLM Toolbox"
+extDescription: "Meningkatkan situs chat seperti ChatGPT, Claude, dan sejenisnya. Memungkinkan penyimpanan prompt dan penambahan bookmark."
+popup:
+  extension:
+    active: "Ekstensi aktif"
+    deactive: "Ekstensi tidak aktif"
+  activate: "Aktifkan"
+  deactivate: "Nonaktifkan"
+  options: "Opsi"
+  changeIconSize: "Ubah ukuran ikon"
+  changePosition: "Ubah posisi"
+
+options:
+  iconSize:
+    small: "Kecil"
+    medium: "Sedang"
+    large: "Besar"
+  position:
+    topRight: "Kanan atas"
+    bottomRight: "Kanan bawah"
+  footer:
+    createdByBrkunver: "Dibuat oleh Brkunver"
+    website: "Situs web"
+    github: "GitHub"
+
+content:
+  title: "Judul"
+  use: "Gunakan"
+  edit: "Edit"
+  delete: "Hapus"
+  clear: "Bersihkan"
+  save: "Simpan"
+  cancel: "Batal"
+  bookmarkTitlePlaceholder: "Masukkan judul..."
+  titleCantBeEmpty: "Judul tidak boleh kosong"
+  contentCantBeEmpty: "Konten tidak boleh kosong"
+  titleAndContentCantBeEmpty: "Judul dan konten tidak boleh kosong"
+  titleAndUrlCantBeEmpty: "Judul dan URL tidak boleh kosong"
+  urlCantExceed: "URL tidak boleh melebihi 1000 karakter"
+  titleCantExceed: "Judul tidak boleh melebihi 50 karakter"
+  contentCantExceed: "Konten tidak boleh melebihi 1000 karakter"
+
+  bookmarkAdded: "Bookmark ditambahkan"
+  addBookmark: "Tambah bookmark"
+  addBookmarkAs: "Tambah sebagai bookmark..."
+  myBookmarks: "Bookmark saya"
+  bookmarkCount: "Jumlah bookmark"
+  noBookmarksYet: "Belum ada bookmark"
+  editBookmark: "Edit bookmark"
+  bookmarkUpdatedSuccesfully: "Bookmark berhasil diperbarui!"
+  failedToUpdateBookmark: "Gagal memperbarui bookmark"
+
+  promptUpdated: "Prompt diperbarui"
+  failedToUpdatePrompt: "Gagal memperbarui prompt"
+  editPrompt: "Edit prompt"
+  createNewPrompt: "Buat prompt baru"
+  promptAddedSuccessfully: "Prompt berhasil ditambahkan!"
+  content: "Konten"
+  promptContentPlaceholder: "Konten prompt..."
+  noSavedPrompts: "Belum ada prompt yang disimpan"
+  category: "Kategori"
+  promptApplied: "Prompt diterapkan"
+  promptDeleted: "Prompt dihapus"
+  promptCount: "Jumlah prompt"
+  savedPrompts: "Prompt yang disimpan"
+
+  detectedWebsite: "Situs terdeteksi"
+  newPrompt: "Prompt baru"
+  myPrompts: "Prompt saya"
+
+example:
+  prompt1:
+    id: "promptid1"
+    title: "Bertindak sebagai Data Scientist"
+    content: "Saya ingin Anda bertindak sebagai data scientist.\nBayangkan Anda sedang mengerjakan proyek menantang untuk perusahaan teknologi terdepan.\nAnda harus mengekstrak wawasan berharga dari kumpulan data besar tentang perilaku pengguna pada aplikasi baru.\nTujuan Anda adalah memberikan rekomendasi yang dapat ditindaklanjuti untuk meningkatkan keterlibatan dan retensi pengguna."
+  prompt2:
+    id: "promptid2"
+    title: "Bertindak sebagai Spesialis SEO"
+    content: "Saya ingin Anda bertindak sebagai spesialis SEO.\nSaya akan memberikan pertanyaan atau skenario terkait SEO, dan Anda akan merespons dengan saran atau rekomendasi SEO yang relevan.\nJawaban Anda hanya boleh fokus pada strategi, teknik, dan wawasan SEO.\nJangan memberikan saran atau penjelasan pemasaran umum."

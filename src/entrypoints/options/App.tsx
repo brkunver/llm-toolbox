@@ -5,6 +5,7 @@ import OptionsFooter from "@/entrypoints/options/components/options-footer"
 import { useState, useEffect } from "react"
 import { extIconSizeStorage, isExtensionActive, extPositionStorage } from "@/utils/storage"
 import { ExtPositionType, TExtIconSize } from "@/utils/types"
+import { i18n } from "#imports"
 
 const Popup: React.FC = () => {
   const [isActive, setIsActive] = useState<boolean>(true)
@@ -78,26 +79,26 @@ const Popup: React.FC = () => {
         <Card className="min-h-30 min-w-60 flex flex-col justify-center items-center gap-2">
           <div className="mb-2">
             <span className={`px-2 py-1 rounded-md ${isActive ? "bg-emerald-900" : "bg-red-900"}`}>
-              Extension is {isActive ? "active" : "inactive"}
+              {isActive ? i18n.t("popup.extension.active") : i18n.t("popup.extension.deactive")}
             </span>
           </div>
           <Button className="min-w-36 flex items-center justify-center gap-1" onClick={toggleExtension}>
             {isActive ? (
               <>
                 <CircleX size={16} />
-                <span>Deactivate</span>
+                <span>{i18n.t("popup.deactivate")}</span>
               </>
             ) : (
               <>
                 <PlusCircle size={16} />
-                <span>Activate</span>
+                <span>{i18n.t("popup.activate")}</span>
               </>
             )}
           </Button>
         </Card>
         <Card className="min-h-30 min-w-60 flex flex-col justify-center items-center gap-2">
           <label htmlFor="icon-size" className="mb-2">
-            Change icon size
+            {i18n.t("popup.changeIconSize")}
           </label>
           <select
             name="icon-size"
@@ -106,14 +107,14 @@ const Popup: React.FC = () => {
             className="w-fit text-text-main bg-blue-button px-2 py-1 rounded-2xl"
             onChange={e => changeIconSize(e.target.value as TExtIconSize)}
           >
-            <option value="small">Small</option>
-            <option value="medium">Medium</option>
-            <option value="large">Large</option>
+            <option value="small">{i18n.t("options.iconSize.small")}</option>
+            <option value="medium">{i18n.t("options.iconSize.medium")}</option>
+            <option value="large">{i18n.t("options.iconSize.large")}</option>
           </select>
         </Card>
         <Card className="min-h-30 min-w-60 flex flex-col justify-center items-center gap-2">
           <label htmlFor="extension-position" className="mb-2">
-            Change extension position
+            {i18n.t("popup.changePosition")}
           </label>
           <select
             name="extension-position"
@@ -122,8 +123,8 @@ const Popup: React.FC = () => {
             className="w-fit text-text-main bg-blue-button px-2 py-1 rounded-2xl"
             onChange={e => changePosition(e.target.value as ExtPositionType)}
           >
-            <option value="top-right">Top Right</option>
-            <option value="bottom-right">Bottom Right</option>
+            <option value="top-right">{i18n.t("options.position.topRight")}</option>
+            <option value="bottom-right">{i18n.t("options.position.bottomRight")}</option>
           </select>
         </Card>
       </section>

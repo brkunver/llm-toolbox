@@ -3,6 +3,7 @@ import Button from "@/entrypoints/components/ui/button"
 import Modal from "@/entrypoints/components/ui/modal"
 import { CircleX, Eraser, Save } from "lucide-react"
 import { nanoid } from "nanoid"
+import { i18n } from "#imports"
 
 function NewPrompt() {
   if (import.meta.env.MODE == "development") {
@@ -19,17 +20,17 @@ function NewPrompt() {
 
   function handleSavePrompt() {
     if (prompTitle.trim() === "" || promptContent.trim() === "") {
-      showPopup("Title and content cannot be empty", "red")
+      showPopup(i18n.t("content.titleAndContentCantBeEmpty"), "red")
       return
     }
 
     if (prompTitle.length > 50) {
-      showPopup("Title cannot exceed 50 characters", "red")
+      showPopup(i18n.t("content.titleCantExceed"), "red")
       return
     }
 
     if (promptContent.length > 1000) {
-      showPopup("Content cannot exceed 1000 characters", "red")
+      showPopup(i18n.t("content.contentCantExceed"), "red")
       return
     }
 
@@ -42,7 +43,7 @@ function NewPrompt() {
     }
 
     addNewPrompt(newPrompt)
-    showPopup("Prompt added successfully!")
+    showPopup(i18n.t("content.promptAddedSuccessfully"), "green")
     setPromptTitle("")
     setPromptContent("")
     setPromptCategory("other")
@@ -52,17 +53,17 @@ function NewPrompt() {
   return (
     <Modal isOpen={isOpen} onClose={() => setShowNewPromptModal(false)} className="p-10">
       <section className="flex flex-col gap-4 rounded-2xl w-[50rem] ">
-        <h2 className="text-center text-3xl font-bold underline">Create a new prompt</h2>
+        <h2 className="text-center text-3xl font-bold underline">{i18n.t("content.createNewPrompt")}</h2>
         <input
           className="bg-ui px-4 py-2 rounded-2xl"
           type="text"
           value={prompTitle}
-          placeholder="Title..."
+          placeholder={i18n.t("content.bookmarkTitlePlaceholder")}
           onChange={e => setPromptTitle(e.target.value)}
         />
         <textarea
           className="h-40 w-full resize-none bg-ui text-text-main p-4 rounded-2xl"
-          placeholder="Prompt content..."
+          placeholder={i18n.t("content.promptContentPlaceholder")}
           value={promptContent}
           onChange={e => setPromptContent(e.target.value)}
         />
@@ -85,7 +86,7 @@ function NewPrompt() {
             variant="red"
           >
             <CircleX />
-            <p>Cancel</p>
+            <p>{i18n.t("content.cancel")}</p>
           </Button>
           <Button
             className="text-lg font-semibold flex gap-1"
@@ -97,11 +98,11 @@ function NewPrompt() {
             }}
           >
             <Eraser />
-            <p>Clear</p>
+            <p>{i18n.t("content.clear")}</p>
           </Button>
           <Button className="text-lg font-semibold flex gap-1" variant="green" onClick={handleSavePrompt}>
             <Save />
-            <p>Save Prompt</p>
+            <p>{i18n.t("content.save")}</p>
           </Button>
         </div>
       </section>

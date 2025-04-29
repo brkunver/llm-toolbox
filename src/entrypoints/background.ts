@@ -1,36 +1,31 @@
 import { extPositionStorage } from "@/utils/storage"
+import { i18n } from "#imports"
 
-const exampleBookmark : TBookmark = {
+const exampleBookmark: TBookmark = {
   id: "exampleid1",
   website: "chatgpt",
   title: "ChatGPT Home",
   url: "https://chatgpt.com/",
 }
 
-const examplePrompt : TPrompt = {
-  id: "promptid1",
-  title: "Act as a Data Scientist",
-  content: `I want you to act as a data scientist. 
-  Imagine you're working on a challenging project for a cutting-edge tech company. 
-  You've been tasked with extracting valuable insights from a large dataset related to user behavior on a new app. 
-  Your goal is to provide actionable recommendations to improve user engagement and retention.`,
+const examplePrompt: TPrompt = {
+  id: i18n.t("example.prompt1.id"),
+  title: i18n.t("example.prompt1.title"),
+  content: i18n.t("example.prompt1.content"),
   category: "coding",
-  createdAt: new Date()
+  createdAt: new Date(),
 }
 
-const examplePrompt2 : TPrompt = {
-  id: "promptid2",
-  title: "Act as SEO specialist",
-  content : `I want you to act as an SEO specialist. 
-  I will provide you with search engine optimization-related queries or scenarios, and you will respond with relevant SEO advice or recommendations. 
-  Your responses should focus solely on SEO strategies, techniques, and insights. 
-  Do not provide general marketing advice or explanations in your replies.`,
+const examplePrompt2: TPrompt = {
+  id: i18n.t("example.prompt2.id"),
+  title: i18n.t("example.prompt2.title"),
+  content: i18n.t("example.prompt2.content"),
   category: "marketing",
-  createdAt: new Date()
+  createdAt: new Date(),
 }
 
 export default defineBackground(() => {
-  browser.runtime.onInstalled.addListener((details) => {
+  browser.runtime.onInstalled.addListener(details => {
     if (details.reason == "install") {
       isExtensionActive.setValue(true)
       isMenuActive.setValue(true)

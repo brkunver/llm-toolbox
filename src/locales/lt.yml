@@ -1,0 +1,36 @@
+extName: "LLM Toolbox"
+extDescription: "Pagerina pokalbių svetaines, tokias kaip ChatGPT, Claude. Leidžia išsaugoti raginimus ir žymeles."
+popup:
+  extension:
+    active: "Plėtinys aktyvus"
+    deactive: "Plėtinys neaktyvus"
+  activate: "Aktyvuoti"
+  deactivate: "Deaktyvuoti"
+  options: "Parinktys"
+  changeIconSize: "Keisti piktogramos dydį"
+  changePosition: "Keisti poziciją"
+
+options:
+  iconSize:
+    small: "Mažas"
+    medium: "Vidutinis"
+    large: "Didelis"
+  position:
+    topRight: "Viršuje dešinėje"
+    bottomRight: "Apačioje dešinėje"
+  footer:
+    createdByBrkunver: "Sukūrė Brkunver"
+    website: "Svetainė"
+    github: "GitHub"
+
+content:
+  title: "Pavadinimas"
+  use: "Naudoti"
+  edit: "Redaguoti"
+  delete: "Ištrinti"
+  clear: "Išvalyti"
+  save: "Išsaugoti"
+  cancel: "Atšaukti"
+  bookmarkTitlePlaceholder: "Įveskite pavadinimą..."
+  titleCantBeEmpty: "Pavadinimas negali būti tuščias"
+  contentCantBeEmpty: "Turinys negali būti tuščias"

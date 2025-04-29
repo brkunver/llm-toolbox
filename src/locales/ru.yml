@@ -1,0 +1,79 @@
+extName: "LLM Toolbox"
+extDescription: "Улучшает сайты чата, такие как ChatGPT и Claude. Позволяет сохранять подсказки и закладки."
+popup:
+  extension:
+    active: "Расширение активно"
+    deactive: "Расширение неактивно"
+  activate: "Активировать"
+  deactivate: "Деактивировать"
+  options: "Настройки"
+  changeIconSize: "Изменить размер иконки"
+  changePosition: "Изменить позицию"
+
+options:
+  iconSize:
+    small: "Маленький"
+    medium: "Средний"
+    large: "Большой"
+  position:
+    topRight: "Вверху справа"
+    bottomRight: "Внизу справа"
+  footer:
+    createdByBrkunver: "Создано Brkunver"
+    website: "Веб-сайт"
+    github: "GitHub"
+
+content:
+  title: "Заголовок"
+  use: "Использовать"
+  edit: "Редактировать"
+  delete: "Удалить"
+  clear: "Очистить"
+  save: "Сохранить"
+  cancel: "Отмена"
+  bookmarkTitlePlaceholder: "Введите заголовок..."
+  titleCantBeEmpty: "Заголовок не может быть пустым"
+  contentCantBeEmpty: "Содержимое не может быть пустым"
+  titleAndContentCantBeEmpty: "Заголовок и содержимое не могут быть пустыми"
+  titleAndUrlCantBeEmpty: "Заголовок и URL не могут быть пустыми"
+  urlCantExceed: "URL не может превышать 1000 символов"
+  titleCantExceed: "Заголовок не может превышать 50 символов"
+  contentCantExceed: "Содержимое не может превышать 1000 символов"
+
+  bookmarkAdded: "Закладка добавлена"
+  addBookmark: "Добавить закладку"
+  addBookmarkAs: "Добавить как закладку..."
+  myBookmarks: "Мои закладки"
+  bookmarkCount: "Количество закладок"
+  noBookmarksYet: "Пока нет закладок"
+  editBookmark: "Редактировать закладку"
+  bookmarkUpdatedSuccesfully: "Закладка успешно обновлена!"
+  failedToUpdateBookmark: "Не удалось обновить закладку"
+
+  promptUpdated: "Подсказка обновлена"
+  failedToUpdatePrompt: "Не удалось обновить подсказку"
+  editPrompt: "Редактировать подсказку"
+  createNewPrompt: "Создать новую подсказку"
+  promptAddedSuccessfully: "Подсказка успешно добавлена!"
+  content: "Содержимое"
+  promptContentPlaceholder: "Содержимое подсказки..."
+  noSavedPrompts: "Пока нет сохранённых подсказок"
+  category: "Категория"
+  promptApplied: "Подсказка применена"
+  promptDeleted: "Подсказка удалена"
+  promptCount: "Количество подсказок"
+  savedPrompts: "Сохранённые подсказки"
+
+  detectedWebsite: "Обнаруженный сайт"
+  newPrompt: "Новая подсказка"
+  myPrompts: "Мои подсказки"
+
+example:
+  prompt1:
+    id: "promptid1"
+    title: "Действуй как специалист по данным"
+    content: "Я хочу, чтобы ты действовал как специалист по данным.\nПредставь, что ты работаешь над сложным проектом для передовой технологической компании.\nТебе нужно извлечь ценные инсайты из большого набора данных о поведении пользователей в новом приложении.\nТвоя цель — дать практические рекомендации по улучшению вовлечённости и удержания пользователей."
+  prompt2:
+    id: "promptid2"
+    title: "Действуй как SEO-специалист"
+    content: "Я хочу, чтобы ты действовал как SEO-специалист.\nЯ дам тебе вопросы или сценарии, связанные с SEO, а ты ответишь соответствующими советами или рекомендациями.\nТвои ответы должны быть только о стратегиях, техниках и инсайтах SEO.\nНе давай общих маркетинговых советов или объяснений."

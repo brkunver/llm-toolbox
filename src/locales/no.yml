@@ -1,0 +1,36 @@
+extName: "LLM Toolbox"
+extDescription: "Forbedrer chatnettsteder som ChatGPT, Claude. Lar deg lagre prompt og bokmerker."
+popup:
+  extension:
+    active: "Utvidelsen er aktiv"
+    deactive: "Utvidelsen er inaktiv"
+  activate: "Aktiver"
+  deactivate: "Deaktiver"
+  options: "Alternativer"
+  changeIconSize: "Endre ikonstørrelse"
+  changePosition: "Endre posisjon"
+
+options:
+  iconSize:
+    small: "Liten"
+    medium: "Middels"
+    large: "Stor"
+  position:
+    topRight: "Øverst til høyre"
+    bottomRight: "Nederst til høyre"
+  footer:
+    createdByBrkunver: "Laget av Brkunver"
+    website: "Nettsted"
+    github: "GitHub"
+
+content:
+  title: "Tittel"
+  use: "Bruk"
+  edit: "Rediger"
+  delete: "Slett"
+  clear: "Tøm"
+  save: "Lagre"
+  cancel: "Avbryt"
+  bookmarkTitlePlaceholder: "Skriv inn tittel..."
+  titleCantBeEmpty: "Tittel kan ikke være tom"
+  contentCantBeEmpty: "Innhold kan ikke være tomt"

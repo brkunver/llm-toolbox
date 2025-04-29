@@ -1,0 +1,36 @@
+extName: "LLM Toolbox"
+extDescription: "Vylepšuje chatovací weby jako ChatGPT, Claude. Umožňuje ukládání promptů a záložek."
+popup:
+  extension:
+    active: "Rozšíření je aktivní"
+    deactive: "Rozšíření je neaktivní"
+  activate: "Aktivovat"
+  deactivate: "Deaktivovat"
+  options: "Možnosti"
+  changeIconSize: "Změnit velikost ikony"
+  changePosition: "Změnit pozici"
+
+options:
+  iconSize:
+    small: "Malý"
+    medium: "Střední"
+    large: "Velký"
+  position:
+    topRight: "Nahoře vpravo"
+    bottomRight: "Dole vpravo"
+  footer:
+    createdByBrkunver: "Vytvořil Brkunver"
+    website: "Web"
+    github: "GitHub"
+
+content:
+  title: "Název"
+  use: "Použít"
+  edit: "Upravit"
+  delete: "Smazat"
+  clear: "Vymazat"
+  save: "Uložit"
+  cancel: "Zrušit"
+  bookmarkTitlePlaceholder: "Zadejte název..."
+  titleCantBeEmpty: "Název nesmí být prázdný"
+  contentCantBeEmpty: "Obsah nesmí být prázdný"

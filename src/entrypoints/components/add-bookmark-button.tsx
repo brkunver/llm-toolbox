@@ -3,6 +3,8 @@ import { twMerge } from "tailwind-merge"
 import Button from "./ui/button"
 import { Bookmark, FilePenLine } from "lucide-react"
 
+import { i18n } from "#imports"
+
 interface AddBookmarkButtonProps {
   onShowAddBookmarkModal?: () => void
   changeTitle?: boolean
@@ -18,14 +20,14 @@ function AddBookmarkButton({ changeTitle = false, onShowAddBookmarkModal, classN
       return
     } else {
       addBookmark()
-      showPopup("Bookmark added", "green")
+      showPopup(i18n.t("content.bookmarkAdded"), "green")
     }
   }
 
   return (
     <Button onClick={addBookmarkHandler} className={twMerge("flex gap-1", className)}>
       {changeTitle ? <FilePenLine /> : <Bookmark />}
-      <span>{changeTitle ? "Add bookmark as..." : "Add bookmark"}</span>
+      <span>{changeTitle ? i18n.t("content.addBookmarkAs") : i18n.t("content.addBookmark")}</span>
     </Button>
   )
 }

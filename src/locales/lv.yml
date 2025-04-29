@@ -1,0 +1,36 @@
+extName: "LLM Toolbox"
+extDescription: "Uzlabo tērzēšanas vietnes, piemēram, ChatGPT, Claude. Ļauj saglabāt uzvednes un grāmatzīmes."
+popup:
+  extension:
+    active: "Paplašinājums ir aktīvs"
+    deactive: "Paplašinājums nav aktīvs"
+  activate: "Aktivizēt"
+  deactivate: "Deaktivizēt"
+  options: "Iestatījumi"
+  changeIconSize: "Mainīt ikonas izmēru"
+  changePosition: "Mainīt pozīciju"
+
+options:
+  iconSize:
+    small: "Mazs"
+    medium: "Vidējs"
+    large: "Liels"
+  position:
+    topRight: "Augšā pa labi"
+    bottomRight: "Apakšā pa labi"
+  footer:
+    createdByBrkunver: "Izveidoja Brkunver"
+    website: "Vietne"
+    github: "GitHub"
+
+content:
+  title: "Virsraksts"
+  use: "Lietot"
+  edit: "Rediģēt"
+  delete: "Dzēst"
+  clear: "Notīrīt"
+  save: "Saglabāt"
+  cancel: "Atcelt"
+  bookmarkTitlePlaceholder: "Ievadiet virsrakstu..."
+  titleCantBeEmpty: "Virsraksts nevar būt tukšs"
+  contentCantBeEmpty: "Saturs nevar būt tukšs"

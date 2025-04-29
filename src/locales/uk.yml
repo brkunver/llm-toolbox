@@ -1,0 +1,36 @@
+extName: "LLM Toolbox"
+extDescription: "Покращує чати, такі як ChatGPT, Claude. Дозволяє зберігати підказки та закладки."
+popup:
+  extension:
+    active: "Розширення активне"
+    deactive: "Розширення неактивне"
+  activate: "Активувати"
+  deactivate: "Деактивувати"
+  options: "Параметри"
+  changeIconSize: "Змінити розмір іконки"
+  changePosition: "Змінити позицію"
+
+options:
+  iconSize:
+    small: "Малий"
+    medium: "Середній"
+    large: "Великий"
+  position:
+    topRight: "Вгорі праворуч"
+    bottomRight: "Внизу праворуч"
+  footer:
+    createdByBrkunver: "Створено Brkunver"
+    website: "Вебсайт"
+    github: "GitHub"
+
+content:
+  title: "Заголовок"
+  use: "Використати"
+  edit: "Редагувати"
+  delete: "Видалити"
+  clear: "Очистити"
+  save: "Зберегти"
+  cancel: "Скасувати"
+  bookmarkTitlePlaceholder: "Введіть заголовок..."
+  titleCantBeEmpty: "Заголовок не може бути порожнім"
+  contentCantBeEmpty: "Вміст не може бути порожнім"

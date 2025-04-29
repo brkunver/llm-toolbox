@@ -1,0 +1,36 @@
+extName: "LLM Toolbox"
+extDescription: "משפר אתרי צ'אט כמו ChatGPT, Claude. מאפשר שמירת פרומפטים וסימניות."
+popup:
+  extension:
+    active: "ההרחבה פעילה"
+    deactive: "ההרחבה לא פעילה"
+  activate: "הפעל"
+  deactivate: "השבת"
+  options: "אפשרויות"
+  changeIconSize: "שנה גודל סמל"
+  changePosition: "שנה מיקום"
+
+options:
+  iconSize:
+    small: "קטן"
+    medium: "בינוני"
+    large: "גדול"
+  position:
+    topRight: "ימין עליון"
+    bottomRight: "ימין תחתון"
+  footer:
+    createdByBrkunver: "נוצר על ידי Brkunver"
+    website: "אתר"
+    github: "GitHub"
+
+content:
+  title: "כותרת"
+  use: "השתמש"
+  edit: "ערוך"
+  delete: "מחק"
+  clear: "נקה"
+  save: "שמור"
+  cancel: "בטל"
+  bookmarkTitlePlaceholder: "הזן כותרת..."
+  titleCantBeEmpty: "הכותרת לא יכולה להיות ריקה"
+  contentCantBeEmpty: "התוכן לא יכול להיות ריק"

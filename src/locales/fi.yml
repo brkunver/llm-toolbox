@@ -1,0 +1,36 @@
+extName: "LLM Toolbox"
+extDescription: "Parantaa chat-sivustoja kuten ChatGPT, Claude. Mahdollistaa kehotteiden ja kirjanmerkkien tallennuksen."
+popup:
+  extension:
+    active: "Laajennus on aktiivinen"
+    deactive: "Laajennus ei ole aktiivinen"
+  activate: "Aktivoi"
+  deactivate: "Deaktivoi"
+  options: "Asetukset"
+  changeIconSize: "Vaihda kuvakkeen kokoa"
+  changePosition: "Vaihda sijaintia"
+
+options:
+  iconSize:
+    small: "Pieni"
+    medium: "Keskikokoinen"
+    large: "Suuri"
+  position:
+    topRight: "Ylhäällä oikealla"
+    bottomRight: "Alhaalla oikealla"
+  footer:
+    createdByBrkunver: "Tekijä Brkunver"
+    website: "Verkkosivusto"
+    github: "GitHub"
+
+content:
+  title: "Otsikko"
+  use: "Käytä"
+  edit: "Muokkaa"
+  delete: "Poista"
+  clear: "Tyhjennä"
+  save: "Tallenna"
+  cancel: "Peruuta"
+  bookmarkTitlePlaceholder: "Anna otsikko..."
+  titleCantBeEmpty: "Otsikko ei voi olla tyhjä"
+  contentCantBeEmpty: "Sisältö ei voi olla tyhjä"

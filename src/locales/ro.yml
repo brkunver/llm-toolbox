@@ -1,0 +1,36 @@
+extName: "LLM Toolbox"
+extDescription: "Îmbunătățește site-urile de chat precum ChatGPT, Claude. Permite salvarea prompturilor și a marcajelor."
+popup:
+  extension:
+    active: "Extensia este activă"
+    deactive: "Extensia este inactivă"
+  activate: "Activează"
+  deactivate: "Dezactivează"
+  options: "Opțiuni"
+  changeIconSize: "Schimbă dimensiunea pictogramei"
+  changePosition: "Schimbă poziția"
+
+options:
+  iconSize:
+    small: "Mic"
+    medium: "Mediu"
+    large: "Mare"
+  position:
+    topRight: "Sus dreapta"
+    bottomRight: "Jos dreapta"
+  footer:
+    createdByBrkunver: "Creat de Brkunver"
+    website: "Website"
+    github: "GitHub"
+
+content:
+  title: "Titlu"
+  use: "Folosește"
+  edit: "Editează"
+  delete: "Șterge"
+  clear: "Curăță"
+  save: "Salvează"
+  cancel: "Anulează"
+  bookmarkTitlePlaceholder: "Introduceți titlul..."
+  titleCantBeEmpty: "Titlul nu poate fi gol"
+  contentCantBeEmpty: "Conținutul nu poate fi gol"

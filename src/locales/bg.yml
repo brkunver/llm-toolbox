@@ -1,0 +1,36 @@
+extName: "LLM Toolbox"
+extDescription: "Подобрява чат сайтове като ChatGPT, Claude. Позволява записване на подсказки и отметки."
+popup:
+  extension:
+    active: "Разширението е активно"
+    deactive: "Разширението не е активно"
+  activate: "Активирай"
+  deactivate: "Деактивирай"
+  options: "Опции"
+  changeIconSize: "Промени размера на иконата"
+  changePosition: "Промени позицията"
+
+options:
+  iconSize:
+    small: "Малък"
+    medium: "Среден"
+    large: "Голям"
+  position:
+    topRight: "Горе вдясно"
+    bottomRight: "Долу вдясно"
+  footer:
+    createdByBrkunver: "Създадено от Brkunver"
+    website: "Уебсайт"
+    github: "GitHub"
+
+content:
+  title: "Заглавие"
+  use: "Използвай"
+  edit: "Редактирай"
+  delete: "Изтрий"
+  clear: "Изчисти"
+  save: "Запази"
+  cancel: "Отказ"
+  bookmarkTitlePlaceholder: "Въведете заглавие..."
+  titleCantBeEmpty: "Заглавието не може да е празно"
+  contentCantBeEmpty: "Съдържанието не може да е празно"

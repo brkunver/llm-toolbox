@@ -1,0 +1,36 @@
+extName: "LLM Toolbox"
+extDescription: "Parandab vestlussaite nagu ChatGPT, Claude. Võimaldab salvestada viipasid ja järjehoidjaid."
+popup:
+  extension:
+    active: "Laiendus on aktiivne"
+    deactive: "Laiendus pole aktiivne"
+  activate: "Aktiveeri"
+  deactivate: "Deaktiveeri"
+  options: "Valikud"
+  changeIconSize: "Muuda ikooni suurust"
+  changePosition: "Muuda positsiooni"
+
+options:
+  iconSize:
+    small: "Väike"
+    medium: "Keskmine"
+    large: "Suur"
+  position:
+    topRight: "Üleval paremal"
+    bottomRight: "All paremal"
+  footer:
+    createdByBrkunver: "Loonud Brkunver"
+    website: "Veebisait"
+    github: "GitHub"
+
+content:
+  title: "Pealkiri"
+  use: "Kasuta"
+  edit: "Muuda"
+  delete: "Kustuta"
+  clear: "Puhasta"
+  save: "Salvesta"
+  cancel: "Tühista"
+  bookmarkTitlePlaceholder: "Sisestage pealkiri..."
+  titleCantBeEmpty: "Pealkiri ei tohi olla tühi"
+  contentCantBeEmpty: "Sisu ei tohi olla tühi"

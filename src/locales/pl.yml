@@ -1,0 +1,36 @@
+extName: "LLM Toolbox"
+extDescription: "Ulepsza strony czatu, takie jak ChatGPT, Claude. Pozwala zapisywać prompt i zakładki."
+popup:
+  extension:
+    active: "Rozszerzenie aktywne"
+    deactive: "Rozszerzenie nieaktywne"
+  activate: "Aktywuj"
+  deactivate: "Dezaktywuj"
+  options: "Opcje"
+  changeIconSize: "Zmień rozmiar ikony"
+  changePosition: "Zmień pozycję"
+
+options:
+  iconSize:
+    small: "Mały"
+    medium: "Średni"
+    large: "Duży"
+  position:
+    topRight: "Góra prawa"
+    bottomRight: "Dół prawa"
+  footer:
+    createdByBrkunver: "Utworzone przez Brkunver"
+    website: "Strona internetowa"
+    github: "GitHub"
+
+content:
+  title: "Tytuł"
+  use: "Użyj"
+  edit: "Edytuj"
+  delete: "Usuń"
+  clear: "Wyczyść"
+  save: "Zapisz"
+  cancel: "Anuluj"
+  bookmarkTitlePlaceholder: "Wpisz tytuł..."
+  titleCantBeEmpty: "Tytuł nie może być pusty"
+  contentCantBeEmpty: "Treść nie może być pusta"

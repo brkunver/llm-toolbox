@@ -1,0 +1,79 @@
+extName: "LLM Toolbox"
+extDescription: "Mejora ChatGPT, Claude y sitios de chat similares. Permite guardar prompts y añadir marcadores."
+popup:
+  extension:
+    active: "Extensión activa"
+    deactive: "Extensión inactiva"
+  activate: "Activar"
+  deactivate: "Desactivar"
+  options: "Opciones"
+  changeIconSize: "Cambiar tamaño de icono"
+  changePosition: "Cambiar posición"
+
+options:
+  iconSize:
+    small: "Pequeño"
+    medium: "Mediano"
+    large: "Grande"
+  position:
+    topRight: "Arriba a la derecha"
+    bottomRight: "Abajo a la derecha"
+  footer:
+    createdByBrkunver: "Creado por Brkunver"
+    website: "Sitio web"
+    github: "GitHub"
+
+content:
+  title: "Título"
+  use: "Usar"
+  edit: "Editar"
+  delete: "Eliminar"
+  clear: "Limpiar"
+  save: "Guardar"
+  cancel: "Cancelar"
+  bookmarkTitlePlaceholder: "Introduce el título..."
+  titleCantBeEmpty: "El título no puede estar vacío"
+  contentCantBeEmpty: "El contenido no puede estar vacío"
+  titleAndContentCantBeEmpty: "El título y el contenido no pueden estar vacíos"
+  titleAndUrlCantBeEmpty: "El título y la URL no pueden estar vacíos"
+  urlCantExceed: "La URL no puede exceder los 1000 caracteres"
+  titleCantExceed: "El título no puede exceder los 50 caracteres"
+  contentCantExceed: "El contenido no puede exceder los 1000 caracteres"
+
+  bookmarkAdded: "Marcador añadido"
+  addBookmark: "Añadir marcador"
+  addBookmarkAs: "Añadir como marcador..."
+  myBookmarks: "Mis marcadores"
+  bookmarkCount: "Cantidad de marcadores"
+  noBookmarksYet: "Aún no hay marcadores"
+  editBookmark: "Editar marcador"
+  bookmarkUpdatedSuccesfully: "¡Marcador actualizado con éxito!"
+  failedToUpdateBookmark: "No se pudo actualizar el marcador"
+
+  promptUpdated: "Prompt actualizado"
+  failedToUpdatePrompt: "No se pudo actualizar el prompt"
+  editPrompt: "Editar prompt"
+  createNewPrompt: "Crear nuevo prompt"
+  promptAddedSuccessfully: "¡Prompt añadido con éxito!"
+  content: "Contenido"
+  promptContentPlaceholder: "Contenido del prompt..."
+  noSavedPrompts: "Aún no hay prompts guardados"
+  category: "Categoría"
+  promptApplied: "Prompt aplicado"
+  promptDeleted: "Prompt eliminado"
+  promptCount: "Cantidad de prompts"
+  savedPrompts: "Prompts guardados"
+
+  detectedWebsite: "Sitio web detectado"
+  newPrompt: "Nuevo prompt"
+  myPrompts: "Mis prompts"
+
+example:
+  prompt1:
+    id: "promptid1"
+    title: "Actúa como un científico de datos"
+    content: "Quiero que actúes como un científico de datos.\nImagina que trabajas en un proyecto desafiante para una empresa tecnológica de vanguardia.\nDebes extraer información valiosa de un gran conjunto de datos sobre el comportamiento de los usuarios en una nueva aplicación.\nTu objetivo es proporcionar recomendaciones prácticas para mejorar la participación y retención de los usuarios."
+  prompt2:
+    id: "promptid2"
+    title: "Actúa como especialista en SEO"
+    content: "Quiero que actúes como un especialista en SEO.\nTe daré preguntas o escenarios relacionados con la optimización de motores de búsqueda y responderás con consejos o recomendaciones SEO relevantes.\nTus respuestas deben centrarse únicamente en estrategias, técnicas y conocimientos de SEO.\nNo des consejos ni explicaciones generales de marketing."

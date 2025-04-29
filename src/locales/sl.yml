@@ -1,0 +1,36 @@
+extName: "LLM Toolbox"
+extDescription: "Izboljša klepetalna mesta, kot sta ChatGPT, Claude. Omogoča shranjevanje pozivov in zaznamkov."
+popup:
+  extension:
+    active: "Razširitev je aktivna"
+    deactive: "Razširitev ni aktivna"
+  activate: "Aktiviraj"
+  deactivate: "Deaktiviraj"
+  options: "Možnosti"
+  changeIconSize: "Spremeni velikost ikone"
+  changePosition: "Spremeni položaj"
+
+options:
+  iconSize:
+    small: "Majhna"
+    medium: "Srednja"
+    large: "Velika"
+  position:
+    topRight: "Zgoraj desno"
+    bottomRight: "Spodaj desno"
+  footer:
+    createdByBrkunver: "Ustvaril Brkunver"
+    website: "Spletna stran"
+    github: "GitHub"
+
+content:
+  title: "Naslov"
+  use: "Uporabi"
+  edit: "Uredi"
+  delete: "Izbriši"
+  clear: "Počisti"
+  save: "Shrani"
+  cancel: "Prekliči"
+  bookmarkTitlePlaceholder: "Vnesite naslov..."
+  titleCantBeEmpty: "Naslov ne sme biti prazen"
+  contentCantBeEmpty: "Vsebina ne sme biti prazna"

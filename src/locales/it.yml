@@ -1,0 +1,79 @@
+extName: "LLM Toolbox"
+extDescription: "Migliora ChatGPT, Claude e siti chat simili. Permette di salvare prompt e aggiungere segnalibri."
+popup:
+  extension:
+    active: "Estensione attiva"
+    deactive: "Estensione disattivata"
+  activate: "Attiva"
+  deactivate: "Disattiva"
+  options: "Opzioni"
+  changeIconSize: "Cambia dimensione icona"
+  changePosition: "Cambia posizione"
+
+options:
+  iconSize:
+    small: "Piccola"
+    medium: "Media"
+    large: "Grande"
+  position:
+    topRight: "In alto a destra"
+    bottomRight: "In basso a destra"
+  footer:
+    createdByBrkunver: "Creato da Brkunver"
+    website: "Sito Web"
+    github: "GitHub"
+
+content:
+  title: "Titolo"
+  use: "Usa"
+  edit: "Modifica"
+  delete: "Elimina"
+  clear: "Pulisci"
+  save: "Salva"
+  cancel: "Annulla"
+  bookmarkTitlePlaceholder: "Inserisci il titolo..."
+  titleCantBeEmpty: "Il titolo non può essere vuoto"
+  contentCantBeEmpty: "Il contenuto non può essere vuoto"
+  titleAndContentCantBeEmpty: "Il titolo e il contenuto non possono essere vuoti"
+  titleAndUrlCantBeEmpty: "Il titolo e l'URL non possono essere vuoti"
+  urlCantExceed: "L'URL non può superare i 1000 caratteri"
+  titleCantExceed: "Il titolo non può superare i 50 caratteri"
+  contentCantExceed: "Il contenuto non può superare i 1000 caratteri"
+
+  bookmarkAdded: "Segnalibro aggiunto"
+  addBookmark: "Aggiungi segnalibro"
+  addBookmarkAs: "Aggiungi come segnalibro..."
+  myBookmarks: "I miei segnalibri"
+  bookmarkCount: "Conteggio segnalibri"
+  noBookmarksYet: "Nessun segnalibro ancora"
+  editBookmark: "Modifica segnalibro"
+  bookmarkUpdatedSuccesfully: "Segnalibro aggiornato con successo!"
+  failedToUpdateBookmark: "Impossibile aggiornare il segnalibro"
+
+  promptUpdated: "Prompt aggiornato"
+  failedToUpdatePrompt: "Impossibile aggiornare il prompt"
+  editPrompt: "Modifica prompt"
+  createNewPrompt: "Crea nuovo prompt"
+  promptAddedSuccessfully: "Prompt aggiunto con successo!"
+  content: "Contenuto"
+  promptContentPlaceholder: "Contenuto del prompt..."
+  noSavedPrompts: "Nessun prompt salvato ancora"
+  category: "Categoria"
+  promptApplied: "Prompt applicato"
+  promptDeleted: "Prompt eliminato"
+  promptCount: "Conteggio prompt"
+  savedPrompts: "Prompt salvati"
+
+  detectedWebsite: "Sito rilevato"
+  newPrompt: "Nuovo prompt"
+  myPrompts: "I miei prompt"
+
+example:
+  prompt1:
+    id: "promptid1"
+    title: "Agisci come un Data Scientist"
+    content: "Voglio che tu agisca come un data scientist.\nImmagina di lavorare su un progetto impegnativo per un'azienda tecnologica all'avanguardia.\nDevi estrarre preziose informazioni da un grande set di dati relativi al comportamento degli utenti su una nuova app.\nIl tuo obiettivo è fornire raccomandazioni attuabili per migliorare il coinvolgimento e la fidelizzazione degli utenti."
+  prompt2:
+    id: "promptid2"
+    title: "Agisci come uno specialista SEO"
+    content: "Voglio che tu agisca come uno specialista SEO.\nTi fornirò domande o scenari relativi all'ottimizzazione per i motori di ricerca e tu risponderai con consigli o raccomandazioni SEO pertinenti.\nLe tue risposte dovrebbero concentrarsi solo su strategie, tecniche e approfondimenti SEO.\nNon fornire consigli o spiegazioni di marketing generali."

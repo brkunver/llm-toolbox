@@ -1,0 +1,36 @@
+extName: "LLM Toolbox"
+extDescription: "Βελτιώνει ιστότοπους συνομιλίας όπως το ChatGPT, Claude. Επιτρέπει την αποθήκευση προτροπών και σελιδοδεικτών."
+popup:
+  extension:
+    active: "Η επέκταση είναι ενεργή"
+    deactive: "Η επέκταση είναι ανενεργή"
+  activate: "Ενεργοποίηση"
+  deactivate: "Απενεργοποίηση"
+  options: "Επιλογές"
+  changeIconSize: "Αλλαγή μεγέθους εικονιδίου"
+  changePosition: "Αλλαγή θέσης"
+
+options:
+  iconSize:
+    small: "Μικρό"
+    medium: "Μεσαίο"
+    large: "Μεγάλο"
+  position:
+    topRight: "Πάνω δεξιά"
+    bottomRight: "Κάτω δεξιά"
+  footer:
+    createdByBrkunver: "Δημιουργήθηκε από τον Brkunver"
+    website: "Ιστοσελίδα"
+    github: "GitHub"
+
+content:
+  title: "Τίτλος"
+  use: "Χρήση"
+  edit: "Επεξεργασία"
+  delete: "Διαγραφή"
+  clear: "Καθαρισμός"
+  save: "Αποθήκευση"
+  cancel: "Ακύρωση"
+  bookmarkTitlePlaceholder: "Εισαγάγετε τίτλο..."
+  titleCantBeEmpty: "Ο τίτλος δεν μπορεί να είναι κενός"
+  contentCantBeEmpty: "Το περιεχόμενο δεν μπορεί να είναι κενό"

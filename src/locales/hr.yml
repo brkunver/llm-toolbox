@@ -1,0 +1,36 @@
+extName: "LLM Toolbox"
+extDescription: "Poboljšava chat stranice poput ChatGPT, Claude. Omogućuje spremanje promptova i oznaka."
+popup:
+  extension:
+    active: "Ekstenzija je aktivna"
+    deactive: "Ekstenzija nije aktivna"
+  activate: "Aktiviraj"
+  deactivate: "Deaktiviraj"
+  options: "Opcije"
+  changeIconSize: "Promijeni veličinu ikone"
+  changePosition: "Promijeni poziciju"
+
+options:
+  iconSize:
+    small: "Mala"
+    medium: "Srednja"
+    large: "Velika"
+  position:
+    topRight: "Gore desno"
+    bottomRight: "Dolje desno"
+  footer:
+    createdByBrkunver: "Izradio Brkunver"
+    website: "Web stranica"
+    github: "GitHub"
+
+content:
+  title: "Naslov"
+  use: "Koristi"
+  edit: "Uredi"
+  delete: "Izbriši"
+  clear: "Očisti"
+  save: "Spremi"
+  cancel: "Odustani"
+  bookmarkTitlePlaceholder: "Unesite naslov..."
+  titleCantBeEmpty: "Naslov ne smije biti prazan"
+  contentCantBeEmpty: "Sadržaj ne smije biti prazan"

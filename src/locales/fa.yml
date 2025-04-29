@@ -1,0 +1,79 @@
+extName: "جعبه ابزار LLM"
+extDescription: "وب‌سایت‌های چت مانند ChatGPT و Claude را بهبود می‌بخشد. امکان ذخیره پرامپت و نشانه‌گذاری را فراهم می‌کند."
+popup:
+  extension:
+    active: "افزونه فعال است"
+    deactive: "افزونه غیرفعال است"
+  activate: "فعال‌سازی"
+  deactivate: "غیرفعال‌سازی"
+  options: "تنظیمات"
+  changeIconSize: "تغییر اندازه آیکون"
+  changePosition: "تغییر موقعیت"
+
+options:
+  iconSize:
+    small: "کوچک"
+    medium: "متوسط"
+    large: "بزرگ"
+  position:
+    topRight: "بالا راست"
+    bottomRight: "پایین راست"
+  footer:
+    createdByBrkunver: "توسط Brkunver ساخته شده"
+    website: "وب‌سایت"
+    github: "گیت‌هاب"
+
+content:
+  title: "عنوان"
+  use: "استفاده"
+  edit: "ویرایش"
+  delete: "حذف"
+  clear: "پاک‌کردن"
+  save: "ذخیره"
+  cancel: "لغو"
+  bookmarkTitlePlaceholder: "عنوان را وارد کنید..."
+  titleCantBeEmpty: "عنوان نمی‌تواند خالی باشد"
+  contentCantBeEmpty: "محتوا نمی‌تواند خالی باشد"
+  titleAndContentCantBeEmpty: "عنوان و محتوا نمی‌توانند خالی باشند"
+  titleAndUrlCantBeEmpty: "عنوان و نشانی نمی‌توانند خالی باشند"
+  urlCantExceed: "نشانی نمی‌تواند بیش از ۱۰۰۰ کاراکتر باشد"
+  titleCantExceed: "عنوان نمی‌تواند بیش از ۵۰ کاراکتر باشد"
+  contentCantExceed: "محتوا نمی‌تواند بیش از ۱۰۰۰ کاراکتر باشد"
+
+  bookmarkAdded: "نشانه اضافه شد"
+  addBookmark: "افزودن نشانه"
+  addBookmarkAs: "افزودن به عنوان نشانه..."
+  myBookmarks: "نشانه‌های من"
+  bookmarkCount: "تعداد نشانه‌ها"
+  noBookmarksYet: "هنوز نشانه‌ای وجود ندارد"
+  editBookmark: "ویرایش نشانه"
+  bookmarkUpdatedSuccesfully: "نشانه با موفقیت به‌روزرسانی شد!"
+  failedToUpdateBookmark: "به‌روزرسانی نشانه ناموفق بود"
+
+  promptUpdated: "پرامپت به‌روزرسانی شد"
+  failedToUpdatePrompt: "به‌روزرسانی پرامپت ناموفق بود"
+  editPrompt: "ویرایش پرامپت"
+  createNewPrompt: "ایجاد پرامپت جدید"
+  promptAddedSuccessfully: "پرامپت با موفقیت اضافه شد!"
+  content: "محتوا"
+  promptContentPlaceholder: "محتوای پرامپت..."
+  noSavedPrompts: "هنوز پرامپتی ذخیره نشده است"
+  category: "دسته‌بندی"
+  promptApplied: "پرامپت اعمال شد"
+  promptDeleted: "پرامپت حذف شد"
+  promptCount: "تعداد پرامپت‌ها"
+  savedPrompts: "پرامپت‌های ذخیره‌شده"
+
+  detectedWebsite: "وب‌سایت شناسایی شده"
+  newPrompt: "پرامپت جدید"
+  myPrompts: "پرامپت‌های من"
+
+example:
+  prompt1:
+    id: "promptid1"
+    title: "مانند یک دانشمند داده رفتار کن"
+    content: "می‌خواهم مانند یک دانشمند داده رفتار کنی.\nتصور کن روی یک پروژه چالش‌برانگیز برای یک شرکت فناوری پیشرفته کار می‌کنی.\nباید بینش‌های ارزشمندی از یک مجموعه داده بزرگ درباره رفتار کاربران در یک اپ جدید استخراج کنی.\nهدفت ارائه پیشنهادهای عملی برای افزایش تعامل و نگهداشت کاربران است."
+  prompt2:
+    id: "promptid2"
+    title: "مانند یک متخصص سئو رفتار کن"
+    content: "می‌خواهم مانند یک متخصص سئو رفتار کنی.\nسوالات یا سناریوهای مرتبط با سئو به تو می‌دهم و تو باید با توصیه‌ها یا پیشنهادهای مرتبط پاسخ دهی.\nپاسخ‌هایت باید فقط بر استراتژی‌ها، تکنیک‌ها و بینش‌های سئو متمرکز باشد.\nتوصیه یا توضیح بازاریابی عمومی ارائه نده."
