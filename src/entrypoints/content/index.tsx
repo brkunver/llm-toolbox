@@ -56,6 +56,6 @@ export default defineContentScript({
     })
 
     // 4. Mount the UI
-    ui.mount()
+    ui.autoMount()
   },
 })
