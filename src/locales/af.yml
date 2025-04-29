@@ -1,0 +1,36 @@
+extName: "LLM Toolbox"
+extDescription: "Verbeter kletssites soos ChatGPT, Claude. Laat toe om prompt en boekmerke te stoor."
+popup:
+  extension:
+    active: "Uitbreiding is aktief"
+    deactive: "Uitbreiding is nie aktief nie"
+  activate: "Aktiveer"
+  deactivate: "Deaktiveer"
+  options: "Opsies"
+  changeIconSize: "Verander ikoongrootte"
+  changePosition: "Verander posisie"
+
+options:
+  iconSize:
+    small: "Klein"
+    medium: "Medium"
+    large: "Groot"
+  position:
+    topRight: "Regs bo"
+    bottomRight: "Regs onder"
+  footer:
+    createdByBrkunver: "Geskep deur Brkunver"
+    website: "Webwerf"
+    github: "GitHub"
+
+content:
+  title: "Titel"
+  use: "Gebruik"
+  edit: "Redigeer"
+  delete: "Verwyder"
+  clear: "Maak skoon"
+  save: "Stoor"
+  cancel: "Kanselleer"
+  bookmarkTitlePlaceholder: "Voer titel in..."
+  titleCantBeEmpty: "Titel mag nie leeg wees nie"
+  contentCantBeEmpty: "Inhoud mag nie leeg wees nie"

@@ -1,0 +1,36 @@
+extName: "LLM Toolbox"
+extDescription: "ChatGPT, Claude-এর মতো চ্যাট ওয়েবসাইট উন্নত করে। প্রম্পট সংরক্ষণ ও বুকমার্ক যোগ করার সুবিধা দেয়।"
+popup:
+  extension:
+    active: "এক্সটেনশন সক্রিয়"
+    deactive: "এক্সটেনশন নিষ্ক্রিয়"
+  activate: "সক্রিয় করুন"
+  deactivate: "নিষ্ক্রিয় করুন"
+  options: "অপশন"
+  changeIconSize: "আইকনের আকার পরিবর্তন করুন"
+  changePosition: "অবস্থান পরিবর্তন করুন"
+
+options:
+  iconSize:
+    small: "ছোট"
+    medium: "মাঝারি"
+    large: "বড়"
+  position:
+    topRight: "উপরে ডানদিকে"
+    bottomRight: "নিচে ডানদিকে"
+  footer:
+    createdByBrkunver: "Brkunver দ্বারা তৈরি"
+    website: "ওয়েবসাইট"
+    github: "GitHub"
+
+content:
+  title: "শিরোনাম"
+  use: "ব্যবহার করুন"
+  edit: "সম্পাদনা"
+  delete: "মুছুন"
+  clear: "পরিষ্কার করুন"
+  save: "সংরক্ষণ করুন"
+  cancel: "বাতিল করুন"
+  bookmarkTitlePlaceholder: "শিরোনাম লিখুন..."
+  titleCantBeEmpty: "শিরোনাম খালি হতে পারবে না"
+  contentCantBeEmpty: "কনটেন্ট খালি হতে পারবে না"

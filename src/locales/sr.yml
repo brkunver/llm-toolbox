@@ -1,0 +1,36 @@
+extName: "LLM Toolbox"
+extDescription: "Побољшава сајтове за ћаскање као што су ChatGPT, Claude. Омогућава чување промптова и обележивача."
+popup:
+  extension:
+    active: "Екстензија је активна"
+    deactive: "Екстензија није активна"
+  activate: "Активирај"
+  deactivate: "Деактивирај"
+  options: "Опције"
+  changeIconSize: "Промени величину иконице"
+  changePosition: "Промени позицију"
+
+options:
+  iconSize:
+    small: "Мала"
+    medium: "Средња"
+    large: "Велика"
+  position:
+    topRight: "Горе десно"
+    bottomRight: "Доле десно"
+  footer:
+    createdByBrkunver: "Креирао Brkunver"
+    website: "Вебсајт"
+    github: "GitHub"
+
+content:
+  title: "Наслов"
+  use: "Користи"
+  edit: "Уреди"
+  delete: "Обриши"
+  clear: "Очисти"
+  save: "Сачувај"
+  cancel: "Откажи"
+  bookmarkTitlePlaceholder: "Унесите наслов..."
+  titleCantBeEmpty: "Наслов не може бити празан"
+  contentCantBeEmpty: "Садржај не може бити празан"

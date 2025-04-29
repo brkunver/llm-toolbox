@@ -1,0 +1,36 @@
+extName: "LLM Toolbox"
+extDescription: "Pinapahusay ang mga chat site tulad ng ChatGPT, Claude. Pinapayagan ang pag-save ng prompt at bookmark."
+popup:
+  extension:
+    active: "Aktibo ang extension"
+    deactive: "Hindi aktibo ang extension"
+  activate: "I-activate"
+  deactivate: "I-deactivate"
+  options: "Mga opsyon"
+  changeIconSize: "Baguhin ang laki ng icon"
+  changePosition: "Baguhin ang posisyon"
+
+options:
+  iconSize:
+    small: "Maliit"
+    medium: "Katamtaman"
+    large: "Malaki"
+  position:
+    topRight: "Itas kanan"
+    bottomRight: "Ibaba kanan"
+  footer:
+    createdByBrkunver: "Ginawa ni Brkunver"
+    website: "Website"
+    github: "GitHub"
+
+content:
+  title: "Pamagat"
+  use: "Gamitin"
+  edit: "I-edit"
+  delete: "Tanggalin"
+  clear: "I-clear"
+  save: "I-save"
+  cancel: "Kanselahin"
+  bookmarkTitlePlaceholder: "Ilagay ang pamagat..."
+  titleCantBeEmpty: "Hindi maaaring walang laman ang pamagat"
+  contentCantBeEmpty: "Hindi maaaring walang laman ang nilalaman"

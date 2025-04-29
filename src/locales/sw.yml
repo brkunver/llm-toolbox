@@ -1,0 +1,36 @@
+extName: "LLM Toolbox"
+extDescription: "Huboresha tovuti za gumzo kama ChatGPT, Claude. Inaruhusu kuhifadhi prompt na alamisho."
+popup:
+  extension:
+    active: "Kiendelezi kimewashwa"
+    deactive: "Kiendelezi hakijawashwa"
+  activate: "Washa"
+  deactivate: "Zima"
+  options: "Chaguo"
+  changeIconSize: "Badilisha ukubwa wa ikoni"
+  changePosition: "Badilisha nafasi"
+
+options:
+  iconSize:
+    small: "Ndogo"
+    medium: "Wastani"
+    large: "Kubwa"
+  position:
+    topRight: "Juu kulia"
+    bottomRight: "Chini kulia"
+  footer:
+    createdByBrkunver: "Imetengenezwa na Brkunver"
+    website: "Tovuti"
+    github: "GitHub"
+
+content:
+  title: "Kichwa"
+  use: "Tumia"
+  edit: "Hariri"
+  delete: "Futa"
+  clear: "Futa yote"
+  save: "Hifadhi"
+  cancel: "Ghairi"
+  bookmarkTitlePlaceholder: "Weka kichwa..."
+  titleCantBeEmpty: "Kichwa hakiwezi kuwa tupu"
+  contentCantBeEmpty: "Yaliyomo hayawezi kuwa tupu"

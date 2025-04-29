@@ -1,0 +1,36 @@
+extName: "LLM Toolbox"
+extDescription: "Forbedrer chatwebsites som ChatGPT, Claude. Giver mulighed for at gemme prompts og bogmærker."
+popup:
+  extension:
+    active: "Udvidelsen er aktiv"
+    deactive: "Udvidelsen er inaktiv"
+  activate: "Aktivér"
+  deactivate: "Deaktivér"
+  options: "Indstillinger"
+  changeIconSize: "Skift ikonstørrelse"
+  changePosition: "Skift position"
+
+options:
+  iconSize:
+    small: "Lille"
+    medium: "Mellem"
+    large: "Stor"
+  position:
+    topRight: "Øverst til højre"
+    bottomRight: "Nederst til højre"
+  footer:
+    createdByBrkunver: "Oprettet af Brkunver"
+    website: "Website"
+    github: "GitHub"
+
+content:
+  title: "Titel"
+  use: "Brug"
+  edit: "Rediger"
+  delete: "Slet"
+  clear: "Ryd"
+  save: "Gem"
+  cancel: "Annuller"
+  bookmarkTitlePlaceholder: "Indtast titel..."
+  titleCantBeEmpty: "Titel må ikke være tom"
+  contentCantBeEmpty: "Indhold må ikke være tomt"

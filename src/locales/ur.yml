@@ -1,0 +1,36 @@
+extName: "LLM ٹول باکس"
+extDescription: "ChatGPT، Claude وغیرہ جیسے چیٹ ویب سائٹس کو بہتر بناتا ہے۔ پرامپٹ سیو اور بُک مارک کی سہولت دیتا ہے۔"
+popup:
+  extension:
+    active: "ایکسٹینشن فعال ہے"
+    deactive: "ایکسٹینشن غیر فعال ہے"
+  activate: "فعال کریں"
+  deactivate: "غیر فعال کریں"
+  options: "اختیارات"
+  changeIconSize: "آئیکن کا سائز تبدیل کریں"
+  changePosition: "مقام تبدیل کریں"
+
+options:
+  iconSize:
+    small: "چھوٹا"
+    medium: "درمیانہ"
+    large: "بڑا"
+  position:
+    topRight: "اوپر دایاں"
+    bottomRight: "نیچے دایاں"
+  footer:
+    createdByBrkunver: "Brkunver کے ذریعہ تیار کردہ"
+    website: "ویب سائٹ"
+    github: "GitHub"
+
+content:
+  title: "عنوان"
+  use: "استعمال کریں"
+  edit: "ترمیم"
+  delete: "حذف کریں"
+  clear: "صاف کریں"
+  save: "محفوظ کریں"
+  cancel: "منسوخ کریں"
+  bookmarkTitlePlaceholder: "عنوان درج کریں..."
+  titleCantBeEmpty: "عنوان خالی نہیں ہو سکتا"
+  contentCantBeEmpty: "مواد خالی نہیں ہو سکتا"
