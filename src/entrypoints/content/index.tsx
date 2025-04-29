@@ -42,6 +42,8 @@ export default defineContentScript({
 
         // Container is a body, and React warns when creating a root on the body, so create a wrapper div
         const app = document.createElement("div")
+        app.id = "llm-toolbox-root"
+        app.style.zIndex = "999999"
         container.append(app)
 
         // Create a root on the UI container and render a component
