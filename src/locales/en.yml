@@ -1,3 +1,5 @@
+extName: "LLM Toolbox"
+extDescription: "Enhances ChatGPT, Claude, and similar chat websites. Allows prompt saving and bookmarking."
 popup:
   extension:
     active: "Extension is Active"

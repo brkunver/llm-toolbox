@@ -1,0 +1,79 @@
+extName: "LLM Araç Kutusu"
+extDescription: "ChatGPT, Claude ve benzeri sohbet sitelerini geliştirir. Prompt kaydı ve yer imi oluşturmayı sağlar."
+popup:
+  extension:
+    active: "Eklenti Aktif"
+    deactive: "Eklenti Pasif"
+  activate: "Aktifleştir"
+  deactivate: "Pasifleştir"
+  options: "Ayarlar"
+  changeIconSize: "Simge Boyut Değiş"
+  changePosition: "Konumu Değiştir"
+
+options:
+  iconSize:
+    small: "Küçük"
+    medium: "Orta"
+    large: "Büyük"
+  position:
+    topRight: "Sağ Üst"
+    bottomRight: "Sağ Alt"
+  footer:
+    createdByBrkunver: "Brkunver tarafından oluşturuldu"
+    website: "Web Sitesi"
+    github: "GitHub"
+
+content:
+  title: "Başlık"
+  use: "Kullan"
+  edit: "Düzenle"
+  delete: "Sil"
+  clear: "Temizle"
+  save: "Kaydet"
+  cancel: "İptal"
+  bookmarkTitlePlaceholder: "Başlık gir..."
+  titleCantBeEmpty: "Başlık boş olamaz"
+  contentCantBeEmpty: "İçerik boş olamaz"
+  titleAndContentCantBeEmpty: "Başlık ve içerik boş olamaz"
+  titleAndUrlCantBeEmpty: "Başlık ve URL boş olamaz"
+  urlCantExceed: "URL 1000 karakteri geçemez"
+  titleCantExceed: "Başlık 50 karakteri geçemez"
+  contentCantExceed: "İçerik 1000 karakteri geçemez"
+
+  bookmarkAdded: "Yer imi eklendi"
+  addBookmark: "Yer imi ekle"
+  addBookmarkAs: "Şu olarak yer imi ekle..."
+  myBookmarks: "Yer İmlerim"
+  bookmarkCount: "Yer İmi Sayısı"
+  noBookmarksYet: "Henüz yer imi yok"
+  editBookmark: "Yer İmini Düzenle"
+  bookmarkUpdatedSuccesfully: "Yer imi başarıyla güncellendi!"
+  failedToUpdateBookmark: "Yer imi güncellenemedi"
+
+  promptUpdated: "Prompt güncellendi"
+  failedToUpdatePrompt: "Prompt güncellenemedi"
+  editPrompt: "Promptu Düzenle"
+  createNewPrompt: "Yeni Prompt Oluştur"
+  promptAddedSuccessfully: "Prompt başarıyla eklendi!"
+  content: "İçerik"
+  promptContentPlaceholder: "Prompt içeriği..."
+  noSavedPrompts: "Henüz kayıtlı prompt yok"
+  category: "Kategori"
+  promptApplied: "Prompt Uygulandı"
+  promptDeleted: "Prompt Silindi"
+  promptCount: "Prompt Sayısı"
+  savedPrompts: "Kayıtlı Promptlar"
+
+  detectedWebsite: "Algılanan Web Sitesi"
+  newPrompt: "Yeni Prompt"
+  myPrompts: "Promptlarım"
+
+example:
+  prompt1:
+    id: "promptid1"
+    title: "Bir Veri Bilimci gibi davran"
+    content: "Bir veri bilimci gibi davranmanı istiyorum.\nKendini ileri teknoloji bir şirkette zorlu bir projede çalışıyormuş gibi hayal et.\nKullanıcı davranışlarına dair büyük bir veri setinden değerli içgörüler çıkarman gerekiyor.\nAmacın, kullanıcı etkileşimi ve elde tutmayı artıracak uygulanabilir öneriler sunmak."
+  prompt2:
+    id: "promptid2"
+    title: "SEO uzmanı gibi davran"
+    content: "Bir SEO uzmanı gibi davranmanı istiyorum.\nSana arama motoru optimizasyonuyla ilgili sorular veya senaryolar vereceğim ve sen de ilgili SEO tavsiyeleri veya önerileriyle cevap vereceksin.\nYanıtların yalnızca SEO stratejilerine, tekniklerine ve içgörülerine odaklanmalı.\nYanıtlarında genel pazarlama tavsiyesi veya açıklaması verme."

@@ -1,0 +1,79 @@
+extName: "LLM Toolbox"
+extDescription: "Erweitert ChatGPT, Claude und ähnliche Chat-Websites. Ermöglicht das Speichern von Prompts und das Hinzufügen von Lesezeichen."
+popup:
+  extension:
+    active: "Erweiterung ist aktiv"
+    deactive: "Erweiterung ist deaktiviert"
+  activate: "Aktivieren"
+  deactivate: "Deaktivieren"
+  options: "Optionen"
+  changeIconSize: "Symbolgröße ändern"
+  changePosition: "Position ändern"
+
+options:
+  iconSize:
+    small: "Klein"
+    medium: "Mittel"
+    large: "Groß"
+  position:
+    topRight: "Oben rechts"
+    bottomRight: "Unten rechts"
+  footer:
+    createdByBrkunver: "Erstellt von Brkunver"
+    website: "Webseite"
+    github: "GitHub"
+
+content:
+  title: "Titel"
+  use: "Verwenden"
+  edit: "Bearbeiten"
+  delete: "Löschen"
+  clear: "Leeren"
+  save: "Speichern"
+  cancel: "Abbrechen"
+  bookmarkTitlePlaceholder: "Titel eingeben..."
+  titleCantBeEmpty: "Titel darf nicht leer sein"
+  contentCantBeEmpty: "Inhalt darf nicht leer sein"
+  titleAndContentCantBeEmpty: "Titel und Inhalt dürfen nicht leer sein"
+  titleAndUrlCantBeEmpty: "Titel und URL dürfen nicht leer sein"
+  urlCantExceed: "URL darf 1000 Zeichen nicht überschreiten"
+  titleCantExceed: "Titel darf 50 Zeichen nicht überschreiten"
+  contentCantExceed: "Inhalt darf 1000 Zeichen nicht überschreiten"
+
+  bookmarkAdded: "Lesezeichen hinzugefügt"
+  addBookmark: "Lesezeichen hinzufügen"
+  addBookmarkAs: "Als Lesezeichen hinzufügen..."
+  myBookmarks: "Meine Lesezeichen"
+  bookmarkCount: "Lesezeichenanzahl"
+  noBookmarksYet: "Noch keine Lesezeichen"
+  editBookmark: "Lesezeichen bearbeiten"
+  bookmarkUpdatedSuccesfully: "Lesezeichen erfolgreich aktualisiert!"
+  failedToUpdateBookmark: "Lesezeichen konnte nicht aktualisiert werden"
+
+  promptUpdated: "Prompt aktualisiert"
+  failedToUpdatePrompt: "Prompt konnte nicht aktualisiert werden"
+  editPrompt: "Prompt bearbeiten"
+  createNewPrompt: "Neuen Prompt erstellen"
+  promptAddedSuccessfully: "Prompt erfolgreich hinzugefügt!"
+  content: "Inhalt"
+  promptContentPlaceholder: "Prompt-Inhalt..."
+  noSavedPrompts: "Noch keine gespeicherten Prompts"
+  category: "Kategorie"
+  promptApplied: "Prompt angewendet"
+  promptDeleted: "Prompt gelöscht"
+  promptCount: "Prompt-Anzahl"
+  savedPrompts: "Gespeicherte Prompts"
+
+  detectedWebsite: "Erkannte Webseite"
+  newPrompt: "Neuer Prompt"
+  myPrompts: "Meine Prompts"
+
+example:
+  prompt1:
+    id: "promptid1"
+    title: "Als Datenwissenschaftler agieren"
+    content: "Ich möchte, dass du als Datenwissenschaftler agierst.\nStell dir vor, du arbeitest an einem anspruchsvollen Projekt für ein innovatives Technologieunternehmen.\nDu sollst wertvolle Erkenntnisse aus einem großen Datensatz über das Nutzerverhalten einer neuen App gewinnen.\nDein Ziel ist es, umsetzbare Empfehlungen zur Verbesserung der Nutzerbindung und -interaktion zu geben."
+  prompt2:
+    id: "promptid2"
+    title: "Als SEO-Spezialist agieren"
+    content: "Ich möchte, dass du als SEO-Spezialist agierst.\nIch werde dir Fragen oder Szenarien zur Suchmaschinenoptimierung geben und du antwortest mit relevanten SEO-Tipps oder Empfehlungen.\nDeine Antworten sollten sich ausschließlich auf SEO-Strategien, -Techniken und -Einblicke konzentrieren.\nGib keine allgemeinen Marketingratschläge oder Erklärungen."
