@@ -1,5 +1,9 @@
 # Change log
 
+## [1.1.0] - 2025-04-29
+
+- Added support for multiple languages.
+
 ## [1.0.4] - 2025-04-07
 
 - Update website link in the options menu.
