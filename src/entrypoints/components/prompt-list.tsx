@@ -1,6 +1,7 @@
 import { memo } from "react"
 import Drawer from "@/entrypoints/components/ui/drawer"
 import Button from "@/entrypoints/components/ui/button"
+import { i18n } from "#imports"
 
 function PromptList() {
   if (import.meta.env.MODE == "development") {
@@ -29,7 +30,7 @@ function PromptList() {
   const handleUsePrompt = (prompt: TPrompt) => {
     changePrompt(prompt.content)
     setShowPromptList(false)
-    showPopup(`Prompt "${truncateText(prompt.title, 20)}" applied`, "green")
+    showPopup(i18n.t("content.promptApplied"), "green")
   }
 
   const handleEditPrompt = (prompt: TPrompt) => {
@@ -39,18 +40,20 @@ function PromptList() {
   const handleDeletePrompt = async (promptId: string, promptTitle: string) => {
     const updatedPrompts = prompts.filter(p => p.id !== promptId)
     await promptStorage.setValue(updatedPrompts)
-    showPopup(`Prompt "${truncateText(promptTitle, 20)}" deleted`, "red")
+    showPopup(i18n.t("content.promptDeleted"), "red")
   }
 
   return (
     <Drawer isOpen={isOpen} onClose={() => setShowPromptList(false)}>
       <div className="flex flex-col gap-4">
-        <h1 className="text-xl font-bold">Saved Prompts</h1>
-        <p className="text-gray-400">Prompt Count: {prompts.length}</p>
+        <h1 className="text-xl font-bold">{i18n.t("content.savedPrompts")}</h1>
+        <p className="text-gray-400">
+          {i18n.t("content.promptCount")}: {prompts.length}
+        </p>
 
         {prompts.length === 0 ? (
           <div className="p-4 bg-gray-800 rounded-md">
-            <p className="text-center text-gray-400">No saved prompts yet</p>
+            <p className="text-center text-gray-400">{i18n.t("content.noSavedPrompts")}</p>
           </div>
         ) : (
           <div className="flex flex-col gap-3">
@@ -63,13 +66,13 @@ function PromptList() {
                 <div className="flex justify-between items-center mt-2">
                   <div className="flex gap-2">
                     <Button variant="green" onClick={() => handleUsePrompt(prompt)}>
-                      Use
+                      {i18n.t("content.use")}
                     </Button>
                     <Button variant="blue" onClick={() => handleEditPrompt(prompt)}>
-                      Edit
+                      {i18n.t("content.edit")}
                     </Button>
                     <Button variant="red" onClick={() => handleDeletePrompt(prompt.id, prompt.title)}>
-                      Delete
+                      {i18n.t("content.delete")}
                     </Button>
                   </div>
                   <span className="text-xs px-2 py-1 bg-gray-700 rounded-full shrink-0">{prompt.category}</span>
