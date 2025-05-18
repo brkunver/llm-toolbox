@@ -2,7 +2,7 @@
   "name": "llm-toolbox",
   "description": "A browser extension for the Popular LLM's",
   "private": false,
-  "version": "1.1.0",
+  "version": "1.1.1",
   "type": "module",
   "packageManager": "pnpm@10.11.0",
   "scripts": {
