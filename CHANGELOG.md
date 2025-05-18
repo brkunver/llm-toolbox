@@ -1,5 +1,9 @@
 # Change log
 
+## [1.1.1] - 2025-05-18
+
+- Update packages.
+
 ## [1.1.0] - 2025-04-29
 
 - Added support for multiple languages.
