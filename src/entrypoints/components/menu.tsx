@@ -76,6 +76,11 @@ function Menu() {
             changeTitle={true}
             onShowAddBookmarkModal={() => setShowAddBookmarkModal(true)}
           />
+          <Button className="flex gap-1 w-full text-center" onClick={() => setShowBookmarks(true)}>
+            <Bookmark />
+            <span>{i18n.t("content.myBookmarks")}</span>
+          </Button>
+          <div id="divider" className="h-2 bg-gray-500 my-2 rounded-3xl"></div>
           <Button
             className="flex gap-1 w-full text-center bg-indigo-900 hover:bg-indigo-950"
             onClick={() => setShowNewPromptModal(true)}
@@ -86,10 +91,6 @@ function Menu() {
           <Button className="flex gap-1 w-full text-center" onClick={() => setShowPromptList(true)}>
             <List />
             <span>{i18n.t("content.myPrompts")}</span>
-          </Button>
-          <Button className="flex gap-1 w-full text-center" onClick={() => setShowBookmarks(true)}>
-            <Bookmark />
-            <span>{i18n.t("content.myBookmarks")}</span>
           </Button>
         </motion.section>
       )}
